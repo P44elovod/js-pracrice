@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="sample">
+    <div>
+        #1<br>
+        <button onclick="alert('Привет!')">Нажми на меня</button>
+    </div>
+    <div>
+        #2<br>
+        <button onmousemove="alert('Привет!')">Наведи на меня</button>
+    </div>
+    <div>
+        #3<br>
+        <button ondblclick="alert('Привет!')">Двойной счелчок по мне!</button>
+    </div>
+    <div>
+        #4<br>
+        <div class="rectangle" onmouseout="alert('Привет!')">Наведи на меня мышь - а потом убери!</div>
+    </div>
+    <div>
+        #5<br>
+        <input type="text" id="input" value="Ку-ку">
+        <button onclick="buttonClick()">Нажми на меня</button>
+
+    </div>
+    <div>
+        #6<br>
+        <input type="text" id="replace" value="Ку-ку">
+        <button onclick="buttonClickReplace()">Нажми на меня</button>
+
+    </div>
+    <div>
+        #7<br>
+        <img src="1.jpg" id="image"><br>
+        <button onclick="buttonClickChangeImage()">Нажми на меня</button>
+
+    </div>
+    <div>
+        #8<br>
+        <input type="text" onclick="buttonClickInputAlert(this)" value="Нажми на меня!">
+
+    </div>
+    <div>
+        #9<br>
+        <input type="text" onclick="buttonClickInputChanges(this)" value="Нажми на меня!">
+
+    </div>
+    <div>
+        #10<br>
+        <input type="text" onclick="buttonClickInputChanges(this)" onblur="buttonClickInputChangesAgain(this)"
+               value="Нажми на меня!">
+
+    </div>
+    <div>
+        #11<br>
+        <input type="text" value="!" id="test">
+        <input type="submit" onclick="func()">
+
+    </div>
+</div>
+</body>
+</html>
