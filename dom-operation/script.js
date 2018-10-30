@@ -11,6 +11,7 @@ function buttonClickReplace() {
     input.value = 'Ой, я поменял свой текст!';
 
 }
+
 function buttonClickChangeImage() {
 
     var elem = document.getElementById('image');
@@ -18,19 +19,21 @@ function buttonClickChangeImage() {
 
 }
 
-function buttonClickInputAlert(elem){
+function buttonClickInputAlert(elem) {
 
-   alert(elem.value);
-
-}
-function buttonClickInputChanges(elem){
-
-   elem.value = 'Ой, я поменял текст!';
+    alert(elem.value);
 
 }
-function buttonClickInputChangesAgain(elem){
 
-   elem.value = 'Ой, я поменял текст снова!';
+function buttonClickInputChanges(elem) {
+
+    elem.value = 'Ой, я поменял текст!';
+
+}
+
+function buttonClickInputChangesAgain(elem) {
+
+    elem.value = 'Ой, я поменял текст снова!';
 
 }
 
@@ -51,7 +54,8 @@ function onMouseOverChangeImage(elem) {
     elem.src = "2.jpg";
 
 }
-function  onMouseOutChangeImage(elem){
+
+function onMouseOutChangeImage(elem) {
 
     elem.src = "1.jpg";
 
@@ -66,12 +70,13 @@ function buttonClickChangeColor() {
 }
 
 function hide() {
-var elem = document.getElementById('hide');
-elem.style.display = 'none';
+    var elem = document.getElementById('hide');
+    elem.style.display = 'none';
 }
+
 function show() {
-var elem = document.getElementById('hide');
-elem.style.display = 'inline';
+    var elem = document.getElementById('hide');
+    elem.style.display = 'inline';
 }
 
 function buttonClickChangeShapeAndColor() {
@@ -110,13 +115,33 @@ function onClickEnable() {
 function clickCount(elem) {
 
 
-    elem.value = Number(elem.value)+1;
+    elem.value = Number(elem.value) + 1;
 
 }
 
 function buttonClickChangeFloat() {
 
+    var inputText = document.getElementById('#float');
 
+inputText.style.cssFloat = 'right';
+inputText.value = "Теперь я плаваю справа!"
+
+}
+
+function buttonClickShowClases() {
+
+    var input = document.getElementById('#showclasses');
+    input.value = 'Мои css классы: '+input.className;
+}
+
+function buttonClickChangeValue() {
+
+    var hello = document.getElementById('#hello');
+    var goodbye = document.getElementById('#goodbye');
+
+    var buff = hello.value;
+    hello.value = goodbye.value;
+    goodbye.value = buff;
 
 }
 
