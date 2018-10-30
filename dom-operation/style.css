@@ -19,3 +19,15 @@ body {
     margin-bottom: 10px;
 
 }
+
+.invisible {
+
+    display: none;
+
+}
+
+.visible {
+
+    display: inline;
+
+}
