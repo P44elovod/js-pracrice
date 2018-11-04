@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="sample">
+    <div>
+        #1<br>
+        <p id="#cont">При нажатии на кнопку текст в абзаце поменяется.</p>
+        <input type="submit" value="Нажми на меня!" onclick="onClickContentChange()">
+
+    </div>
+    <div>
+        #2<br>
+        <p id="#cont_2">При нажатии на кнопку текст в абзаце поменяется.</p>
+        <input type="submit" value="Нажми на меня!" onclick="onClickTagAndContentChange()">
+
+    </div>
+    <div>
+        #3<br>
+        <p id="#cont_3">При нажатии на кнопку абзац станет h3, но текст останется.</p>
+        <input type="submit" value="Нажми на меня!" onclick="onClickOnlyTagChange()">
+
+    </div>
+    <div>
+        #4<br>
+        <p><input type="text" id="#input_4"> + <input type="text" id="#input_4_1"> = <span id="#result_4">?</span></p>
+        <br>
+        <input type="submit" onclick="calculate()" value="Нажмите то бы сложить">
+    </div>
+    <div>
+        #5<br>
+        <p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+        <p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+        <p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+        <p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+        <h2>А я h2 и не поменяюсь!</h2>
+        <br>
+        <input type="submit" value="Нажмите на меня!" onclick="onClickContentChangeByTag()">
+
+    </div>
+    <div>
+        #6<br>
+        <h2 class="www">Заголовок с классом www.</h2>
+        <p class="www">Абзац с классом www.</p>
+        <p class="www">Абзац с классом www.</p>
+        <p>Просто абзац, не поменяется.</p>
+        <input type="submit" value="Нажмите на меня!" onclick="onClickContentChangeByClassName()">
+
+    </div>
+    <div>
+        #7<br>
+        <h2 class="www">Заголовок с классом www.</h2>
+        <p class="www">Абзац с классом www.</p>
+        <p class="www">Абзац с классом www.</p>
+        <p>Просто абзац, не поменяется.</p>
+        <input type="submit" value="Нажмите на меня!" onclick="onClickContentChangeByQuSelAll()">
+
+    </div>
+    <div>
+        #8<br>
+        <p class="my-class" id="#class">Абзац с class="my-class".</p>
+        <input type="submit" value="Нажмите - и я выведу класс абзаца" onclick="onClickShowClass()">
+
+    </div>
+    <div>
+        #9<br>
+        <p class="my-class" id="#class_9">Абзац с class="my-class". Класс "my-class" задает красный цвет.</p>
+        <input type="submit" value="Нажмите - и я выведу класс абзаца" onclick="onClickShowClass()"><br><br>
+        <input type="submit" value="Нажмите - и я изменю класс абзаца" onclick="onClickDeleteClass()">
+
+    </div>
+    <div>
+        #10<br>
+        <p class="my-class" id="#class_10">Абзац с class="my-class". Класс "my-class" задает красный цвет.</p>
+        <input type="submit" value="Нажмите - и я выведу класс абзаца" onclick="onClickShowClass()"><br><br>
+        <input type="submit" value="Нажмите - и я изменю класс абзаца new-class" onclick="onClickNewClass()">
+
+    </div>
+    <div>
+        #11<br>
+        <p><input type="text" lable="введи в меня текст!" onkeyup="changeContent(this)"><span id="#text"></span></p>
+
+    </div>
+    <div>
+        #12<br>
+        <a href="http://google.ru">ссылка 1</a><br><br>
+        <a href="http://tut.by">ссылка 2</a><br><br>
+        <a href="http://yandex.ru">ссылка 3</a><br><br>
+        <input type="submit" value="Нажмите на меня!" onclick="onClickShowHref()">
+    </div>
+    <div>
+        #13<br>
+        <p id="#content_12">При нажатии на кнопку текст в абзаце поменяется.</p>
+        <input type="submit" value="Нажмите - и я выведу класс абзаца" onclick="onClickChangeContentAndDisableButton()"
+               id="#input_12">
+    </div>
+    <div>
+        #14<br>
+        <p class="task14">Абзац с текстом.</p>
+        <p class="task14">Абзац с текстом.</p>
+        <p class="task14">Абзац с текстом.</p>
+        <p class="task14">Абзац с текстом.</p>
+        <p class="task14">Абзац с текстом.</p>
+        <p class="task14">Абзац с текстом.</p>
+        <p class="task14">Абзац с текстом.</p>
+        <p class="task14">Абзац с текстом.</p>
+        <br>
+        <input type="submit" value="Нажмите на меня!" onclick="onClickContentChangeOnNumber()">
+
+    </div>
+    <div>
+        #15<br>
+        <p class="task15">Абзац с текстом.</p>
+        <p class="task15">Абзац с текстом.</p>
+        <p class="task15">Абзац с текстом.</p>
+        <p class="task15">Абзац с текстом.</p>
+        <p class="task15">Абзац с текстом.</p>
+        <p class="task15">Абзац с текстом.</p>
+        <p class="task15">Абзац с текстом.</p>
+        <p class="task15">Абзац с текстом.</p>
+        <br>
+        <input type="submit" value="Нажмите на меня!" onclick="onClickContentAddNumber()">
+
+    </div>
+
+
+</div>
+</body>
+</html>
