@@ -87,3 +87,12 @@
 // console.log(Math.floor(dif));
 // #12    Создайте инпут, в который пользователь вводит дату своего рождения в формате '2014-12-31' (с конкретным годом). По потери фокуса выведите под инпутом сколько дней осталось до его дня рождения.
 //     Воспользуйтесь методом Date.parse.
+// function func(value) {
+//     var content = document.getElementsByClassName('inputContainer');
+//     var now = new Date();
+//     var input = value.value.split('-');
+//     var date = input[1]+'-'+input[2]+'-'+input[0];
+//     var dif = Math.abs((now.getTime() - Date.parse(date))/(1000 * 60 * 60 * 24));
+//     content[0].innerHTML = content[0].innerHTML +'<br>'+ Math.floor(dif);
+//
+// }
