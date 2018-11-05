@@ -123,15 +123,15 @@ function buttonClickChangeFloat() {
 
     var inputText = document.getElementById('#float');
 
-inputText.style.cssFloat = 'right';
-inputText.value = "Теперь я плаваю справа!"
+    inputText.style.cssFloat = 'right';
+    inputText.value = "Теперь я плаваю справа!"
 
 }
 
 function buttonClickShowClases() {
 
     var input = document.getElementById('#showclasses');
-    input.value = 'Мои css классы: '+input.className;
+    input.value = 'Мои css классы: ' + input.className;
 }
 
 function buttonClickChangeValue() {
@@ -147,6 +147,48 @@ function buttonClickChangeValue() {
 function hahngeSubmit(elem){
 
    elem.value = 'Ой, я поменял текст снова!';
+
+}
+
+function buttonClickCount() {
+
+    var inputValue = document.getElementById('#input');
+    var outputValue = document.getElementById('#output');
+
+    outputValue.value = inputValue.value * inputValue.value;
+
+
+}
+
+function buttonClickCountWithValidation() {
+
+    var inputValue = document.getElementById('#in');
+    var input = inputValue.value;
+
+    if (!isNaN(input)) {
+        var output = document.getElementById('#result');
+        output.value = input * input;
+
+    } else {
+
+        alert('введена не цифра');
+
+    }
+}
+
+function buttonClickDisable(value) {
+    value.disabled = true;
+    value.style.cursor = 'not-allowed';
+
+
+}
+
+function buttonClickAddValue(value) {
+
+    var inputValue = document.getElementById('#inputform');
+
+    inputValue.value += value;
+
 
 }
 
