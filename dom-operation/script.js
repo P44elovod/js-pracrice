@@ -144,4 +144,9 @@ function buttonClickChangeValue() {
     goodbye.value = buff;
 
 }
+function hahngeSubmit(elem){
+
+   elem.value = 'Ой, я поменял текст снова!';
+
+}
 
