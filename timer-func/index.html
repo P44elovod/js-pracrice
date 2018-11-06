@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="inputContainer">
-    <input type="text" style="width: 200px" placeholder="YYYY-MM-DD" onblur="func(this)">
+<body><!--onload="startClock()"-->
+<div class="sample">
+    <div>
+        #1<br>
+        <p class="timer">0</p>
+        <input type="submit" onclick="startTimer()" value="Нажми на меня">
+    </div>
+    <div>
+        #2<br>
+        <p class="timer_2">0</p>
+        <input type="submit" onclick="startTimer()" value="Запустить таймер" id="#start">
+        <input type="submit" onclick="stopTimer()" value="Остановить таймер" id="#stop">
+    </div>
+    <div >
+        #3<br>
+        <p class="clock"></p>
+
+    </div>
+    <div>
+        #4<br>
+        <p class="countDown">10</p>
+        <input type="submit" onclick="startCountDown()" value="Запустить таймер" id="#startButton">
+    </div>
+    <div>
+        #5<br>
+       <p><img src=""></p>
+
+    </div>
 </div>
 </body>
 </html>
