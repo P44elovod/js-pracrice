@@ -83,27 +83,116 @@
 //
 // }
 
-//
-
-//
 //     #5 Создайте простой слайдер:
 //
-var imgArr = ['1.png','2.png','3.png','4.png','5.png','6.png','7.png'];
-var elem = document.querySelector('img');
 
-function imgSlide() {
-    for (var i = 0; i < imgArr.length; i++) {
+// function startSlider() {
+//     window.timerID = setInterval(Slide, 500);
+// }
+//
+// window.number = 1;
+//
+// function Slide() {
+//
+//     var elem = document.getElementById('img');
+//     if (window.number == 6) {
+//         window.number = 0;
+//     }
+//     window.number++;
+//     elem.src = 'img/' + window.number + '.png';
+//
+// }
 
-elem.src = 'img/'+imgArr[i];
+//     #6 Создайте карусель:
+//
+// function startCarusel() {
+//
+//     window.timerID = setInterval(imgMove, 500);
+//     document.getElementById('#startCar').disabled = true;
+// }
+//
+// function imgMove() {
+//     var image1 = document.getElementById('img1');
+//     var image2 = document.getElementById('img2');
+//     var image3 = document.getElementById('img3');
+//
+//     var tmp = image1.src;
+//     image1.src = image2.src;
+//     image2.src = image3.src;
+//     image3.src = tmp;
+//
+// }
+
+//    #7 Создайте карусель:
+//
+// function startCaruselNew(){
+//     window.timerID = setInterval(imgMoveNew, 500);
+//     document.getElementById('#startCar_6').disabled = true;
+//     document.getElementById('#stopCar_6').disabled = false;
+//
+// }
+//
+// function stopCaruselNew() {
+// clearInterval(window.timerID);
+//     document.getElementById('#startCar_6').disabled = false;
+//     document.getElementById('#stopCar_6').disabled = true;
+//
+// }
+//
+// function imgMoveNew() {
+//     var image1 = document.getElementById('img1_6');
+//     var image2 = document.getElementById('img2_6');
+//     var image3 = document.getElementById('img3_6');
+//     var image4 = document.getElementById('img4_6');
+//     var image5 = document.getElementById('img5_6');
+//     var image6 = document.getElementById('img6_6');
+//
+//     var tmp = image1.src;
+//     image1.src = image2.src;
+//     image2.src = image3.src;
+//     image3.src = image4.src;
+//     image4.src = image5.src;
+//     image5.src = image6.src;
+//     image6.src = tmp;
+//
+// }
+
+// Создайте отсчет до полуночи:
+
+
+function startCountDownTimer(){
+
+    window.timerID = window.setInterval(timer, 1000);
+
+}
+
+function timer() {
+
+    var content = document.getElementsByTagName('td');
+    var now = new Date();
+    var target = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1);
+
+    var diff = (target-now)/1000;
+    var difHours = addZero(Math.floor((diff)/(60*60)));
+    var difMinutes = addZero(Math.floor((diff-difHours*60*60)/60));
+    var difSeconds = addZero(Math.floor(diff%60));
+
+
+
+    content[0].innerHTML = difHours;
+    content[1].innerHTML = difMinutes;
+    content[2].innerHTML = difSeconds;
+
+
+
+}
+
+function addZero(num) {
+
+    if (num <= 9) {
+
+        num = '0'+num;
 
     }
+    return num;
 }
-//
-//
-//     Создайте карусель:
-//
-//
-//
-//     Создайте карусель:
-//
-// Создайте отсчет до полуночи:

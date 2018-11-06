@@ -6,7 +6,7 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body><!--onload="startClock()"-->
+<body onload="startCountDownTimer()"><!--#3 onload="startClock()" _____#5 onload="startSlider()"-->
 <div class="sample">
     <div>
         #1<br>
@@ -19,7 +19,7 @@
         <input type="submit" onclick="startTimer()" value="Запустить таймер" id="#start">
         <input type="submit" onclick="stopTimer()" value="Остановить таймер" id="#stop">
     </div>
-    <div >
+    <div>
         #3<br>
         <p class="clock"></p>
 
@@ -31,9 +31,44 @@
     </div>
     <div>
         #5<br>
-       <p><img src=""></p>
+        <p><img src="img/1.png" id="img"></p>
 
     </div>
+    <div>
+        #6<br>
+        <img src="img/1.png" id="img1">
+        <img src="img/2.png" id="img2">
+        <img src="img/3.png" id="img3"><br>
+        <input type="submit" onclick="startCarusel()" value="Запустить карусель" id="#startCar">
+    </div>
+    <div>
+        #7<br>
+        <img src="img/1.png" id="img1_6">
+        <img src="img/2.png" id="img2_6">
+        <img src="img/3.png" id="img3_6">
+        <img src="img/4.png" id="img4_6"><br>
+        <img src="img/5.png" id="img5_6">
+        <img src="img/6.png" id="img6_6"><br>
+        <input type="submit" onclick="startCaruselNew()" value="Запустить карусель" id="#startCar_6">
+        <input type="submit" onclick="stopCaruselNew()" value="Остановить карусель" id="#stopCar_6" disabled>
+    </div>
+    <div>
+        <p>До полуночи оталось:</p>
+        <table cellspacing="0" border="1">
+            <tr>
+                <th>Часы</th>
+                <th>Минуты</th>
+                <th>Секунды</th>
+            </tr>
+            <tr class="time">
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+    </div>
+
 </div>
 </body>
 </html>
