@@ -1,0 +1,33 @@
+body {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.rectangle {
+
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+
+.sample > div {
+
+    padding: 20px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+
+}
+
+.invisible {
+
+    display: none;
+
+}
+
+.visible {
+
+    display: inline;
+
+}
