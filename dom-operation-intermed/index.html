@@ -12,7 +12,19 @@
 <div class="www">dsfsdfdsfsdf</div>
 <div class="www">dsfsdfdsfsdf</div>
 <div class="www">dsfsdfdsfsdf</div>
-
+<div>
+    <ol>
+        <li>dd</li>
+        <li>dd</li>
+        <li>dd</li>
+        <li>dd</li>
+    </ol>
+    <ul>
+        <li>dd</li>
+        <li>dd</li>
+        <li>dd</li>
+    </ul>
+</div>
 </body>
 </html>
 
@@ -78,16 +90,39 @@
     // }
     //     Даны элементы с классом www. Добавьте каждому элементу в конец название его тега в нижнем регистре.
     //
+    // var elem = document.querySelectorAll('.www');
+    // func();
+    //
+    // // console.log(elem);
+    // function func() {
+    //     for (var i = 0; i < elem.length; i++) {
+    //         elem[i].innerHTML = elem[i].innerHTML + ' ' + elem[i].tagName.toLowerCase();
+    //     }
+    // }
 
     //     Вставка элементов через appendChild
     // Для решения задач данного блока вам понадобятся следующие методы: createElement, appendChild.
     //     Дан ol. Вставьте ему в конец li с текстом 'пункт'.
     //
+    // var elem = document.querySelector('ol');
+    // var li = document.createElement('li');
+    // li.innerHTML = 'пункт';
+    // elem.appendChild(li);
     //     Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li.
     //
+    // var arr = [1, 2, 3, 4, 5];
+    // var elem = document.querySelector('ul');
+    // for (var i = 0; i < arr.length; i++) {
+    //     var li = document.createElement('li');
+    //     li.innerHTML = arr[i];
+    //     elem.appendChild(li);
+    // }
     //     Привязывание событий при вставке
-    // Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li. Сделайте так, чтобы к вставляемым li было привязано следующее событие: по нажатию на li она должна вывести на экран свой текст.
+    // Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li.
+    // Сделайте так, чтобы к вставляемым li было привязано следующее событие:
+    // по нажатию на li она должна вывести на экран свой текст.
     //
+
     //     Вставка элементов через insertBefore
     //     Для решения задач данного блока вам понадобятся следующие методы: insertBefore.
     //
