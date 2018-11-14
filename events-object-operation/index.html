@@ -27,13 +27,17 @@
         <td>sName#4</td>
     </tr>
 </table>
+<br>
+<input type="text" id="name" placeholder="Имя">
+<input type="text" id="sname" placeholder="Фамилия">
+<input type="submit" value="add" id="submit">
 </body>
 </html>
 
 <script>
     // var elem = document.getElementById('elem');
-    var button = document.getElementById('button');
-    var input = document.getElementById('input');
+    // var button = document.getElementById('button');
+    // var input = document.getElementById('input');
 
     // #1
     // var elem = document.querySelector('body');
@@ -162,6 +166,39 @@
     //     Сделайте так, чтобы при клике на любую ячейку появлялся prompt, с помощью которого можно изменить текст ячейки.
     //     Задачу решите с помощью делегирования (то есть событие должно быть навешано на table).
 
+    var newName = document.getElementById('name');
+    var newSName = document.getElementById('sname');
+    var table = document.querySelector('table');
+    var submit = document.getElementById('submit');
+
+    submit.addEventListener("click", addNewName);
+    table.addEventListener("click", changeContent);
+
+    function changeContent(event) {
+
+        var td = event.target.closest('td');
+        if (td) {
+
+            td.innerHTML = prompt();
+
+        }
+
+    }
+
+
+    function addNewName() {
+        var tr = document.createElement('tr');
+        var tdName = document.createElement('td');
+        var tdSName = document.createElement('td');
+
+        tdName.innerHTML = newName.value;
+        tdSName.innerHTML = newSName.value;
+        tr.appendChild(tdName);
+        tr.appendChild(tdSName);
+        table.appendChild(tr);
+
+
+    }
 
 
 </script>
