@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="states">
+    <option value="one">Страна#1</option>
+    <option value="two">Страна#2</option>
+    <option value="three">Страна#3</option>
+</select><br><br>
+<select id="first" style="display: none">
+    <option value="one">Город#1 Страны#1</option>
+    <option value="two">Город#2 Страны#1</option>
+    <option value="three">Город#3 Страны#1</option>
+</select>
+<select id="second" style="display: none">
+    <option value="one">Город#1 Страны#2</option>
+    <option value="two">Город#2 Страны#2</option>
+    <option value="three">Город#3 Страны#2</option>
+</select>
+<select id="third" style="display: none">
+    <option value="one">Город#1 Страны#3</option>
+    <option value="two">Город#2 Страны#3</option>
+    <option value="three">Город#3 Страны#3</option>
+</select>
+<!--<input type="text" id="input">-->
+<br><br>
+<!--<input type="submit" value="Go!" id="submit">-->
+</body>
+</html>
+
+<script>
+    // Работа с формами
+    // Дана форма с id="form". В ней даны инпуты, в них числа. Дана кнопка.
+    // По нажатию на эту кнопку получите форму по ее id, затем циклом переберите все инпуты в ней и найдите сумму чисел из этих инпутов.
+    //
+    // var submit = document.getElementById('submit');
+    // var form = document.getElementById('form');
+    // submit.addEventListener("click", go);
+    //
+    //
+    // function go() {
+    //     var sum = 0;
+    //     for (var i = 0; i < form.elements.length; i++) {
+    //         sum += parseInt(form.elements[i].value);
+    //     }
+    //     console.log(sum);
+    // }
+
+    //     На странице расположено несколько форм. В них есть инпуты, в инпутах числа. Дана кнопка.
+    //     По нажатию на эту кнопку циклом переберите все формы на странице, затем циклом переберите все
+    //     инпуты в каждой форме и найдите сумму чисел из всех этих инпутов.
+    // var submit = document.getElementById('submit');
+    // submit.addEventListener("click", go);
+    //
+    // function go() {
+    //     var form = document.forms;
+    //     var sum = 0;
+    //     for (var i = 0; i < form.length; i++) {
+    //
+    //         for (var j = 0; j < form[i].elements.length; j++) {
+    //
+    //             sum += parseInt(form[i].elements[j].value);
+    //
+    //         }
+    //
+    //
+    //     }
+    //     console.log(sum);
+    // }
+
+    //     Работа с селектами
+    // Дан селект. Дан инпут. По изменению селекта выведите текст выбранного пункта в инпут.
+    //
+    // var options = document.querySelector('select').options;
+    // var selector = document.querySelector('select');
+    // var input = document.getElementById('input');
+    //
+    // selector.addEventListener("change", go);
+    //
+    // function go() {
+    //
+    //     for (var i = 0; i < options.length; i++) {
+    //
+    //         if (options[i].selected === true) {
+    //             input.value = options[i].text;
+    //         }
+    //
+    //     }
+    // }
+
+    //     Дан селект. Дан инпут. Дана кнопка. Сделайте так, чтобы в инпут можно было ввести число,
+    //     нажать на кнопку и в селекте становился выбранным пункт с этим номером.
+    //
+    // var options = document.querySelector('select').options;
+    // var selector = document.querySelector('select');
+    // var input = document.getElementById('input');
+    //
+    // var submit = document.getElementById('submit');
+    //
+    // submit.addEventListener("click", go);
+    //
+    // function go() {
+    //
+    //     selector.selectedIndex = parseInt(input.value);
+    //
+    // }
+
+
+    //     Дан селект со списком стран. Сделайте так, чтобы при выборе страны рядом появлялся еще и селект со списком городов из этой страны.
+    //     Задача у многих не получается, см. ее разбор https://youtu.be/hgT0mjZvV9s
+    //
+    var mainSelect = document.getElementById('states');
+    var options = mainSelect.options;
+
+    mainSelect.addEventListener("change", go);
+
+    function go() {
+
+        for
+
+        if ()
+
+
+
+    }
+
+    //     Даны 3 селекта: с днем, с месяцем и годом. Сделайте так, чтобы некорректную дату нельзя было выбрать.
+    //     Задача у многих не получается, см. ее разбор https://youtu.be/rqq__uXca6Q
+</script>
