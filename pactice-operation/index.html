@@ -12,6 +12,20 @@
 <input type="text" id="input3" class="num">
 <br><br>
 <p id="result"></p>
+<p>1</p>
+<p>3</p>
+<p>55</p>
+<p>4</p>
+<p>4</p>
+<p>44</p>
+
+<a href="index.html">111</a>
+<a href="index.html">222</a>
+<a href="index.html">333</a>
+<a href="index.html">444</a>
+<a href="##">555</a>
+<br><br>
+
 <input type="text" id="input4">
 <input type="submit" value="Go!" id="submit">
 </body>
@@ -31,6 +45,7 @@
     //
     //     Задачи для решения
     // Урок #1
+
     //     Даны 3 инпута и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в четвертый инпут.
     //
     // submit.addEventListener("click", function() {
@@ -38,6 +53,7 @@
     //     forthInput.value = parseInt(firstInput.value)+parseInt(secondInput.value)+parseInt(thirdInput.value)
     //
     // })
+
     //     Даны N инпутов с классом .num и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац с id="result".
     //
     // submit.addEventListener("click", function () {
@@ -56,6 +72,7 @@
     //     p.innerHTML = count(num);
     //
     // })
+
     //     Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.
     //
     // firstInput.addEventListener("blur", function () {
@@ -69,6 +86,7 @@
     //     }
     //     p.innerHTML = result;
     // })
+
     //     Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество).
     //
     // firstInput.addEventListener("blur", function () {
@@ -81,6 +99,7 @@
     //     }
     //     p.innerHTML = result/arr.length;
     // })
+
     //     Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты.
     //
     //
@@ -94,6 +113,7 @@
     //
     //
     // })
+
     //     Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы.
     //     Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте).
     // firstInput.addEventListener("blur", function () {
@@ -135,35 +155,141 @@
     // })
     //     Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31.
     //
-    firstInput.addEventListener("blur", function () {
-        var arr = firstInput.value.split('.');
-        for (var i = 0; i < arr.length; i++) {
-
-
-        }
-
-        console.log(length);
-    })
+    // firstInput.addEventListener("blur", function () {
+    //     var arr = firstInput.value.split('.');
+    //
+    //     firstInput.value = arr[2] + '-' + arr[1] + '-' + arr[0];
+    //
+    // })
     //     Дан инпут. В него вводится год рождения пользователя. По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.
     //
+    // submit.addEventListener("click", function () {
+    //     p.innerHTML = new Date().getFullYear() - parseInt(firstInput.value);
+    // })
     //     Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса узнайте день недели (словом), который приходится на эту дату.
     //
+    // firstInput.addEventListener("blur", function () {
+    //
+    //     var day = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+    //     var arr = firstInput.value.split('.');
+    //     var newDate = '';
+    //
+    //     for (var i = arr.length - 1; i >= 0; i--) {
+    //
+    //         newDate += arr[i];
+    //
+    //         if (i > 0) {
+    //
+    //             newDate += '-';
+    //
+    //         }
+    //
+    //     }
+    //
+    //     console.log(day[new Date(newDate).getDay() - 1]);
+    // })
+
     //     Дан инпут. В него вводится слово. По нажатию на кнопку проверьте то, что это слово читается с начала и с конца одинаково (например, мадам).
     //
+    // submit.addEventListener("click", function () {
+    //     var flag = false;
+    //     if (firstInput.value === firstInput.value.split('').reverse().join('')) {
+    //
+    //         flag = true;
+    //     }
+    //     console.log(flag);
+    // })
+
     //     Дан инпут. В него вводится число. Проверьте по вводу, что это число содержит внутри себя цифру 3.
     //
+    // firstInput.addEventListener("change", function () {
+    //
+    //     var flag = false;
+    //     var arr = firstInput.value.split('');
+    //
+    //     for (var i = 0; i < arr.length; i++){
+    //
+    //         if (arr[i] == 3){
+    //
+    //             flag = true;
+    //
+    //         }
+    //
+    //     }
+    //
+    //     console.log(flag);
+    // })
+
     //     Даны N абзацев и кнопка. По нажатию на кнопку запишите в конец каждого абзаца его порядковый номер.
     //
+    // submit.addEventListener("click", function () {
+    //
+    //     var pArr = document.querySelectorAll('p');
+    //     for (var i = 0; i < pArr.length; i++){
+    //
+    //         pArr[i].innerHTML = pArr[i].innerHTML + i;
+    //
+    //     }
+    //
+    // })
+
     //     Даны N абзацев с числами. По нажатию на кнопку выведите эти числа в инпут через запятую в порядке возрастания.
     //
+    // submit.addEventListener("click", function () {
+    //     var pArr = [];
+    //     var pArrStart = document.getElementsByTagName('p');
+    //
+    //     for (var i = 1; i < pArrStart.length; i++) {
+    //
+    //         pArr.push(parseInt(pArrStart.item(i).innerHTML));
+    //
+    //     }
+    //     pArr.sort();
+    //     firstInput.value = pArr;
+    //
+    // })
+
     //     Даны ссылки. По загрузке страницы добавьте в конец каждой ссылки ее href в круглых скобках.
     //
+    // var a = document.getElementsByTagName('a');
+    //
+    // (function () {
+    //     for (var i = 0; i < a.length; i++) {
+    //         a[i].innerHTML = a[i].innerHTML + ' ' + a[i].href;
+    //     }
+    // }())
+
     //     Даны ссылки. По загрузке страницы, если ссылка начинается с http://, то добавьте ей в конец стрелку → (делается так: &rarr;).
     //
+    // var a = document.getElementsByTagName('a');
+    //
+    // (function () {
+    //
+    //     for (var i = 0; i < a.length; i++) {
+    //         if (a[i].href.slice(0, 7) == 'http://') {
+    //             a[i].innerHTML = a[i].innerHTML + '&rarr;';
+    //         }
+    //     }
+    // }())
+
     //     Даны N абзацев с числами. По нажатию на любой абзац запишите в него квадрат числа, которое в нем находится.
     //
+    // var pArr = document.getElementsByTagName('p');
+    //
+    // for (var i = 0; i < pArr.length; i++) {
+    //
+    //     pArr[i].addEventListener('click', func);
+    // }
+    //
+    // function func() {
+    //
+    //     this.innerHTML = parseInt(this.innerHTML) * parseInt(this.innerHTML);
+    //
+    // }
+
     //     Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза.
     //
+
     //     Даны картинки. По первому нажатию на любую картинку увеличьте ее в 2 раза. По второму нажатию - уменьшите обратно.
     //
     //     Даны N картинок размера 30px. По нажатию на картинку под ними эта картинка появляется размером в 50px.
