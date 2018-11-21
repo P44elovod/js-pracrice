@@ -5,20 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-<select id="day">
-</select>
-<select id="month">
-</select>
-<select id="year">
-</select>
 
-<!--<input type="text" id="input">-->
+
+<input type="text" id="input1" class="num">
+<input type="text" id="input2" class="num">
+<input type="text" id="input3" class="num">
 <br><br>
-<!--<input type="submit" value="Go!" id="submit">-->
+<p id="result"></p>
+<input type="text" id="input4">
+<input type="submit" value="Go!" id="submit">
 </body>
 </html>
 
 <script>
+
+    var firstInput = document.getElementById('input1');
+    var secondInput = document.getElementById('input2');
+    var thirdInput = document.getElementById('input3');
+    var forthInput = document.getElementById('input4');
+    var submit = document.getElementById('submit');
+    var num = document.getElementsByClassName('num');
+    var p = document.getElementById('result');
     // Практика JavaScript для новичков
     // Перед решением задач изучите теорию к данному уроку.
     //
@@ -26,23 +33,117 @@
     // Урок #1
     //     Даны 3 инпута и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в четвертый инпут.
     //
+    // submit.addEventListener("click", function() {
+    //
+    //     forthInput.value = parseInt(firstInput.value)+parseInt(secondInput.value)+parseInt(thirdInput.value)
+    //
+    // })
     //     Даны N инпутов с классом .num и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац с id="result".
     //
+    // submit.addEventListener("click", function () {
+    //
+    //     function count(num) {
+    //         var result = 0;
+    //
+    //         for (var i = 0; i < num.length; i++) {
+    //
+    //             result += parseInt(num[i].value);
+    //
+    //         }
+    //         return result;
+    //     }
+    //
+    //     p.innerHTML = count(num);
+    //
+    // })
     //     Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.
     //
+    // firstInput.addEventListener("blur", function () {
+    //    var arr = firstInput.value.split('');
+    //    var result = 0;
+    //    for (var i = 0; i < arr.length; i++){
+    //
+    //         result += parseInt(arr[i]);
+    //
+    //
+    //     }
+    //     p.innerHTML = result;
+    // })
     //     Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество).
     //
+    // firstInput.addEventListener("blur", function () {
+    //    var arr = firstInput.value.split(',');
+    //    var result = 0;
+    //    for (var i = 0; i < arr.length; i++){
+    //
+    //         result += parseInt(arr[i]);
+    //
+    //     }
+    //     p.innerHTML = result/arr.length;
+    // })
     //     Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты.
     //
+    //
+    // firstInput.addEventListener("blur", function () {
+    //    var arr = firstInput.value.split(' ');
+    //    for (var i = 0; i < arr.length; i++){
+    //
+    //         num[i].value = arr[i];
+    //
+    //     }
+    //
+    //
+    // })
     //     Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы.
     //     Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте).
+    // firstInput.addEventListener("blur", function () {
+    //     var arr = firstInput.value.split(' ');
+    //     firstInput.value = '';
+    //     for (var i = 0; i < arr.length; i++) {
     //
+    //         firstInput.value += arr[i].toUpperCase() + ' ';
+    //
+    //     }
+    //
+    //
+    // })
+
     //     Дан инпут. В него вводится текст. По потери фокуса узнайте количество слов в этом тексте.
     //
+    // firstInput.addEventListener("blur", function () {
+    //
+    //    console.log(firstInput.value.split(' ').length);
+    //
+    // })
+
     //     Дан инпут. В него вводится текст. По потери фокуса узнайте количество символов в самом длинном слове в этом тексте.
     //
+    // firstInput.addEventListener("blur", function () {
+    //     var arr = firstInput.value.split(' ');
+    //     var length = 0;
+    //     for (var i = 0; i < arr.length; i++) {
+    //
+    //         if (arr[i].length > length) {
+    //
+    //             length = arr[i].length;
+    //
+    //         }
+    //
+    //     }
+    //
+    //     console.log(length);
+    // })
     //     Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31.
     //
+    firstInput.addEventListener("blur", function () {
+        var arr = firstInput.value.split('.');
+        for (var i = 0; i < arr.length; i++) {
+
+
+        }
+
+        console.log(length);
+    })
     //     Дан инпут. В него вводится год рождения пользователя. По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.
     //
     //     Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса узнайте день недели (словом), который приходится на эту дату.
