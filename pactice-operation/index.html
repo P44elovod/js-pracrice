@@ -25,9 +25,15 @@
 <a href="index.html">444</a>
 <a href="##">555</a>
 <br><br>
+<br><br>
 
 <input type="text" id="input4">
-<input type="submit" value="Go!" id="submit">
+<input type="submit" value="+" id="increase">
+<input type="submit" value="-" id="decrease">
+<br><br>
+<img src="img/1.jpg" width="30px">
+<img src="img/2.jpg" width="30px">
+
 </body>
 </html>
 
@@ -289,16 +295,94 @@
 
     //     Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза.
     //
+    // var img = document.getElementsByTagName('img');
+    //
+    // for (var i = 0; i < img.length; i++) {
+    //
+    //     img[i].addEventListener("click", func);
+    //
+    // }
+    //
+    // function func() {
+    //     this.width = this.width * 2;
+    // }
 
     //     Даны картинки. По первому нажатию на любую картинку увеличьте ее в 2 раза. По второму нажатию - уменьшите обратно.
     //
+    // var img = document.getElementsByTagName('img');
+    //
+    // for (var i = 0; i < img.length; i++) {
+    //
+    //     img[i].addEventListener("click", func);
+    //
+    //
+    // }
+    //
+    // function func() {
+    //
+    //     this.width = this.width * 2;
+    //     this.removeEventListener("click", func);
+    //     this.addEventListener("click", deFunc);
+    //
+    // }
+    //
+    // function deFunc() {
+    //
+    //     this.width = this.width / 2;
+    //     this.removeEventListener();
+    //
+    // }
+
     //     Даны N картинок размера 30px. По нажатию на картинку под ними эта картинка появляется размером в 50px.
     //
-    //     Дан инпут. Реализуйте кнопочки +1, -1, которые будут увеличивать или уменьшать на 1 значение инпута. Сделайте так, чтобы это значение не могло стать меньше нуля.
+    // var img = document.getElementsByTagName('img');
+    // var body = document.getElementsByTagName('body');
+    // for (var i = 0; i < img.length; i++) {
     //
+    //     img[i].addEventListener("click", func);
+    //
+    //
+    // }
+    //
+    // function func() {
+    //     var newImg = document.createElement('img');
+    //     newImg.src = this.src;
+    //     newImg.width = 50;
+    //     body[0].appendChild(document.createElement('br'));
+    //     body[0].appendChild(newImg);
+    //
+    // }
+
+    //     Дан инпут. Реализуйте кнопочки +1, -1, которые будут увеличивать или уменьшать на 1 значение инпута.
+    //     Сделайте так, чтобы это значение не могло стать меньше нуля.
+    //
+    // document.getElementById('increase').addEventListener("click", function () {
+    //     if (firstInput.value == '') {
+    //         firstInput.value = 0;
+    //         firstInput.value = parseInt(firstInput.value) + 1;
+    //     } else {
+    //
+    //         firstInput.value = parseInt(firstInput.value) + 1;
+    //     }
+    // });
+    //
+    // document.getElementById('decrease').addEventListener("click", function () {
+    //     if (firstInput.value == '' || firstInput.value == 0) {
+    //
+    //         firstInput.value = firstInput.value;
+    //     } else {
+    //
+    //
+    //         firstInput.value = parseInt(firstInput.value)-1;
+    //     }
+    // });
+
+
     //     Урок #2
-    //     Дан инпут. В него вводится число. По потери фокуса проверьте, что в нем лежит число от 1 до 100. Если это так - покрасьте инпут в зеленый цвет, а если не так - в красный.
+    //     Дан инпут. В него вводится число. По потери фокуса проверьте, что в нем лежит число от 1 до 100.
+    //     Если это так - покрасьте инпут в зеленый цвет, а если не так - в красный.
     //
+
     //     Дан инпут. Выделите любой текст на странице. По окончанию выделения этот текст должен записаться в этот инпут.
     //
     //     Даны абзацы с числами. По нажатию на кнопку найдите абзац, в котором хранится максимальное число, и сделайте его красного цвета.
