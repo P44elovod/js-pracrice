@@ -6,36 +6,10 @@
 </head>
 <body>
 
+<div style="width: 200px; height: 200px; margin: 0 auto; border: 1px solid black" id="div">
+    <input type="button" id="input1" value="close">
+</div>
 
-<input type="text" id="input1" class="num">
-<input type="text" id="input2" class="num">
-<input type="text" id="input3" class="num">
-<br><br>
-
-
-<input type="submit" value="Go!" id="submit">
-<br><br>
-<p id="result"></p>
-<input type="checkbox" class="check">
-<input type="checkbox" class="check">
-<input type="checkbox" class="check">
-<input type="checkbox" class="check">
-<input type="checkbox" class="check">
-<input type="checkbox" class="check">
-<a href="#" id="next">Link>>></a><br><br>
-
-
-<input type="radio" value="html">html
-<input type="radio" value="css">css
-<input type="radio" value="js">js
-<input type="radio" value="php">php
-<br><br>
-<br><br>
-
-<input type="text" id="input4">
-<input type="submit" value="+" id="increase">
-<input type="submit" value="-" id="decrease">
-<br><br>
 
 </body>
 </html>
@@ -668,20 +642,124 @@
     //     Спросите у пользователя какой язык (html, css, js, php) он знает с помощью радио кнопочек.
     //     Выведите этот язык в абзац.
     //
+    // var radioButton = document.getElementsByName('radio');
+    //
+    // for (var i = 0; i < radioButton.length; i++) {
+    //
+    //     radioButton[i].addEventListener("click", function () {
+    //         p.innerHTML = this.value;
+    //     })
+    // }
 
-    //     Спросите у пользователя какие языки (html, css, js, php) он знает с помощью чекбоксов. Выбранные языки должны выводится в абзац ниже через запятую.
+    //     Спросите у пользователя какие языки (html, css, js, php) он знает с помощью чекбоксов.
+    //     Выбранные языки должны выводится в абзац ниже через запятую.
     //
-    //     Дан чекбокс. Дан инпут. Сделайте так, что если чекбокс отмечен - инпут видимый, если не отмечен - не видимый.
+    // var par = document.getElementById('next');
+    // var checkBoxes = document.getElementsByClassName('check');
     //
-    //     Даны чекбоксы. Под каждым чекбоксом размещен абзац. Сделайте так, что если чекбокс отмечен - соответствующий абзац видимый, а если не отмечен - не видимый.
+    // for (var i = 0; i < checkBoxes.length; i++ ){
     //
-    //     Дан инпут. Даны li. В инпут пишется номер. Сделайте так, чтобы по вводу числа, li с заданным номером покрасился в красный цвет.
+    //     checkBoxes[i].addEventListener("change", addValue)
     //
-    //     Дан абзац. Даны чекбоксы 'перечеркнуть', 'сделать жирным', 'сделать красным'. Если соответствующий чекбокс отмечен - заданное действие происходит с абзацем (становится красным, например).
+    // }
+    //
+    // function addValue() {
+    //    if (this.checked === true && p.innerHTML == ''){
+    //        p.innerHTML = this.value;
+    //    } else if (this.checked === true && p.innerHTML != ''){
+    //        p.innerHTML = p.innerHTML + ', ' + this.value;
+    //
+    //    }
+    // }
+
+    //     Дан чекбокс. Дан инпут. Сделайте так, что если чекбокс отмечен - инпут видимый,
+    //     если не отмечен - не видимый.
+    //
+    // var checkbox = document.getElementById('input');
+    // firstInput.style.display = 'none';
+    // checkbox.addEventListener("change", function () {
+    //
+    //     if (checkbox.checked === true) {
+    //
+    //         firstInput.style.display = 'inline';
+    //
+    //     }else {
+    //
+    //         firstInput.style.display = 'none';
+    //
+    //     }
+    //
+    // })
+
+    //     Даны чекбоксы. Под каждым чекбоксом размещен абзац.
+    //     Сделайте так, что если чекбокс отмечен - соответствующий абзац видимый, а если не отмечен - не видимый.
+    //
+    // var checkBoxes = document.getElementsByClassName('check');
+    // var elem = document.querySelectorAll('input + p');
+    //
+    // for (var i = 0; i < checkBoxes.length; i++) {
+    //
+    //     checkBoxes[i].addEventListener("change", function () {
+    //
+    //         for (var j = 0; j < checkBoxes.length; j++) {
+    //
+    //             if (checkBoxes[j].checked === true) {
+    //
+    //                 elem[j].style.display = 'none';
+    //                 console.log(elem[j]);
+    //             } else if (checkBoxes[j].checked === false) {
+    //
+    //                 elem[j].style.display = 'block';
+    //
+    //             }
+    //
+    //         }
+    //
+    //
+    //     })
+    //
+    // }
+
+    //     Дан инпут. Даны li. В инпут пишется номер. Сделайте так, чтобы по вводу числа,
+    //     li с заданным номером покрасился в красный цвет.
+    //
+    // var li = document.getElementsByTagName('li');
+    // firstInput.addEventListener("keyup", function () {
+    //
+    //     li[firstInput.value-1].style.color = 'red';
+    //     firstInput.value = '';
+    //
+    // })
+
+    //     Дан абзац. Даны чекбоксы 'перечеркнуть', 'сделать жирным', 'сделать красным'.
+    //     Если соответствующий чекбокс отмечен - заданное действие происходит с абзацем (становится красным, например).
     //     Если чекбоксу снять отметку - действие отменяется.
     //
-    //     Дан блок с кнопкой 'закрыть блок'. По нажатию на эту кнопку блок должен исчезнуть. Кнопка размещается внутри блока и должна исчезнуть вместе с ним. Блоков может быть любое количество, каждый из них закрывает своя кнопка.
+    // var options = {1: 'color:red', 2: 'font-weight:bold;', 3: 'text-decoration:line-through;'};
+    // var checkboxes = document.getElementsByTagName('input');
+    // for (var i = 0; i < checkboxes.length; i++ ){
     //
+    //     checkboxes[i].addEventListener("change", function () {
+    //
+    //       if (this.checked === true ){
+    //           p.style.cssText = options[this.value];
+    //       }else {
+    //           p.style.cssText = 'none';
+    //       }
+    //
+    //     })
+    //
+    // }
+
+    //     Дан блок с кнопкой 'закрыть блок'. По нажатию на эту кнопку блок должен исчезнуть.
+    //     Кнопка размещается внутри блока и должна исчезнуть вместе с ним.
+    //     Блоков может быть любое количество, каждый из них закрывает своя кнопка.
+    //
+    // var div = document.getElementById('div');
+    // firstInput.addEventListener("click", function () {
+    // div.style.display = 'none';
+    // })
+
     //
     //     Урок #4
     //     В инпут через запятую вводятся страны. По нажатию на кнопку сделайте так, чтобы эти страны записались в ul под инпутом (каждая страна отдельный li).
