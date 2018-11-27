@@ -8,24 +8,27 @@
 
 
 <input type="text" id="input1" class="num">
-
 <input type="text" id="input2" class="num">
 <input type="text" id="input3" class="num">
 <br><br>
-<p id="result"></p>
-<p>1</p>
-<p>3</p>
-<p>55</p>
-<p>4</p>
-<p>4</p>
-<p>44</p>
-<input type="submit" value="Go!" id="submit">
 
-<a href="index.html">111</a>
-<a href="index.html">222</a>
-<a href="index.html">333</a>
-<a href="index.html">444</a>
-<a href="##">555</a>
+
+<input type="submit" value="Go!" id="submit">
+<br><br>
+<p id="result"></p>
+<input type="checkbox" class="check">
+<input type="checkbox" class="check">
+<input type="checkbox" class="check">
+<input type="checkbox" class="check">
+<input type="checkbox" class="check">
+<input type="checkbox" class="check">
+<a href="#" id="next">Link>>></a><br><br>
+
+
+<input type="radio" value="html">html
+<input type="radio" value="css">css
+<input type="radio" value="js">js
+<input type="radio" value="php">php
 <br><br>
 <br><br>
 
@@ -33,8 +36,6 @@
 <input type="submit" value="+" id="increase">
 <input type="submit" value="-" id="decrease">
 <br><br>
-<img src="img/1.jpg" width="30px">
-<img src="img/2.jpg" width="30px">
 
 </body>
 </html>
@@ -407,59 +408,267 @@
 
     //     Даны абзацы с числами. По нажатию на кнопку найдите абзац, в котором хранится максимальное число, и сделайте его красного цвета.
     //
-    submit.addEventListener("click", function () {
-
-
-        for (var i = 0; i <= p.length; i++) {
-            var number = i;
-            if (parseInt(p[i + 1]) > parseInt(p[i])) {
-console.log(p)
-                number = i + 1;
-
-
-            } else {
-
-                number = i;
-
-            }
-            console.log(content);
-        }
-
-        console.log(number);
-        // p[number].color = 'red';
-    })
-    //     Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам.
+    // var par = document.getElementsByTagName('p');
     //
+    // submit.addEventListener("click", function () {
+    //
+    //     var number = 0;
+    //     var biggest = par[0].innerHTML;
+    //
+    //     for (var i = 0; i < par.length; i++) {
+    //
+    //         if (par[i].innerHTML > biggest) {
+    //
+    //             biggest = par[i].innerHTML;
+    //             number = i;
+    //
+    //         }
+    //     }
+    //
+    //     par[number].style.color = 'red';
+    //
+    // })
+
+    //     Дан инпут. Даны абзацы.
+    //     Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам.
+    //
+    // var par = document.getElementsByTagName('p');
+    // var counter = 0;
+    // for (var i = 0; i < par.length; i++) {
+    //
+    //     par[i].addEventListener("click", function () {
+    //
+    //         counter += 1;
+    //         firstInput.value = counter;
+    //
+    //     })
+    //
+    // }
+
     //     Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем появлялся квадрат того числа, которое в нем записано.
     //
+    // firstInput.addEventListener("blur", function () {
+    //
+    //     setInterval(func, 1000);
+    //
+    //     function func() {
+    //         firstInput.value = firstInput.value * firstInput.value;
+    //     }
+    //
+    // })
+
     //     Дан инпут и кнопка. По нажатию на кнопку сгенерируйте случайную строку из 8-ми символов и запишите в инпут.
     //
+    // submit.addEventListener("click", function () {
+    //
+    //     var pattern = 'dfgmoewgoieqgputhgnmnvz.mngoti485';
+    //
+    //     firstInput.value = getRandomArr(pattern).join('');
+    //
+    //         function getRandomArr(randomPattern) {
+    //
+    //             var randArr = [];
+    //             var arr = randomPattern.split('');
+    //
+    //             for (var i = 0; i < 8; i++) {
+    //
+    //                 randArr[i] = arr[getRandom(0, randomPattern.length)];
+    //
+    //             }
+    //
+    //             return randArr;
+    //
+    //         }
+    //
+    //     function getRandom(min, max) {
+    //         return Math.floor(Math.random() * max - min + 1) + min;
+    //     }
+    //
+    // })
+
     //     Модифицируйте предыдущую задачу так, чтобы был еще один инпут, в котором задается длина случайной строки.
     //
+    // submit.addEventListener("click", function () {
+    //
+    //     var pattern = 'dfgmoewgoieqgputhgnmnvz.mngoti485';
+    //
+    //     firstInput.value = getRandomArr(pattern, secondInput.value).join('');
+    //
+    //     function getRandomArr(randomPattern, quantity) {
+    //
+    //         var randArr = [];
+    //         var arr = randomPattern.split('');
+    //
+    //         for (var i = 0; i < quantity; i++) {
+    //
+    //             randArr[i] = arr[getRandom(0, randomPattern.length)];
+    //
+    //         }
+    //
+    //         return randArr;
+    //
+    //     }
+    //
+    //     function getRandom(min, max) {
+    //         return Math.floor(Math.random() * max - min + 1) + min;
+    //     }
+    //
+    // })
+
     //     Модифицируйте предыдущую задачу так, чтобы был еще один инпут, в котором задаются символы, из которых формируется эта случайна строка.
     //     Символы задаются без всяких разделитетей, в одну строку.
     //
+    // submit.addEventListener("click", function () {
+    //
+    //     var pattern = thirdInput.value;
+    //
+    //     firstInput.value = getRandomArr(pattern, secondInput.value).join('');
+    //
+    //     function getRandomArr(randomPattern, quantity) {
+    //
+    //         var randArr = [];
+    //         var arr = randomPattern.split('');
+    //
+    //         for (var i = 0; i < quantity; i++) {
+    //
+    //             randArr[i] = arr[getRandom(0, randomPattern.length)];
+    //
+    //         }
+    //
+    //         return randArr;
+    //
+    //     }
+    //
+    //     function getRandom(min, max) {
+    //
+    //         return Math.floor(Math.random() * max - min + 1) + min;
+    //
+    //     }
+    //
+    // })
+
     //     Дан инпут. В него вводится число. По потери фокуса сделайте так, чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного числа.
     //     Когда отсчет дойдет до нуля - он должен закончится.
     //
+    // firstInput.addEventListener("blur", function () {
+    //
+    //     setInterval(timer, 1000)
+    //
+    //     p.innerHTML = firstInput.value;
+    //
+    //     function timer() {
+    //         if (p.innerHTML != 0) {
+    //             p.innerHTML = p.innerHTML - 1;
+    //         }
+    //     }
+    // })
+
     //     Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с красного на зеленый и наоборот.
     //
+    // p.style.color = 'red';
+    // setInterval(changeColor, 1000);
+    // function changeColor() {
+    //     if (p.style.color == 'green'){
+    //
+    //        p.style.color = 'red';
+    //
+    //     } else if (p.style.color == 'red'){
+    //         p.style.color = 'green';
+    //     }
+    // }
+
     //     Дан абзац. Дан массив цветов ['red', 'green', 'blue']. Сделайте так, чтобы каждую секунду абзац менял свой цвет на определенное значение их массива: сначала 'red', потом 'green' и так далее.
     //     Как только цвета в массиве закончатся - все начнется сначала. Количество цветов в массиве может быть любым.
     //
-    //     Дан абзац. Дан массив строк ['один', 'два', 'три']. Под абзацем ссылка 'следующая строка'. По заходу на страницу в абзаце должен стоять нулевой элемент этого массива, а по нажатию на ссылку - вставлятся следующий элемент.
+    // setInterval(changeColor, 1000);
+    //
+    // var colors = ['red', 'green', 'blue'];
+    // i = 0;
+    //
+    // function changeColor() {
+    //
+    //     p.style.color = colors[i];
+    //     i++;
+    //     if (i >= colors.length) i = 0;
+    //
+    // }
+
+    //     Дан абзац. Дан массив строк ['один', 'два', 'три'].
+    //     Под абзацем ссылка 'следующая строка'. По заходу на страницу в абзаце должен стоять нулевой элемент этого массива, а по нажатию на ссылку - вставлятся следующий элемент.
+    //
+    // var linkNext = document.getElementById('next');
+    //
+    // var str = ['один', 'два', 'три'];
+    // var i = 1;
+    //
+    // p.innerHTML = str[0];
+    //
+    // linkNext.addEventListener("click", addContent)
     //
     //
-    //     Даны инпуты с числами. Произвольное количетсво, пусть три. В первый инпут запишите 1, через секунду во второй инпут запишите 2, еще через секунду в третий инпут 3, потом через секунду в первый инпут запишите 4,
+    // function addContent() {
+    //
+    //     if (i < str.length) {
+    //         p.innerHTML = str[i];
+    //         i++;
+    //     }
+    // }
+
+    //     Даны инпуты с числами. Произвольное количетсво, пусть три. В первый инпут запишите 1, через секунду во второй инпут запишите 2,
+    //     еще через секунду в третий инпут 3, потом через секунду в первый инпут запишите 4,
     //     во второй 5 и так далее до бесконечности.
     //
-    //     Урок #3
-    //     Дана ссылка. Дан чекбокс. По нажатию на ссылку меняйте состояние чекбокса с отмеченного на неотмеченное и наоборот.
+    // setInterval(setValue, 1000);
+    // var i = 0;
+    // var value = 1;
     //
+    // function setValue() {
+    //
+    //     num[i].value = value;
+    //     value++;
+    //     i++;
+    //     if (i >= num.length) i = 0;
+    //
+    // }
+
+    //     Урок #3
+
+    //     Дана ссылка. Дан чекбокс. По нажатию на ссылку меняйте состояние чекбокса с 
+    //     отмеченного на неотмеченное и наоборот.
+    //
+    // var link = document.getElementById('next');
+    // var check = document.getElementById('check');
+    //
+    // link.addEventListener("click", function () {
+    //
+    //     if (check.checked === true) {
+    //
+    //         check.checked = false;
+    //
+    //     } else if (check.checked === false) {
+    //
+    //         check.checked = true;
+    //
+    //     }
+    //
+    // })
+
     //     Даны чекбокс. Дана кнопка. По нажатию на кнопку сделайте все чекбоксы отмеченными.
     //
-    //     Спросите у пользователя какой язык (html, css, js, php) он знает с помощью радио кнопочек. Выведите этот язык в абзац.
+    // var checkbox = document.getElementsByClassName('check');
+    // submit.addEventListener("click", function () {
     //
+    //     for (var i = 0; i < checkbox.length; i++){
+    //
+    //         checkbox[i].checked = true;
+    //
+    //     }
+    // })
+
+    //     Спросите у пользователя какой язык (html, css, js, php) он знает с помощью радио кнопочек.
+    //     Выведите этот язык в абзац.
+    //
+
     //     Спросите у пользователя какие языки (html, css, js, php) он знает с помощью чекбоксов. Выбранные языки должны выводится в абзац ниже через запятую.
     //
     //     Дан чекбокс. Дан инпут. Сделайте так, что если чекбокс отмечен - инпут видимый, если не отмечен - не видимый.
