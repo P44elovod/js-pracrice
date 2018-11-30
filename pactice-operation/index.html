@@ -10,7 +10,7 @@
 <!--<p id="result"></p>-->
 <!--&lt;!&ndash;<input type="submit" id="submit" value="Go!">&ndash;&gt;-->
 <!--</div>-->
-<table>
+<table id="table">
     <tr>
         <td>1</td>
         <td>3</td>
@@ -23,7 +23,26 @@
         <td>12</td>
         <td>16</td>
     </tr>
+    <tr>
+        <td>1</td>
+        <td>3</td>
+        <td>4</td>
+        <td>19</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+    </tr>
 </table>
+<input type="submit" id="submit">
 </body>
 </html>
 
@@ -859,10 +878,69 @@
     //     Дана таблица с числами.
     //     По нажатию на кнопку в инпут под таблицей выведите эти числа через запятую в порядке возрастания.
     //
+    // var td = document.getElementsByTagName('td');
+    //
+    // submit.addEventListener("click", func)
+    //
+    // function func() {
+    //     var arr = [];
+    //     for (var i = 0; i < td.length; i++){
+    //
+    //         arr.push(parseInt(td[i].innerHTML));
+    //
+    //     }
+    //
+    //     for (var i = 0; i < arr.length; i++) {
+    //
+    //         if (parseInt(arr[i]) > arr[i+1]) {
+    //
+    //             var buf = arr[i];
+    //             arr[i] = arr[i + 1];
+    //             arr[i + 1] = buf;
+    //         }
+    //     }
+    //     arr.join(',');
+    //    firstInput.value = arr;
+    // }
 
     //     Дана таблица с числами. По нажатию на кнопку в последний ряд таблицы в каждую ячейку
     //     запишите сумму чисел в столбце таблицы, расположенном над определенной ячейкой.
     //
+    var td = document.getElementsByTagName('td');
+    var tr = document.getElementsByTagName('tr');
+    var table = document.getElementById('table');
+    submit.addEventListener("click", func);
+
+    function func() {
+
+        var arr = [];
+        var arr2 = [];
+        for (var i = 0; i < table.children.length; i++) {
+            for (var j = 0; j < table.children[i].children.length - 1; j++) {
+                // console.log(table.children[i].children[j]);
+                arr[j] = table.children[i].children[j].children;
+            }
+        }
+
+        for (var i = 0; i < arr.length; i++) {
+
+            // console.log(arr[i]);
+            for (j = 0; j < arr[i].length; j++) {
+
+                for (var l = 0; l < arr.length; l++) {
+
+                    su = arr[i]
+
+                }
+
+                console.log(arr[i][j].innerHTML);
+
+            }
+
+        }
+    }
+
+
     //     Дана таблица с числами. По нажатию на ячейку она активируется и становится красного цвета.
     //     Активировать можно много ячеек. Под таблицей кнопка.
     //     По нажатию по этой кнопке в абзац ниже выведите сумма активированных ячеек.
