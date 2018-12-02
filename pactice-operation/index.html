@@ -5,44 +5,30 @@
     <title>Title</title>
 </head>
 <body>
-<!--<div id="div">-->
-<!--<input type="text" id="input1">-->
-<!--<p id="result"></p>-->
-<!--&lt;!&ndash;<input type="submit" id="submit" value="Go!">&ndash;&gt;-->
-<!--</div>-->
-<table id="table">
-    <tr>
-        <td>1</td>
-        <td>3</td>
-        <td>4</td>
-        <td>19</td>
-    </tr>
-    <tr>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        <td>16</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>3</td>
-        <td>4</td>
-        <td>19</td>
-    </tr>
-    <tr>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        <td>16</td>
-    </tr>
-    <tr>
-        <td>--</td>
-        <td>--</td>
-        <td>--</td>
-        <td>--</td>
-    </tr>
-</table>
-<input type="submit" id="submit">
+<ul>
+    <li>
+        <p>AAAA</p>
+        <ul hidden>
+            <li>AAA1</li>
+            <li>AAA2</li>
+            <li>AAA3</li>
+        </ul>
+
+        <p>BBBB</p>
+        <ul hidden>
+            <li>BBB1</li>
+            <li>BBB2</li>
+            <li>BBB3</li>
+        </ul>
+
+        <p>CCCC</p>
+        <ul hidden>
+            <li>BBB1</li>
+            <li>BBB2</li>
+            <li>BBB3</li>
+        </ul>
+    </li>
+</ul>
 </body>
 </html>
 
@@ -906,51 +892,136 @@
     //     Дана таблица с числами. По нажатию на кнопку в последний ряд таблицы в каждую ячейку
     //     запишите сумму чисел в столбце таблицы, расположенном над определенной ячейкой.
     //
-    var td = document.getElementsByTagName('td');
-    var tr = document.getElementsByTagName('tr');
-    var table = document.getElementById('table');
-    submit.addEventListener("click", func);
-
-    function func() {
-
-        var arr = [];
-        var arr2 = [];
-        for (var i = 0; i < table.children.length; i++) {
-            for (var j = 0; j < table.children[i].children.length - 1; j++) {
-                // console.log(table.children[i].children[j]);
-                arr[j] = table.children[i].children[j].children;
-            }
-        }
-
-        for (var i = 0; i < arr.length; i++) {
-
-            // console.log(arr[i]);
-            for (j = 0; j < arr[i].length; j++) {
-
-                for (var l = 0; l < arr.length; l++) {
-
-                    su = arr[i]
-
-                }
-
-                console.log(arr[i][j].innerHTML);
-
-            }
-
-        }
-    }
-
+    // var result = document.getElementById('result');
+    // var table = document.getElementById('table');
+    //
+    // submit.addEventListener("click", func);
+    //
+    // function func() {
+    //
+    //     var arr = [];
+    //     var arr2 = [];
+    //     for (var i = 0; i < table.children.length; i++) {
+    //         for (var j = 0; j < table.children[i].children.length - 1; j++) {
+    //
+    //             arr[j] = table.children[i].children[j].children;
+    //
+    //         }
+    //     }
+    //
+    //     for (var i = 0; i < arr.length; i++) {
+    //
+    //         var sum = 0;
+    //
+    //         for (var j = 0; j < arr.length; j++) {
+    //
+    //             sum += parseInt(arr[j][i].innerHTML);
+    //
+    //         }
+    //
+    //         arr2.push(sum);
+    //
+    //     }
+    //
+    //     for (var i = 0; i < result.children.length; i++) {
+    //
+    //         result.children[i].innerHTML = arr2[i];
+    //         console.log(result.children[i]);
+    //
+    //     }
+    // }
 
     //     Дана таблица с числами. По нажатию на ячейку она активируется и становится красного цвета.
     //     Активировать можно много ячеек. Под таблицей кнопка.
     //     По нажатию по этой кнопке в абзац ниже выведите сумма активированных ячеек.
     //     Реализуйте кнопку 'сбросить активированные ячейки'.
     //
+    // var td = document.getElementsByTagName('td');
+    //
+    // for (var i = 0; i < td.length; i++) {
+    //     td[i].addEventListener("click", func);
+    //
+    // }
+    //
+    // var arr = []
+    //
+    // function func() {
+    //
+    //     this.style.backgroundColor = 'red';
+    //     arr.push(parseInt(this.innerHTML));
+    // }
+    //
+    // submit.addEventListener("click", function () {
+    //     var total = 0;
+    //     for (var i = 0; i < arr.length; i++) {
+    //
+    //         total += arr[i];
+    //
+    //     }
+    //     p.innerHTML = total;
+    // })
+    //
+    // var reset = document.getElementById('reset');
+    //
+    // reset.addEventListener("click", function () {
+    //
+    //     for (var i = 0; i < td.length; i++) {
+    //
+    //         td[i].style.backgroundColor = '';
+    //
+    //     }
+    //
+    //     arr = [];
+    // })
+
     //     Дана таблица. По нажатию на ячейку в ней появляется инпут с содержимым этой ячейки и кнопка сохранить.
     //     Можно поредактировать текст в инпуте, сохранить - и текст ячейки поменяется.
     //
-    //     Реализуйте раскрывающийся список. По умолчанию есть список стран (ul), по нажатию на страну внутри li со страной
+    // var td = document.getElementsByTagName('td');
+    // for (var i = 0; i < td.length; i++) {
+    //
+    //     td[i].addEventListener("click", func);
+    //
+    // }
+    //
+    // function func() {
+    //     this.style.display = 'none';
+    //     var input = document.createElement('input');
+    //     input.value = this.innerHTML;
+    //
+    //     var submit = document.createElement('input');
+    //     submit.type = 'submit';
+    //     submit.value = 'Change';
+    //     this.parentNode.insertBefore(submit, this.nextSibling);
+    //     this.parentNode.insertBefore(input, this.nextSibling);
+    //     submit.addEventListener("click", function () {
+    //         var cont = this.previousSibling.value;
+    //         this.previousSibling.style.display = 'none';
+    //         this.style.display = 'none';
+    //         var td = document.createElement('td');
+    //         td.innerHTML = cont;
+    //         this.parentNode.insertBefore(td, this.nextSibling);
+    //     })
+    // }
+
+    //     Реализуйте раскрывающийся список. По умолчанию есть список стран (ul), по нажатию на страну
+    //     внутри li со страной
     //     появляется список городов.
+    // var par = document.getElementsByTagName('p');
+    // for (var i = 0; i < par.length; i++) {
+    //
+    //     par[i].addEventListener("click", func)
+    //
+    // }
+    //
+    //     function func() {
+    //
+    //         this.nextElementSibling.style.display = 'block';
+    //         this.style.display = 'none';
+    //
+    //     }
+
+
     //
     //     Урок #5
     //     Даны два селекта. В первом находятся страны, во втором - города.
