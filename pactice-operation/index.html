@@ -5,30 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<ul>
-    <li>
-        <p>AAAA</p>
-        <ul hidden>
-            <li>AAA1</li>
-            <li>AAA2</li>
-            <li>AAA3</li>
-        </ul>
-
-        <p>BBBB</p>
-        <ul hidden>
-            <li>BBB1</li>
-            <li>BBB2</li>
-            <li>BBB3</li>
-        </ul>
-
-        <p>CCCC</p>
-        <ul hidden>
-            <li>BBB1</li>
-            <li>BBB2</li>
-            <li>BBB3</li>
-        </ul>
-    </li>
-</ul>
+<select id="day"></select>
+<select id="month"></select>
+<select id="year"></select>
 </body>
 </html>
 
@@ -1024,15 +1003,100 @@
 
     //
     //     Урок #5
+
     //     Даны два селекта. В первом находятся страны, во втором - города.
     //     Сделайте так, чтобы когда выбирается определенная страна - в другом селекте появлялись города этой страны.
     //     В абзац ниже пишите выбранную страну и город через запятую.
+    //    // var selector = document.getElementById('country');
+    // var firstCountryCitiesSelector = document.getElementById('1111');
+    // var secondCountryCitiesSelector = document.getElementById('2222')
+    // selector.selectedIndex = -1;
+    //
+    // var options = selector.options;
+    //
+    // selector.addEventListener("change", function () {
+    //
+    //         for (var i = 0; i < options.length; i++) {
     //
     //
+    //             if (options[i].selected === true && options[i].value == '1111') {
+    //                 firstCountryCitiesSelector.hidden = false;
+    //                 secondCountryCitiesSelector.hidden = true;
+    //                 p.innerHTML = options[i].innerHTML;
+    //                 var pValue = p.innerHTML;
+    //                 firstCountryCitiesSelector.addEventListener("change", function () {
+    //                     var cont = firstCountryCitiesSelector.value;
+    //                     p.innerHTML = pValue + ', ' + cont;
+    //
+    //
+    //                 })
+    //
+    //
+    //             }
+    //
+    //             if (options[i].selected === true && options[i].value == '2222') {
+    //
+    //                 firstCountryCitiesSelector.hidden = true;
+    //                 secondCountryCitiesSelector.hidden = false;
+    //                 p.innerHTML = options[i].innerHTML;
+    //                 var pValue = p.innerHTML;
+    //                 secondCountryCitiesSelector.addEventListener("change", function () {
+    //                     var cont = secondCountryCitiesSelector.value;
+    //                     p.innerHTML = pValue + ', ' + cont;
+    //
+    //                 })
+    //
+    //
+    //             }
+    //         }
+    //
+    //
+    //     })
+    //
+    //
+
     //     Сделайте селекты день, мес, год. Сделайте так, чтобы не корректную дату нельзя было выбрать
     //     (например, 30 февраля нельзя,
     //     а 30 марта можно или 29 февраля можно, но только в високосный год).
     //
+
+
+    var day = document.getElementById('day');
+    var month = document.getElementById('month');
+    var year = document.getElementById('year');
+
+
+    window.addEventListener("load", initSelectors)
+
+    function initSelectors() {
+
+
+        for (var i = 1; i < 32; i++) {
+
+            day.add(new Option(i));
+
+        }
+        for (var i = 1; i < 13; i++) {
+
+            month.add(new Option(i));
+
+        }
+        for (var i = 1990; i < 2001; i++) {
+
+            year.add(new Option(i));
+
+        }
+
+    }
+
+    day.addEventListener("change", function () {
+
+        var date = new Date(year.value, month.value, day.value)
+        console.log(date);
+if ((date.getMonth()+1) == ) 
+
+    })
+
     //     Реализуйте калькулятор валют. Есть два селекта - селект с исходной валюты, селект с той валютой,
     //     в которую мы хотим перевести деньги, инпут, в который вводится сумма для обмена.
     //     Курсы валют храните в массиве.
