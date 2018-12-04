@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<select id="day"></select>
-<select id="month"></select>
+<body id="body">
 <select id="year"></select>
+<select id="month"></select>
+<select id="day"></select>
 </body>
 </html>
 
@@ -1059,55 +1059,141 @@
     //     (например, 30 февраля нельзя,
     //     а 30 марта можно или 29 февраля можно, но только в високосный год).
     //
-
-
-    var day = document.getElementById('day');
-    var month = document.getElementById('month');
-    var year = document.getElementById('year');
-
-
-    window.addEventListener("load", initSelectors)
-
-    function initSelectors() {
-
-
-        for (var i = 1; i < 32; i++) {
-
-            day.add(new Option(i));
-
-        }
-        for (var i = 1; i < 13; i++) {
-
-            month.add(new Option(i));
-
-        }
-        for (var i = 1990; i < 2001; i++) {
-
-            year.add(new Option(i));
-
-        }
-
-    }
-
-    day.addEventListener("change", function () {
-
-        var date = new Date(year.value, month.value, day.value)
-        console.log(date);
-if ((date.getMonth()+1) == ) 
-
-    })
+    // var day = document.getElementById('day');
+    // var month = document.getElementById('month');
+    // var year = document.getElementById('year');
+    //
+    //
+    // day.selectedIndex = -1;
+    // month.selectedIndex = -1;
+    // year.selectedIndex = -1;
+    //
+    // initSelects(1990, 2006);
+    //
+    // day.addEventListener("change", function () {
+    //
+    //     if (checkDate(year.value, month.value, day.value) != true){
+    //
+    //         alert('wrong date');
+    //         this.value = 0;
+    //
+    //     }
+    //
+    // })
+    //
+    // function initSelects(yearStart, yearEnd) {
+    //
+    //     for (var i = 1; i < 32; i++) {
+    //
+    //         day.add(new Option(i, i));
+    //
+    //     }
+    //     for (var l = 1; l < 13; l++) {
+    //
+    //         month.add(new Option(l, l));
+    //
+    //     }
+    //     for (var k = yearStart; k < yearEnd+1; k++) {
+    //
+    //         year.add(new Option(k, k));
+    //
+    //     }
+    // }
+    //
+    //
+    //
+    //
+    // function checkDate(year, month, day) {
+    //
+    //     var date = new Date(year, month-1, day);
+    //     return date.getFullYear() == year && date.getMonth() == month-1 && date.getDate() == day;
+    //
+    // }
 
     //     Реализуйте калькулятор валют. Есть два селекта - селект с исходной валюты, селект с той валютой,
     //     в которую мы хотим перевести деньги, инпут, в который вводится сумма для обмена.
     //     Курсы валют храните в массиве.
     //     Сделайте так, чтобы в селектах нельзя было выбрать две одинаковых валюты.
     //
-    //     Реализуйте генератор таблиц, ширина и высота таблиц задается в двух инпутах (например, таблица 5 на 10 ячеек).
+    // var currencyRate = {'UAH': 1, 'USD': 28.6, 'GBP': 33.7};
+    // var inCurrency = document.getElementById('in');
+    // var resCurrency = document.getElementById('result');
     //
+    // resCurrency.addEventListener("change", function () {
+    //     if (inCurrency.value != resCurrency.value) {
+    //         console.log(currencyRate[inCurrency.value]);
+    //         firstInput.value = currencyRate[inCurrency.value] / currencyRate[resCurrency.value] * firstInput.value;
+    //
+    //
+    //     }
+    //
+    // })
+
+    //     Реализуйте генератор таблиц, ширина и высота таблиц задается в двух инпутах
+    //     (например, таблица 5 на 10 ячеек).
+    //
+    // var body = document.getElementById('body');
+    // secondInput.addEventListener("blur", function () {
+    // var table = document.createElement('table')
+    //     for (var i = 0; i < secondInput.value; i++){
+    //
+    //         var tr = document.createElement("tr");
+    //         for (var l = 0; l < firstInput.value; l++){
+    //
+    //             var td = document.createElement("td");
+    //             td.innerHTML = l;
+    //             tr.appendChild(td);
+    //
+    //         }
+    //         table.appendChild(tr);
+    //         table.style.border = 'solid black 1px';
+    //         body.appendChild(table);
+    //     }
+    //
+    // })
+
     //     Дан список и кнопка. По нажатию на кнопку посортируйте пункты списка по возрастанию.
     //
+    // var li = document.getElementsByTagName("li");
+    // submit.addEventListener("click", function () {
+    //     var arr = [];
+    //     for (var i = 0; i < li.length; i++){
+    //
+    //         arr.push(li[i].innerHTML);
+    //
+    //     }
+    //
+    //     arr.sort();
+    //
+    //     for ( var i = 0; i < li.length; i++){
+    //
+    //         li[i].innerHTML = arr[i];
+    //
+    //     }
+    //
+    // })
+
     //     Дан ряд ссылок. Сделайте так, чтобы по нажатию на ссылку она становилась с красным фоном.
     //     По нажатию на другую ссылку выделение первой ссылки снимается и выделяется та,
     //     на которую мы нажали. В абзац ниже пишите текст активной ссылки.
+    // var a = document.getElementsByTagName("a");
+    //
+    // for (var i = 0; i < a.length; i++) {
+    //
+    //     a[i].addEventListener("click", func);
+    //
+    // }
+    //
+    // function func() {
+    //
+    //     for (var i = 0; i < a.length; i++) {
+    //
+    //         a[i].style.backgroundColor = '';
+    //     }
+    //
+    //     this.style.backgroundColor = 'red';
+    //     p.innerHTML = this.innerHTML;
+    // }
+
     //
 </script>
