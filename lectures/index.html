@@ -142,42 +142,81 @@
     // которые есть в обоих массивах.
     //
     // console.log(getIntersect([1, 2, 3, 4, 5], [2, 4, 5, 1]))
-    // function getIntersect(arr1, arr2) {
-    //
-    //     var arr = [];
-    //
-    //
-    //     for (var i = 0; i < arr1.length; i++) {
-    //         for (var j = 0; j < arr2.length; j++) {
-    //             if (arr1[i] == arr2[j]) arr.push(arr1[i]);
-    //                 }
-    //     }
-    //
-    //     return arr;
-    //
-    // }
+    function getIntersect(arr1, arr2) {
+
+        var arr = [];
+
+
+        for (var i = 0; i < arr1.length; i++) {
+            for (var j = 0; j < arr2.length; j++) {
+                if (arr1[i] == arr2[j]) arr.push(arr1[i]);
+            }
+        }
+
+        return arr;
+
+    }
 
     // Лекция №1 по JavaScript. Домашняя работа
     // Практика
 
     // Сделайте функцию detElem, которая параметром будет принимать массив и какое значение и возвращать массив,
     // в котором все элементы с таким значением будут удалены.
-
-    console.log(delElem(3, [1, 2, 3]));
-    function delElem(num, arr) {
-
-        return arr.filter(function (value) {
-            value != num
-        });
-
-    }
     //
+    // console.log(delElem(1, [1, 2, 3]));
+    // function delElem(num, arr) {
+    //
+    //    for (var i = 0; i < arr.length; i++ ){
+    //
+    //        if (arr[i] == num){
+    //
+    //            arr.splice(i, 1);
+    //
+    //        }
+    //
+    //    }
+    //
+    //    return arr;
+    //
+    // }
+
     //     Сделайте функцию getDiff, которая параметром будет принимать два массива и возвращать массив элементов,
     //     которые не присутствуют одновременно в обоих массивах.
     //
+    // console.log(getDiff([1, 2, 3, 4, 5, 9, 200, 333], [2, 4, 5, 1]));
+    //
+    // function getDiff(arr1, arr2) {
+    //
+    //     var result = [];
+    //     var intersections = getIntersect(arr1, arr2)
+    //     var totalArr = arr1.concat(arr2);
+    //     for (var i = 0; i < totalArr.length; i++) {
+    //         var flag = true;
+    //         for (var j = 0; j < intersections.length; j++) {
+    //             if (intersections[j] == totalArr[i]) {
+    //
+    //                 flag = false;
+    //
+    //             }
+    //         }
+    //         if (flag == true) {
+    //             result.push(totalArr[i]);
+    //         }
+    //     }
+    //
+    //
+    //     return result;
+    //
+    // }
+
     //     Сделайте функцию arrayRand, которая параметром будет принимать массив и возвращать случайный элемент
     //     из этого массива.
     //
+    function arrayRand(arr) {
+
+        var arrIndex = Math.floor(Math.random() * (arr.length - min));
+
+    }
     //     Сделайте функцию uniq, которая будет оставлять в массиве только уникальные элементы (то есть будет удалять дубли).
     //
     // Сделайте функцию shuffle, которая параметром будет принимать массив и перемешивать его элементы в случайном порядке.
