@@ -142,20 +142,20 @@
     // которые есть в обоих массивах.
     //
     // console.log(getIntersect([1, 2, 3, 4, 5], [2, 4, 5, 1]))
-    function getIntersect(arr1, arr2) {
-
-        var arr = [];
-
-
-        for (var i = 0; i < arr1.length; i++) {
-            for (var j = 0; j < arr2.length; j++) {
-                if (arr1[i] == arr2[j]) arr.push(arr1[i]);
-            }
-        }
-
-        return arr;
-
-    }
+    // function getIntersect(arr1, arr2) {
+    //
+    //     var arr = [];
+    //
+    //
+    //     for (var i = 0; i < arr1.length; i++) {
+    //         for (var j = 0; j < arr2.length; j++) {
+    //             if (arr1[i] == arr2[j]) arr.push(arr1[i]);
+    //         }
+    //     }
+    //
+    //     return arr;
+    //
+    // }
 
     // Лекция №1 по JavaScript. Домашняя работа
     // Практика
@@ -212,15 +212,55 @@
     //     Сделайте функцию arrayRand, которая параметром будет принимать массив и возвращать случайный элемент
     //     из этого массива.
     //
-    function arrayRand(arr) {
+    // console.log(arrayRand([1, 4, 6, 8, 222]));
+    // function arrayRand(arr) {
+    //
+    //     var randIndex = Math.floor(Math.random() * (arr.length-1));
+    //     return arr[randIndex]
+    //
+    // }
 
-        var arrIndex = Math.floor(Math.random() * (arr.length - min));
-
-    }
     //     Сделайте функцию uniq, которая будет оставлять в массиве только уникальные элементы (то есть будет удалять дубли).
     //
+    //
+    // console.log(uniq([1, 1, 2, 2, 3, 3, 4, 5]));
+    //
+    // function uniq(arr) {
+    //
+    //     for (var i = 0; i < arr.length; i++) {
+    //         for (var j = i + 1; j < arr.length; j++) {
+    //
+    //             if (arr[i] == arr[j]) {
+    //                 arr.splice(j, 1);
+    //
+    //             }
+    //
+    //         }
+    //
+    //     }
+    //     return arr;
+    // }
+
     // Сделайте функцию shuffle, которая параметром будет принимать массив и перемешивать его элементы в случайном порядке.
     //
+
+    console.log(shuffle([1, 2, 3]));
+
+    function shuffle(arr){
+        var result = [];
+        var numbers = [];
+        while (numbers.length < arr.length){
+
+
+            console.log(1);
+            numbers.push(0);
+
+        }
+        return numbers;
+
+
+
+    }
     //     Сделайте функцию, которая параметром будет принимать число, а возвращать это же число прописью. Например,
     //     число 115 прописью это сто пятнадцать. Пусть функция работает с числами до миллиона.
     //
