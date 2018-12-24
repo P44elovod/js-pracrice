@@ -241,29 +241,84 @@
     //     return arr;
     // }
 
-    // Сделайте функцию shuffle, которая параметром будет принимать массив и перемешивать его элементы в случайном порядке.
+    // Сделайте функцию shuffle, которая параметром будет принимать массив и перемешивать его элементы
+    // в случайном порядке.
     //
+    // console.log(shuffle([1, 2, 3]));
+    //
+    // function shuffle(arr) {
+    //     var result = [];
+    //     var numbers = [];
+    //     while (numbers.length < arr.length) {
+    //         var elementNumber = Math.floor(Math.random() * (arr.length));
+    //
+    //         if (isElementUsed(numbers, elementNumber) != true) {
+    //
+    //             result.push(arr[elementNumber]);
+    //             numbers.push(elementNumber);
+    //
+    //         }
+    //
+    //
+    //     }
+    //
+    //     function isElementUsed(array, elementNumber) {
+    //         var flag = false;
+    //         for (var i = 0; i < array.length; i++) {
+    //
+    //             if (array[i] === elementNumber) {
+    //                 flag = true;
+    //             }
+    //
+    //         }
+    //
+    //         return flag;
+    //
+    //     }
+    //
+    //     return result;
+    //
+    //
+    // }
 
-    console.log(shuffle([1, 2, 3]));
-
-    function shuffle(arr){
-        var result = [];
-        var numbers = [];
-        while (numbers.length < arr.length){
-
-
-            console.log(1);
-            numbers.push(0);
-
-        }
-        return numbers;
-
-
-
-    }
     //     Сделайте функцию, которая параметром будет принимать число, а возвращать это же число прописью. Например,
     //     число 115 прописью это сто пятнадцать. Пусть функция работает с числами до миллиона.
     //
+    // convertDigitalsToStrings('1234567');
+    //
+    //
+    // function convertDigitalsToStrings(number) {
+    //     var arr = number.split('');
+    //
+    //     // var
+    //
+    //     switch (arr.length) {
+    //         case 7:
+    //
+    //             console.log(arr[0] + ' миллион ' + arr[1]+''+arr[2]+''+arr[3] + '' + ' тысяч ' + arr[4]+''+arr[5]+''+arr[6])
+    //
+    //     }
+    //     console.log(arr);
+    //
+    //
+    // }
+
     //     Сделайте функцию union, которая будет принимать два массива и возвращать новый массив, в котором будут элементы
     //     из этих двух массивов, но без дублей. Например, union([1, 2, 3], [3, 4, 5]) вернет [1, 2, 3, 4, 5].
+    //
+    // console.log(union([1, 2, 3], [1, 2, 3]));
+    //
+    // function union(array1, array2) {
+    //
+    //     var concatArrays = array1.concat(array2);
+    //     var object = {};
+    //
+    //
+    //     concatArrays.forEach(function (value) {
+    //         object[value] = true;
+    //     })
+    //
+    //     return Object.keys(object);
+    // }
+
 </script>
