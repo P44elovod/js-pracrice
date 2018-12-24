@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+<div id="parent"></div>
+<p id="paragraph">3</p>
+<input type="submit" id="start" value="Go!">
+<input type="submit" id="stop" value="Stop!">
 
 </body>
 </html>
@@ -320,5 +324,275 @@
     //
     //     return Object.keys(object);
     // }
+
+    // Лекция №2 по JavaScript. Классная работа
+    //
+    // Разминка
+
+    // Дан массив. Выведите его элементы в виде списка ul так, чтобы каждый элемент попал в свою li.
+    //
+    // var parent = document.getElementById('parent')
+    // displayInUl([1, 2, 3], parent);
+    //
+    //
+    // function displayInUl(arr, parent) {
+    //     var ul = document.createElement("ul");
+    //     for (var i = 0; i < arr.length; i++){
+    //         var li = document.createElement("li");
+    //         li.innerHTML = arr[i];
+    //         ul.appendChild(li);
+    //
+    //     }
+    //     parent.appendChild(ul);
+    //
+    // }
+
+    //     Модифицируйте предыдущую задачу так, чтобы по клику на li ей в конец добавлялся '!'.
+    //
+    // var parent = document.getElementById('parent')
+    // displayInUl([1, 2, 3], parent);
+    //
+    //
+    // function displayInUl(arr, parent) {
+    //     var ul = document.createElement("ul");
+    //     for (var i = 0; i < arr.length; i++){
+    //         var li = document.createElement("li");
+    //         li.innerHTML = arr[i];
+    //         li.addEventListener("click", function () {
+    //             this.innerHTML = this.innerHTML + '!';
+    //         })
+    //         ul.appendChild(li);
+    //
+    //     }
+    //     parent.appendChild(ul);
+    //
+    // }
+
+    //     Модифицируйте предыдущую задачу так,
+    //     чтобы по повторное нажатие на li не приводило к добавлению второго '!'.
+    //
+    // var parent = document.getElementById('parent')
+    // displayInUl([1, 2, 3], parent);
+    //
+    //
+    // function displayInUl(arr, parent) {
+    //     var ul = document.createElement("ul");
+    //     for (var i = 0; i < arr.length; i++) {
+    //         var li = document.createElement("li");
+    //         li.innerHTML = arr[i];
+    //         li.addEventListener("click", func)
+    //         ul.appendChild(li);
+    //
+    //
+    //
+    //     }
+    //     function func() {
+    //
+    //         this.innerHTML = this.innerHTML + '!';
+    //         this.removeEventListener("click", func);
+    //
+    //     }
+    //     parent.appendChild(ul);
+    //
+    // }
+
+    //    Посложнее
+    //
+
+    // Дан абзац и инпут. Сделайте так, чтобы по заходу на страницу текст абзаца отображался в инпуте.
+    //
+    // var p = document.getElementById('paragraph');
+    // var parent = document.getElementById('parent')
+    // window.addEventListener("load", function () {
+    //     var input = document.createElement("input");
+    //     input.type = 'text';
+    //     input.value = p.innerHTML;
+    //     parent.appendChild(input);
+    // })
+
+    //     Модифицируйте предыдущую задачу так, чтобы можно было поредактировать содержимое инпута -
+    //     и содержимое абзаца также поменялось.
+    // var p = document.getElementById('paragraph');
+    // var parent = document.getElementById('parent')
+    // window.addEventListener("load", function () {
+    //     var input = document.createElement("input");
+    //     input.type = 'text';
+    //     input.value = p.innerHTML;
+    //     input.onkeyup = function (){
+    //         p.innerHTML = input.value;
+    //     }
+    //     parent.appendChild(input);
+    // })
+    //
+    //     Дан абзац с текстом. Сделайте так, чтобы по клику на этот абзац рядом с ним появлялся инпут,
+    //     с помощью которого можно будет поредактировать текст нашего абзаца.
+    //     По потери фокуса инпут должен исчезнуть, а содержимое абзаца поменяться.
+    //
+    // var p = document.getElementById('paragraph');
+    // var parent = document.getElementById('parent');
+    // p.addEventListener("click", function () {
+    //     var input = document.createElement('input');
+    //     input.value = p.innerHTML;
+    //     parent.insertBefore(p.appendChild(input), null);
+    //     input.addEventListener("blur", function () {
+    //         p.innerHTML = this.value;
+    //         this.style.display = 'none';
+    //     })
+    // })
+
+    //     Модифицируйте предыдущую задачу так, чтобы инпут появлялся вместо абзаца, а не рядом с ним.
+    //
+    // var p = document.getElementById('paragraph');
+    // var parent = document.getElementById('parent');
+    // p.addEventListener("click", function () {
+    //     p.style.display = 'none';
+    //     var input = document.createElement('input');
+    //     input.value = p.innerHTML;
+    //     parent.insertBefore(p.appendChild(input), null);
+    //     input.addEventListener("blur", function () {
+    //         p.innerHTML = this.value;
+    //         this.style.display = 'none';
+    //         p.style.display = 'block';
+    //     })
+    // })
+
+    //     Массивы
+    //
+
+    // Дан массив [[1, 2, 3], [4, 5, 6], [7, 8, 9]]. Выведите его элементы в виде таблицы table размером 3 на 3.
+    //
+    // var parent = document.getElementById('parent');
+    // var arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    // var table = document.createElement("table");
+    // for (var i = 0; i < arr.length; i++){
+    //
+    //     var tr = document.createElement("tr");
+    //     for (var j = 0; j < arr[i].length; j++){
+    //         var td = document.createElement("td");
+    //         td.innerHTML = arr[i][j];
+    //         tr.appendChild(td);
+    //     }
+    //     table.appendChild(tr);
+    //
+    // }
+    // parent.appendChild(table);
+
+    // Дан массив [1, 2, 3, 4, 5, 6, 7, 8, 9]. Выведите его элементы в виде таблицы table размером 3 на 3.
+    //
+    // var parent = document.getElementById('parent');
+    // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // var table = document.createElement("table");
+    // for (var i = 0; i < arr.length; i += 3) {
+    //     var tr = document.createElement("tr");
+    //
+    //     for (var j = i; j < i+3; j++) {
+    //         var td = document.createElement("td");
+    //         td.innerHTML = arr[j];
+    //         tr.appendChild(td);
+    //     }
+    //
+    //     table.appendChild(tr);
+    // }
+    // parent.appendChild(table);
+
+    // Таблицы
+    //
+
+    // Выведите на экран таблицу table размером 5 на 5 так,
+    // чтобы в ее ячейках последовательно стояли числа от 1 до 25.
+    // var parent = document.getElementById('parent');
+    // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // var table = document.createElement("table");
+    // for (var i = 1; i < 26; i += 5) {
+    //     var tr = document.createElement("tr");
+    //
+    //     for (var j = i; j < i+5; j++) {
+    //         var td = document.createElement("td");
+    //         td.innerHTML = j;
+    //         tr.appendChild(td);
+    //     }
+    //
+    //     table.appendChild(tr);
+    // }
+    // parent.appendChild(table);
+
+    // Объекты
+    //
+    // Дан следующий массив с работниками:
+    //
+    //     var products = [
+    //         {name: 'Коля', age: 30},
+    //         {name: 'Вася', age: 31},
+    //         {name: 'Петя', age: 32},
+    //     ];
+    // Выведите на экран столбец имен в таком формате: 'Коля - зарплата 400$' и так далее для каждого работника.
+    //
+    // products.forEach(function (value) {
+    //     console.log(value.name + ' - возраст ' + value.age);
+    // })
+
+    //     Таймеры
+    //
+
+    // Дан абзац и кнопка.
+    // Сделайте так, чтобы по нажатию на кнопку в абзаце начал тикать таймер от 1 до бесконечности.
+    // Чтобы предотвратить повторное нажатие на кнопку она должна переходить в состояние disabled.
+    //
+    // var p = document.getElementById('paragraph');
+    // var start = document.getElementById('start');
+    //
+    // start.addEventListener("click", function () {
+    //     start.disabled = true;
+    //     setInterval(function () {
+    //         p.innerHTML = parseInt(p.innerHTML) + 1;
+    //     }, 1000);
+    // });
+
+    //     Дан абзац и две кнопки.
+    //     Сделайте так, чтобы по нажатию на первую кнопку в абзаце начал тикать таймер от 1 до бесконечности,
+    //     а по нажатию на вторую таймер останавливался.
+    //
+    // var p = document.getElementById('paragraph');
+    // var start = document.getElementById('start');
+    // var stop = document.getElementById('stop');
+    //
+    // start.addEventListener("click", startTimer);
+    // var intervalID;
+    //
+    // function startTimer() {
+    //     start.disabled = true;
+    //
+    //     intervalID = setInterval(function () {
+    //         p.innerHTML = parseInt(p.innerHTML) + 1;
+    //     }, 1000);
+    // }
+    //
+    // stop.addEventListener("click", function () {
+    //     clearInterval(intervalID);
+    // });
+
+    // Дан абзац и кнопка. Изначально в абзаце написано какое-то число, например 10.
+    //     Сделайте так, чтобы по нажатию на кнопку в абзаце начал тикать обратный отсчет.
+    //     Как только он дойдет до нуля - он должен закончится и под ним должна вывестись фраза 'отсчет закончен'.
+    //
+    // var p = document.getElementById('paragraph');
+    // var start = document.getElementById('start');
+    // var stop = document.getElementById('stop');
+    //
+    // start.addEventListener("click", startTimer);
+    // var intervalID;
+    //
+    // function startTimer() {
+    //     start.disabled = true;
+    //
+    //     intervalID = setInterval(function () {
+    //         p.innerHTML = parseInt(p.innerHTML) - 1;
+    //         if (p.innerHTML == 0){
+    //             clearInterval(intervalID);
+    //         }
+    //     }, 1000);
+    //
+    // }
+
 
 </script>
