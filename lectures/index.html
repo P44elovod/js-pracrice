@@ -5,10 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+
+
 <div id="parent"></div>
-<p id="paragraph">3</p>
-<input type="submit" id="start" value="Go!">
-<input type="submit" id="stop" value="Stop!">
+<p id="paragraph"></p>
+
 
 </body>
 </html>
@@ -593,6 +594,154 @@
     //     }, 1000);
     //
     // }
+
+    // Лекция №2 по JavaScript. Домашняя работа
+    // Разминка
+
+    // Дан массив с числами. Выведите каждый элемент этого массива в своем инпуте.
+    // Сделайте так, чтобы под всеми инпутами вывелась сумма элементов нашего массива.
+    //
+    // var parent = document.getElementById('parent');
+    // var p = document.getElementById('paragraph');
+    // var arr = [1, 2, 3, 4];
+    // var summ = 0;
+    // for (var i = 0; i < arr.length; i ++){
+    //
+    //     var input = document.createElement("input");
+    //     input.value = arr[i];
+    //     parent.appendChild(input);
+    //     summ += Number(arr[i]);
+    //
+    // }
+    // p.innerHTML = summ;
+
+    //     Даны N инпутов. В них вводятся числа. Дана также кнопка.
+    //     Сделайте так, чтобы по нажатию на кнопку на экран вывелась сумма введенных чисел.
+    //
+    // var input = document.getElementsByTagName('input');
+    // var button = document.getElementById('butt');
+    // var p = document.getElementById('paragraph');
+    //
+    // button.addEventListener("click", function () {
+    //     var summ = 0;
+    //     for (var i = 0; i < input.length; i++) {
+    //         summ += Number(input[i].value);
+    //     }
+    //     p.innerHTML = summ;
+    // });
+
+    //     Посложнее
+    // Дан массив. Выведите элементы этого массива в виде списка ul.
+    //
+    // var parent = document.getElementById('parent');
+    // var arr = [1, 2, 3, 4];
+    // var ul = document.createElement("ul");
+    //
+    // for(var i = 0; i < arr.length; i++){
+    //
+    //     var li = document.createElement("li");
+    //     li.innerHTML = arr[i];
+    //     ul.appendChild(li);
+    //
+    // }
+    //
+    // parent.appendChild(ul);
+
+    //     Модифицируйте предыдущую задачу так,
+    //     чтобы по клику на любую li ее содержимое увеличивалось на 1.
+    //
+    // var parent = document.getElementById('parent');
+    // var arr = [1, 2, 3, 4];
+    // var ul = document.createElement("ul");
+    //
+    // for(var i = 0; i < arr.length; i++){
+    //
+    //     var li = document.createElement("li");
+    //     li.innerHTML = arr[i];
+    //     li.addEventListener("click", function () {
+    //        this.innerHTML = Number(this.innerHTML) + 1;
+    //     });
+    //     ul.appendChild(li);
+    //
+    // }
+    //
+    // parent.appendChild(ul);
+
+    // Модифицируйте предыдущую задачу так, чтобы по клику на любую li вместо ее содержимого появлялся инпут,
+    // с помощью которого можно будет поредактировать эту li.
+    //
+    // var parent = document.getElementById('parent');
+    // var arr = [1, 2, 3, 4];
+    // var ul = document.createElement("ul");
+    //
+    // for (var i = 0; i < arr.length; i++) {
+    //
+    //     var li = document.createElement("li");
+    //     var span = document.createElement("span");
+    //     span.innerHTML = arr[i];
+    //     span.addEventListener("click", showInput);
+    //
+    //     li.appendChild(span);
+    //     ul.appendChild(li);
+    //
+    // }
+    //
+    //
+    // function showInput() {
+    //     var input = document.createElement("input");
+    //     input.value = this.innerHTML;
+    //     input.addEventListener("blur", hideInput);
+    //
+    //     this.firstChild.remove();
+    //     this.appendChild(input);
+    //     this.removeEventListener("click", showInput);
+    //
+    // }
+    //
+    // function hideInput() {
+    //
+    //     this.parentElement.addEventListener("click", showInput);
+    //     this.parentElement.innerHTML = this.value;
+    //
+    //
+    // }
+    //
+    // parent.appendChild(ul);
+
+    //     Посложнее
+    // Дан массив. Выведите элементы этого массива в виде таблицы table.
+    // Сделайте так, чтобы если в последнем ряду таблицы не хватит элементов массива,
+    // то пустые ячейки пусть заполнятся дефисами.
+    //
+    //     Разминка
+    // Дан следующий массив с работниками:
+    //
+    //     var products = [
+    //         {name: 'Коля', age: 30, salary: 400},
+    //         {name: 'Вася', age: 31, salary: 500},
+    //         {name: 'Петя', age: 32, salary: 600},
+    //     ];
+    // Выведите на экран столбец имен работников. своем теге li тега ul.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы под списком с работниками вывелась сумма их зарплат.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы суммировались зарплаты только тех работников,
+    //     возраст которых больше 30.
+    //
+    // Продвинутое
+    // Даны инпуты. В атрибуте data-length задается разрешенная длина строки, которую можно ввести в инпут.
+    // Сделайте следующее: если в инпут введена строка правильной длины, покрасьте его в зеленый цвет,
+    // а если не правильной - в красный.
+    //
+    //     Таймеры
+    // Дан абзац и кнопка. По нажатию на кнопку должен запуститься таймер,
+    // который будет по очереди записывать в абзац числа от 1 до 5 по кругу.
+    //
+    //     Дан абзац и кнопка. Дан также массив с какими-то текстами. По нажатию на кнопку должен запуститься таймер,
+    //     который будет по очереди записывать в абзац элементы массива. Как только элементы в массиве закончатся, все должно продолжится с начала.
+    //
+    //     Дан тег img. Даны 3 файла с изображениями.
+    //     Сделайте так, чтобы каждую секунду изображения сменяли друг друга по очереди (по кругу).
 
 
 </script>
