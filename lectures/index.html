@@ -5,9 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+
+
 <div id="parent"></div>
 <p id="paragraph"></p>
-<input type="submit" id="start" value="Go!">
+
 
 </body>
 </html>
@@ -601,82 +603,73 @@
     //
     // var parent = document.getElementById('parent');
     // var p = document.getElementById('paragraph');
-    // var arr = [1, 3, 4];
+    // var arr = [1, 2, 3, 4];
+    // var summ = 0;
+    // for (var i = 0; i < arr.length; i ++){
     //
-    // arr.forEach(function (value) {
     //     var input = document.createElement("input");
-    //     input.value = value;
+    //     input.value = arr[i];
     //     parent.appendChild(input);
-    // })
-    // arr.reduce(function (summ, current) {
-    //     return summ+current;
-    // }, 0);
-    // p.innerHTML = arr.reduce(function (summ, current) {
-    //     return summ+current;
-    // }, 0);
+    //     summ += Number(arr[i]);
+    //
+    // }
+    // p.innerHTML = summ;
 
     //     Даны N инпутов. В них вводятся числа. Дана также кнопка.
     //     Сделайте так, чтобы по нажатию на кнопку на экран вывелась сумма введенных чисел.
     //
-    // var input = document.getElementsByClassName('inp')
+    // var input = document.getElementsByTagName('input');
+    // var button = document.getElementById('butt');
     // var p = document.getElementById('paragraph');
-    // var submit = document.getElementById('start')
     //
-    // submit.addEventListener("click", function () {
+    // button.addEventListener("click", function () {
     //     var summ = 0;
     //     for (var i = 0; i < input.length; i++) {
-    //
-    //         if (input[i].value != undefined) {
-    //
-    //             summ += Number(input[i].value);
-    //
-    //
-    //         }
-    //         p.innerHTML = summ;
-    //
+    //         summ += Number(input[i].value);
     //     }
-    // }
-    // )
+    //     p.innerHTML = summ;
+    // });
 
     //     Посложнее
-
     // Дан массив. Выведите элементы этого массива в виде списка ul.
     //
     // var parent = document.getElementById('parent');
     // var arr = [1, 2, 3, 4];
     // var ul = document.createElement("ul");
     //
-    // for (var i = 0; i < arr.length; i++) {
+    // for(var i = 0; i < arr.length; i++){
     //
     //     var li = document.createElement("li");
-    //
     //     li.innerHTML = arr[i];
     //     ul.appendChild(li);
+    //
     // }
+    //
     // parent.appendChild(ul);
 
-    //     Модифицируйте предыдущую задачу так, чтобы по клику на любую li ее содержимое увеличивалось на 1.
+    //     Модифицируйте предыдущую задачу так,
+    //     чтобы по клику на любую li ее содержимое увеличивалось на 1.
     //
     // var parent = document.getElementById('parent');
     // var arr = [1, 2, 3, 4];
     // var ul = document.createElement("ul");
     //
-    // for (var i = 0; i < arr.length; i++) {
+    // for(var i = 0; i < arr.length; i++){
     //
     //     var li = document.createElement("li");
-    //
     //     li.innerHTML = arr[i];
     //     li.addEventListener("click", function () {
-    //         this.innerHTML = Number(this.innerHTML) + 1;
-    //     })
+    //        this.innerHTML = Number(this.innerHTML) + 1;
+    //     });
     //     ul.appendChild(li);
+    //
     // }
+    //
     // parent.appendChild(ul);
 
     // Модифицируйте предыдущую задачу так, чтобы по клику на любую li вместо ее содержимого появлялся инпут,
     // с помощью которого можно будет поредактировать эту li.
     //
-
     // var parent = document.getElementById('parent');
     // var arr = [1, 2, 3, 4];
     // var ul = document.createElement("ul");
@@ -684,43 +677,67 @@
     // for (var i = 0; i < arr.length; i++) {
     //
     //     var li = document.createElement("li");
+    //     var span = document.createElement("span");
+    //     span.innerHTML = arr[i];
+    //     span.addEventListener("click", showInput);
     //
-    //     li.innerHTML = arr[i];
-    //
-    //     li.addEventListener("click", function () {
-    //
-    //
-    //         var input = document.createElement("input");
-    //         input.value = this.innerHTML;
-    //         this.style.display = 'none';
-    //
-    //         input.addEventListener("blur", function () {
-    //
-    //
-    //         })
-    //
-    //         ul.insertBefore(input, this.nextSibling);
-    //
-    //     })
-    //
-    //
+    //     li.appendChild(span);
     //     ul.appendChild(li);
+    //
     // }
+    //
+    //
+    // function showInput() {
+    //     var input = document.createElement("input");
+    //     input.value = this.innerHTML;
+    //     input.addEventListener("blur", hideInput);
+    //
+    //     this.firstChild.remove();
+    //     this.appendChild(input);
+    //     this.removeEventListener("click", showInput);
+    //
+    // }
+    //
+    // function hideInput() {
+    //
+    //     this.parentElement.addEventListener("click", showInput);
+    //     this.parentElement.innerHTML = this.value;
+    //
+    //
+    // }
+    //
     // parent.appendChild(ul);
 
     //     Посложнее
-    //
+
     // Дан массив. Выведите элементы этого массива в виде таблицы table.
     // Сделайте так, чтобы если в последнем ряду таблицы не хватит элементов массива,
     // то пустые ячейки пусть заполнятся дефисами.
     //
-    var arr = [1, 2, 3, 4, 5, 6, 7];
-    var parent = document.getElementById('parent');
-    var table = document.createElement("table");
+    // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+    //
+    // var parent = document.getElementById('parent');
+    // var table = document.createElement("table");
+    // var counter = 0;
+    // for (var i = 0; i <= arr.length % 5 + 1; i++) {
+    //     var tr = document.createElement("tr");
+    //     for (var j = 0; j < 5; j++) {
+    //         var td = document.createElement("td");
+    //         if (arr[counter] != undefined){
+    //         td.innerHTML = arr[counter];
+    //         } else {
+    //             td.innerHTML = '-';
+    //         }
+    //         counter++;
+    //         tr.appendChild(td);
+    //     }
+    //     table.appendChild(tr);
+    // }
+    // parent.appendChild(table);
 
 
     //     Разминка
-    //
+
     // Дан следующий массив с работниками:
     //
     //     var products = [
@@ -730,25 +747,80 @@
     //     ];
     // Выведите на экран столбец имен работников. своем теге li тега ul.
     //
+    // var workers = [
+    //         {name: 'Коля', age: 30, salary: 400},
+    //         {name: 'Вася', age: 31, salary: 500},
+    //         {name: 'Петя', age: 32, salary: 600},
+    //     ];
+    //
+    // var parent = document.getElementById('parent');
+    // var ul = document.createElement("ul");
+    // workers.forEach(function (value) {
+    //     var li = document.createElement("li");
+    //     li.innerHTML = value.name;
+    //     ul.appendChild(li);
+    // })
+    //
+    // parent.appendChild(ul);
+
     //     Модифицируйте предыдущую задачу так, чтобы под списком с работниками вывелась сумма их зарплат.
     //
+    // var workers = [
+    //     {name: 'Коля', age: 30, salary: 400},
+    //     {name: 'Вася', age: 31, salary: 500},
+    //     {name: 'Петя', age: 32, salary: 600},
+    // ];
+    //
+    // var parent = document.getElementById('parent');
+    // var ul = document.createElement("ul");
+    // var p = document.getElementById('paragraph');
+    // var totalSalary = 0;
+    // workers.forEach(function (value) {
+    //     var li = document.createElement("li");
+    //     li.innerHTML = value.name;
+    //     ul.appendChild(li);
+    //     totalSalary += value.salary;
+    // })
+    //
+    // parent.appendChild(ul);
+    // p.innerHTML = totalSalary;
+
     //     Модифицируйте предыдущую задачу так, чтобы суммировались зарплаты только тех работников,
     //     возраст которых больше 30.
     //
-    // Продвинутое
+    // var workers = [
+    //     {name: 'Коля', age: 30, salary: 400},
+    //     {name: 'Вася', age: 31, salary: 500},
+    //     {name: 'Петя', age: 32, salary: 600},
+    // ];
     //
+    // var parent = document.getElementById('parent');
+    // var ul = document.createElement("ul");
+    // var p = document.getElementById('paragraph');
+    // var totalSalary = 0;
+    // workers.forEach(function (value) {
+    //     var li = document.createElement("li");
+    //     li.innerHTML = value.name;
+    //     ul.appendChild(li);
+    //     if (value.age > 30) {
+    //         totalSalary += value.salary;
+    //     }
+    // })
+    //
+    // parent.appendChild(ul);
+    // p.innerHTML = totalSalary;
+
+    // Продвинутое
     // Даны инпуты. В атрибуте data-length задается разрешенная длина строки, которую можно ввести в инпут.
     // Сделайте следующее: если в инпут введена строка правильной длины, покрасьте его в зеленый цвет,
     // а если не правильной - в красный.
     //
     //     Таймеры
-    //
-    // Дан абзац и кнопка. По нажатию на кнопку должен запуститься таймер, который будет по очереди записывать
-    // в абзац числа от 1 до 5 по кругу.
+    // Дан абзац и кнопка. По нажатию на кнопку должен запуститься таймер,
+    // который будет по очереди записывать в абзац числа от 1 до 5 по кругу.
     //
     //     Дан абзац и кнопка. Дан также массив с какими-то текстами. По нажатию на кнопку должен запуститься таймер,
-    //     который будет по очереди записывать в абзац элементы массива. Как только элементы в массиве закончатся,
-    //     все должно продолжится с начала.
+    //     который будет по очереди записывать в абзац элементы массива. Как только элементы в массиве закончатся, все должно продолжится с начала.
     //
     //     Дан тег img. Даны 3 файла с изображениями.
     //     Сделайте так, чтобы каждую секунду изображения сменяли друг друга по очереди (по кругу).
