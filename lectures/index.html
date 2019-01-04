@@ -737,6 +737,7 @@
 
 
     //     Разминка
+
     // Дан следующий массив с работниками:
     //
     //     var products = [
@@ -746,11 +747,69 @@
     //     ];
     // Выведите на экран столбец имен работников. своем теге li тега ul.
     //
+    // var workers = [
+    //         {name: 'Коля', age: 30, salary: 400},
+    //         {name: 'Вася', age: 31, salary: 500},
+    //         {name: 'Петя', age: 32, salary: 600},
+    //     ];
+    //
+    // var parent = document.getElementById('parent');
+    // var ul = document.createElement("ul");
+    // workers.forEach(function (value) {
+    //     var li = document.createElement("li");
+    //     li.innerHTML = value.name;
+    //     ul.appendChild(li);
+    // })
+    //
+    // parent.appendChild(ul);
+
     //     Модифицируйте предыдущую задачу так, чтобы под списком с работниками вывелась сумма их зарплат.
     //
+    // var workers = [
+    //     {name: 'Коля', age: 30, salary: 400},
+    //     {name: 'Вася', age: 31, salary: 500},
+    //     {name: 'Петя', age: 32, salary: 600},
+    // ];
+    //
+    // var parent = document.getElementById('parent');
+    // var ul = document.createElement("ul");
+    // var p = document.getElementById('paragraph');
+    // var totalSalary = 0;
+    // workers.forEach(function (value) {
+    //     var li = document.createElement("li");
+    //     li.innerHTML = value.name;
+    //     ul.appendChild(li);
+    //     totalSalary += value.salary;
+    // })
+    //
+    // parent.appendChild(ul);
+    // p.innerHTML = totalSalary;
+
     //     Модифицируйте предыдущую задачу так, чтобы суммировались зарплаты только тех работников,
     //     возраст которых больше 30.
     //
+    // var workers = [
+    //     {name: 'Коля', age: 30, salary: 400},
+    //     {name: 'Вася', age: 31, salary: 500},
+    //     {name: 'Петя', age: 32, salary: 600},
+    // ];
+    //
+    // var parent = document.getElementById('parent');
+    // var ul = document.createElement("ul");
+    // var p = document.getElementById('paragraph');
+    // var totalSalary = 0;
+    // workers.forEach(function (value) {
+    //     var li = document.createElement("li");
+    //     li.innerHTML = value.name;
+    //     ul.appendChild(li);
+    //     if (value.age > 30) {
+    //         totalSalary += value.salary;
+    //     }
+    // })
+    //
+    // parent.appendChild(ul);
+    // p.innerHTML = totalSalary;
+
     // Продвинутое
     // Даны инпуты. В атрибуте data-length задается разрешенная длина строки, которую можно ввести в инпут.
     // Сделайте следующее: если в инпут введена строка правильной длины, покрасьте его в зеленый цвет,
