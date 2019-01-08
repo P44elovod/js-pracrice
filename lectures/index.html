@@ -6,10 +6,9 @@
 </head>
 <body>
 
-
 <div id="parent"></div>
-<p id="paragraph"></p>
-
+<p id="paragraph">0</p>
+<img id="img">
 
 </body>
 </html>
@@ -811,19 +810,90 @@
     // p.innerHTML = totalSalary;
 
     // Продвинутое
+
     // Даны инпуты. В атрибуте data-length задается разрешенная длина строки, которую можно ввести в инпут.
     // Сделайте следующее: если в инпут введена строка правильной длины, покрасьте его в зеленый цвет,
     // а если не правильной - в красный.
     //
+    // var input = document.getElementsByTagName('input');
+    // for (var i = 0; i < input.length; i++) {
+    //
+    //     input[i].addEventListener("keyup", function () {
+    //         if (this.value.length != this.getAttribute('data-length')) {
+    //             this.style.borderColor = 'red'
+    //         } else {
+    //
+    //             this.style.borderColor = 'green';
+    //
+    //         }
+    //
+    //     })
+    //
+    //
+    // }
+
     //     Таймеры
+
     // Дан абзац и кнопка. По нажатию на кнопку должен запуститься таймер,
     // который будет по очереди записывать в абзац числа от 1 до 5 по кругу.
     //
-    //     Дан абзац и кнопка. Дан также массив с какими-то текстами. По нажатию на кнопку должен запуститься таймер,
-    //     который будет по очереди записывать в абзац элементы массива. Как только элементы в массиве закончатся, все должно продолжится с начала.
+    // var button = document.getElementById('button');
+    // var p = document.getElementById('paragraph');
     //
+    // button.addEventListener("click", function () {
+    //
+    //     setInterval(timer, 1000);
+    //
+    //     function timer() {
+    //         if (p.innerHTML > 4) {
+    //             p.innerHTML = 0;
+    //         }
+    //         p.innerHTML = Number(p.innerHTML) + 1;
+    //
+    //     }
+    // })
+
+    //     Дан абзац и кнопка. Дан также массив с какими-то текстами. По нажатию на кнопку должен запуститься таймер,
+    //     который будет по очереди записывать в абзац элементы массива.
+    //     Как только элементы в массиве закончатся, все должно продолжится с начала.
+    //
+    // var button = document.getElementById('button');
+    // var p = document.getElementById('paragraph');
+    // var content = ['aaa', 'bbb', 'ccc'];
+    //
+    // button.addEventListener("click", function () {
+    //
+    //     setInterval(timer, 1000);
+    //     var i = 0;
+    //
+    //     function timer() {
+    //         if ( i > content.length-1) {
+    //             i = 0;
+    //         }
+    //         p.innerHTML = content[i];
+    //         i++;
+    //
+    //     }
+    // })
+
     //     Дан тег img. Даны 3 файла с изображениями.
     //     Сделайте так, чтобы каждую секунду изображения сменяли друг друга по очереди (по кругу).
+    // var img = document.getElementById('img')
+    // var images = ['/img1', '/img2', '/img3'];
+    //
+    // window.setInterval(changeImage, 1000);
+    // var index = 0;
+    // img.src = '/img1';
+    // function changeImage() {
+    //
+    //     if (index > images.length-1){
+    //         index = 0;
+    //     }
+    //
+    //     img.src = images[index];
+    //
+    //     index ++;
+    // }
 
 
 </script>
