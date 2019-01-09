@@ -8,8 +8,9 @@
 
 <div id="parent"></div>
 <p id="paragraph">0</p>
-<img id="img">
-
+<p id="elem1">ntrcn</p>
+<p id="elem2">dfgfdg</p>
+<ul id="ul"></ul>
 </body>
 </html>
 <script>
@@ -899,6 +900,7 @@
     // Работа с функциями
     // Посмотрите следующее видео: ссылка на видео, а затем переходите к решению задач.
     //
+
     //     Сделайте функцию setText, которая будет принимать id элемента и текст.
     //     Пусть эта функция устанавливает новый текст для элемента с этим id. Пример: пусть у нас даны два абзаца:
     //
@@ -912,7 +914,17 @@
     //
     //     <p id="elem1">первый</p>
     //     <p id="elem2">второй</p>
+    //
+    // setText('elem1', 'первый');
+    // setText('elem2', 'второй');
+    //
+    // function setText(id, text) {
+    //     var element = document.getElementById(id);
+    //     element.innerHTML = text;
+    // }
+
     // Работа с функциями и DOM
+
     // Сделайте функцию addText, которая первым параметром будет принимать текст, а вторым - DOM элемент.
     // Сделайте так, чтобы данная функция добавляла текст в конец этого элемента. Пример: дан следующий элемент:
     //
@@ -924,16 +936,39 @@
     // В результате получим следующий HTML код (в конец добавится '!'):
     //
     // <p id="elem">текст!</p>
-    // Даны абзацы. Получите их, переберите циклом и каждому добавьте в конец '!' с помощью функции addText, сделанной в предыдущей задаче.
+    // var elem = document.getElementById('elem1');
+    // addText('!', elem1);
     //
+    // function addText(text, element) {
+    //     element.innerHTML = element.innerHTML + text;
+    // }
+
+    // Даны абзацы. Получите их, переберите циклом и каждому добавьте в конец '!'
+    // с помощью функции addText, сделанной в предыдущей задаче.
+    //
+    // var elements = document.querySelectorAll('p');
+    // for (var i = 0; i < elements.length; i++){
+    //
+    //     addText('!', elements[i]);
+    //
+    // }
+    //
+    // function addText(text, element) {
+    //     element.innerHTML = element.innerHTML + text;
+    // }
+
     //     Работа с функциями и DOM
     // Дан массив. Выведите его элементы в виде списка ul.
+
     //
-    //     Сделайте функцию appendElem, которая первым параметром будет принимать текст, а вторым - ссылку DOM объект, в котором лежит тег ul.
-    //     Сделайте так, чтобы данная функция добавляла текст в конец этого элемента. Пример: дан следующий элемент:
+    //     Сделайте функцию appendElem, которая первым параметром будет принимать текст,
+    //     а вторым - ссылку DOM объект, в котором лежит тег ul.
+    //     Сделайте так, чтобы данная функция добавляла текст в конец этого элемента.
+    //     Пример: дан следующий элемент:
     //
     //     <ul id="elem"></ul>
-    // Получим наш элемент по id и используем нашу функцию appendElem, чтобы добавить ему в конец тег li с текстом '!':
+    // Получим наш элемент по id и используем нашу функцию appendElem, чтобы добавить
+    // ему в конец тег li с текстом '!':
     //
     // var elem = document.getElementById('elem');
     // appendElem('!', elem);
@@ -955,6 +990,32 @@
     //     <li>2</li>
     //     <li>3</li>
     //     </ul>
+    //
+    // var ul = document.getElementById('ul');
+    //
+    // appendElem('!', ul);
+    //
+    // function appendElem(text, element) {
+    //
+    //     var li = document.createElement("li");
+    //     li.innerHTML = text;
+    //     element.appendChild(li);
+    //
+    // }
+
     // Дан массив и ul. С помощью функции appendElem, сделанной в предыдущей задаче, запишите каждый элемент массива в отдельную li в этом ul.
+    // var arr = [1, 2, 3, 4, 5];
+    // var ul = document.getElementById('ul');
+    // for (var i = 0; i < arr.length; i++) {
+    //     appendElem(arr[i], ul);
+    // }
+    //
+    // function appendElem(text, element) {
+    //
+    //     var li = document.createElement("li");
+    //     li.innerHTML = text;
+    //     element.appendChild(li);
+    //
+    // }
 
 </script>
