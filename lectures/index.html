@@ -7,10 +7,10 @@
 <body>
 
 <div id="parent"></div>
-<p id="paragraph">0</p>
-<p id="elem1">ntrcn</p>
-<p id="elem2">dfgfdg</p>
+<p id="paragraph">fgdshghgfjfdj</p>
 <ul id="ul"></ul>
+<input id="input">
+
 </body>
 </html>
 <script>
@@ -1018,4 +1018,104 @@
     //
     // }
 
+    // Лекция №4 по JavaScript. Классная работа
+    // Задачи
+
+    // Дан абзац. Сделайте так, чтобы по клику на него его текст становился в инпуте,
+    // с помощью которого можно будет поредактировать текст этого абзаца.
+    // По потери фокуса инпут должен исчезать, а в абзаце оставаться новый текст.
+    //
+    // var p = document.getElementById('paragraph');
+    //
+    // p.addEventListener("click", showInput);
+    //
+    // function showInput() {
+    //     var input = document.createElement("input");
+    //     input.value = this.innerHTML;
+    //     input.addEventListener("blur", hideInput);
+    //
+    //     this.innerHTML = '';
+    //     this.appendChild(input);
+    //     this.removeEventListener("click", showInput);
+    //
+    // }
+    //
+    // function hideInput() {
+    //
+    //     this.parentElement.addEventListener("click", showInput);
+    //     this.parentElement.innerHTML = this.value;
+    //
+    // }
+
+
+    //     Дан массив. Выведите его элементы в виде списка ul.
+    //
+    // Модифицируйте предыдущую задачу так, чтобы по клику на любую li в ней появлялся инпут,
+    //     с помощью которого ее можно будет поредактировать.
+    //     Модифицируйте предыдущую задачу так, чтобы под списком был инпут,
+    //     с помощью которого можно будет добавить новый элемент в конец списка ul.
+    // var arr = [1, 2, 3, 4];
+    // var ul = document.getElementById('ul');
+    // var input = document.getElementById('input');
+    //
+    // showArrayAsList(ul, arr);
+    //
+    // input.addEventListener("blur", addElement);
+    //
+    // function showArrayAsList(parent, array) {
+    //     for (var i = 0; i < array.length; i++) {
+    //
+    //         var li = document.createElement("li");
+    //         li.innerHTML = array[i];
+    //         li.addEventListener("click", showContentEditor);
+    //         parent.appendChild(li);
+    //
+    //     }
+    //
+    //
+    // }
+    //
+    //
+    // function addElement() {
+    //
+    //     var li = document.createElement("li");
+    //     li.innerHTML = this.value;
+    //     li.addEventListener("click", showContentEditor);
+    //     ul.appendChild(li);
+    //     this.value='';
+    //
+    // }
+    // function showContentEditor() {
+    //     var input = document.createElement("input");
+    //     input.value = this.innerHTML;
+    //     input.addEventListener("blur", hideContentEditor);
+    //     this.innerHTML = '';
+    //     this.appendChild(input);
+    //     console.log(this.parentElement)
+    //     this.removeEventListener("click", showContentEditor);
+    // }
+    //
+    // function hideContentEditor() {
+    //
+    //     this.parentElement.addEventListener("click", showContentEditor);
+    //     this.parentElement.innerHTML = this.value;
+    //
+    // }
+
+    //
+    //
+
+    //
+    //     Разборы
+    // Посмотрите разбор решения задачи ссылка на видео и затем повторите это решение самостоятельно.
+    //
+    //     Разборы
+    // Посмотрите разбор решения задачи ссылка на видео и затем повторите это решение самостоятельно.
+    //
+    //     Разборы
+    // Посмотрите разбор решения задачи ссылка на видео и затем повторите это решение самостоятельно.
+    //
+    //     Практика
+    // После того, как вы повторите мой код, на его базе сделайте так,
+    // чтобы в конце каждой li стояла ссылка 'удалить', в помощью которой можно будет удалить эту li из ul.
 </script>
