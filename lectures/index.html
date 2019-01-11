@@ -7,10 +7,10 @@
 <body>
 
 <div id="parent"></div>
-<p id="paragraph">fgdshghgfjfdj</p>
+
 <ul id="ul"></ul>
 <input id="input">
-
+<p id="paragraph"></p>
 </body>
 </html>
 <script>
@@ -1091,7 +1091,6 @@
     //     input.addEventListener("blur", hideContentEditor);
     //     this.innerHTML = '';
     //     this.appendChild(input);
-    //     console.log(this.parentElement)
     //     this.removeEventListener("click", showContentEditor);
     // }
     //
@@ -1101,21 +1100,134 @@
     //     this.parentElement.innerHTML = this.value;
     //
     // }
-
-    //
-    //
-
-    //
-    //     Разборы
-    // Посмотрите разбор решения задачи ссылка на видео и затем повторите это решение самостоятельно.
-    //
-    //     Разборы
-    // Посмотрите разбор решения задачи ссылка на видео и затем повторите это решение самостоятельно.
-    //
-    //     Разборы
-    // Посмотрите разбор решения задачи ссылка на видео и затем повторите это решение самостоятельно.
     //
     //     Практика
     // После того, как вы повторите мой код, на его базе сделайте так,
     // чтобы в конце каждой li стояла ссылка 'удалить', в помощью которой можно будет удалить эту li из ul.
+
+    // Лекция №4 по JavaScript. Домашняя работа
+    // Задачи
+    //
+    // Дан инпут. В него через запятую вводятся числа. Сделайте так, чтобы по потери фокуса каждое число
+    // записалось в свою li в теге ul.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы под списком выводилась сумма этих чисел.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы под списком в инпут можно было
+    //     много раз вводить числа через запятую и терять фокус и все новые числа будут записываться в конец ul,
+    //     а также динамически будет меняться выводимая сумма.
+    //
+    // var ul = document.getElementById('ul');
+    // var input = document.getElementById('input');
+    // var p = document.getElementById('paragraph');
+    //
+    // input.addEventListener("blur", function () {
+    //
+    //     var values = convertSourceToArray(input);
+    //     showAsList(values, ul);
+    //     this.value = '';
+    //     p.innerHTML = valuesAddition(values, p.innerText);
+    //
+    // })
+    //
+    // function showAsList(sourceArray, parent) {
+    //
+    //     for (var i = 0; i < sourceArray.length; i++) {
+    //         addNewElement(parent, sourceArray[i]);
+    //     }
+    //
+    // }
+    //
+    // function convertSourceToArray(source) {
+    //
+    //     var values = source.value.split(',');
+    //
+    //     return values;
+    //
+    // }
+    //
+    // function addNewElement(parent, value) {
+    //
+    //     var li = document.createElement("li");
+    //     li.innerHTML = value;
+    //     parent.appendChild(li);
+    //
+    // }
+    //
+    // function valuesAddition(sourceArray, previousSumm) {
+    //
+    //     if (previousSumm == undefined) {
+    //
+    //         summ = 0;
+    //         for (var i = 0; i < sourceArray.length; i++) {
+    //
+    //             summ += Number(sourceArray[i]);
+    //             console.log(summ);
+    //
+    //         }
+    //     } else {
+    //         summ = Number(previousSumm);
+    //
+    //
+    //         for (var i = 0; i < sourceArray.length; i++) {
+    //
+    //             summ += Number(sourceArray[i]);
+    //
+    //         }
+    //
+    //
+    //     }
+    //
+    //     return summ;
+    // }
+
+    //     Задачи
+
+    // Дан инпут. В него через запятую вводятся числа. По потери фокуса проверьте,
+    // что каждое введенное число является квадратом предыдущего.
+    // Если это так, сделайте границу инпута зеленого цвета, если не так - красного.
+    //  var input = document.getElementById('input');
+    //
+    //  input.addEventListener("blur", function () {
+    //
+    //      var values = convertSourceToArray(this);
+    //      if (checkPerfectSquare(values) == true){
+    //          this.style.borderColor = 'green';
+    //      } else {
+    //
+    //          this.style.borderColor = 'red';
+    //
+    //      }
+    //
+    //
+    //  })
+    //
+    //
+    //  function convertSourceToArray(source) {
+    //
+    //      var values = source.value.split(',');
+    //
+    //      return values;
+    //
+    //  }
+    //
+    //  function checkPerfectSquare(array) {
+    //      var flag = true;
+    //      for (var i = 0; i < array.length-1; i++){
+    //
+    //          if (array[i+1] != calculatePerfectSquare(array[i])){
+    //              flag = false;
+    //          }
+    //
+    //      }
+    //
+    //      return flag;
+    //
+    //  }
+    //
+    // function calculatePerfectSquare(number) {
+    //     return number * number;
+    // }
+
+
 </script>
