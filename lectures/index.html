@@ -5,11 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-
+<table id="table" border="1px">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+</table>
 <div id="parent"></div>
 
 <ul id="ul"></ul>
-<input id="input">
+<input id="input" type="submit" value="go">
 <p id="paragraph"></p>
 </body>
 </html>
@@ -1228,6 +1239,52 @@
     // function calculatePerfectSquare(number) {
     //     return number * number;
     // }
+
+    // Лекция №5 по JavaScript. Домашняя работа
+    // Задачи
+
+    // Сделайте вручную в HTML коде таблицу table, ячейки которой будут заполненными какими-либо числами.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы под таблицей размещалась кнопка,
+    //     по нажатию на которую выводилась сумма чисел из ячеек этой таблицы.
+    //     Модифицируйте предыдущую задачу так, чтобы по клику на любую ячейку,
+    //     число в ней увеличивалось на 1. Сделайте так, чтобы по нажатию на кнопку, выводилась обновленная
+    //     сумма ячеек таблицы.
+    // var submit = document.getElementById('input');
+    // var td = document.getElementsByTagName('td');
+    // var p = document.getElementById('paragraph');
+    //
+    // initValueHandler(td);
+    // showSumHandler(td);
+    //
+    // function initValueHandler(elements) {
+    //
+    //     for (var i = 0; i < elements.length; i++) {
+    //        tdHandler(elements[i]);
+    //     }
+    //
+    // }
+    //
+    //
+    // function tdHandler(element) {
+    //     element.addEventListener("click", function () {
+    //         this.innerHTML = Number(this.innerHTML) + 1;
+    //     })
+    // }
+    //
+    // function showSumHandler(values) {
+    //
+    //     submit.addEventListener("click", function () {
+    //         var sum = 0;
+    //         for (var i = 0; i < values.length; i++) {
+    //             sum += Number(values[i].innerHTML);
+    //         }
+    //
+    //         p.innerHTML = sum;
+    //     });
+    //
+    // }
+
 
 
 </script>
