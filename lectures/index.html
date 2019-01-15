@@ -1285,8 +1285,10 @@
 
 
     var symbols = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    var parent = document.getElementById('document');
+    var parent = document.getElementById('parent');
 
+
+    initKeyboard(symbols, parent);
 
     function initKeyboard(values, parent) {
 
@@ -1300,10 +1302,11 @@
 
 
     function addButton(value, parent) {
-        var div = document.createElement("div");
-        div.innerHTML = value;
-        div.style.borderColor = 'black';
+        var buttonElement = document.createElement("button");
+        buttonElement.innerHTML = value;
+        // div.style.borderColor = 'black';
         // div.style.textAlign = 'center';
+        parent.appendChild(buttonElement);
 
     }
 
