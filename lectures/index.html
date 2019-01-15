@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<input id="input" placeholder="type your text"><p></p>
 <div id="parent"></div>
 
 <ul id="ul"></ul>
@@ -1282,45 +1283,77 @@
     // Пусть эта экранная клавиатура будет привязана к какому-нибудь инпуту, то есть кликая по ней, мы будем
     // вводить данные в этот инпут.
     //
-
-
-    var symbols = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    var parent = document.getElementById('parent');
-
-
-    initKeyboard(symbols, parent);
-
-    function initKeyboard(values, parent) {
-
-        for (var i = 0; i < values.length; i++){
-
-            addButton(values[i], parent);
-
-        }
-
-    }
-
-
-    function addButton(value, parent) {
-        var buttonElement = document.createElement("button");
-        buttonElement.innerHTML = value;
-        // div.style.borderColor = 'black';
-        // div.style.textAlign = 'center';
-        parent.appendChild(buttonElement);
-
-    }
-
+    // var symbols = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    // var parent = document.getElementById('parent');
+    // var input  = document.getElementById('input');
+    //
+    //
+    // initKeyboard(symbols, parent);
+    //
+    // function initKeyboard(values, parent) {
+    //     for (var i = 0; i < values.length; i++){
+    //
+    //         addButton(values[i], parent);
+    //
+    //     }
+    //
+    // }
+    //
+    //
+    // function addButton(value, parent) {
+    //     var buttonElement = document.createElement("button");
+    //     buttonElement.innerHTML = value;
+    //     buttonElement.addEventListener("click", function () {
+    //         input.value = input.value + this.innerHTML;
+    //     })
+    //     parent.appendChild(buttonElement);
+    //
+    // }
 
 
     //     Калькулятор
+
     // Разберите функцию eval.
     //
     //     Дана строка '3+5+6'. С помощью функции eval получите результат сложения чисел из этой строки.
     //
+    // console.log(eval('3+5+6'));
+
     //     Реализуйте калькулятор. Как он будет работать: у вас будет инпут,
     //     а под ним кнопочки с цифрами и знаками операций. Когда вы будете жать на эти кнопочки,
     //     данные будут попадать в инпут. Затем, когда вы нажмете на кнопку '=', вы должны получить результат
     //     операций в этом же инпуте.
-
+    // var symbols = ["*", "+", "-", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "="];
+    // var parent = document.getElementById('parent');
+    // var input  = document.getElementById('input');
+    //
+    //
+    // initKeyboard(symbols, parent);
+    //
+    // function initKeyboard(values, parent) {
+    //     for (var i = 0; i < values.length; i++){
+    //
+    //         addButton(values[i], parent);
+    //
+    //     }
+    //
+    // }
+    //
+    //
+    // function addButton(value, parent) {
+    //     var buttonElement = document.createElement("button");
+    //     buttonElement.innerHTML = value;
+    //     buttonElement.addEventListener("click", function () {
+    //         if (this.innerHTML != '=') {
+    //             input.value = input.value + this.innerHTML;
+    //         } else {
+    //            input.value =
+    //             // console.log(input.value);
+    //                 eval(input.value);
+    //         }
+    //     })
+    //     parent.appendChild(buttonElement);
+    //
+    // }
 
 </script>
