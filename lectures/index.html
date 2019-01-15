@@ -5,11 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<input id="input" placeholder="type your text"><p></p>
+<input id="input" placeholder="a">
+<input id="input" placeholder="b">
+<input id="input" placeholder="c">
+<p></p>
 <div id="parent"></div>
 
 <ul id="ul"></ul>
 <p id="paragraph"></p>
+<button id="butt">go!</button>
 </body>
 </html>
 <script>
@@ -1355,20 +1359,50 @@
     //     parent.appendChild(buttonElement);
     //
     // }
+
     // Лекция №6 по JavaScript. Домашняя работа
     // Перевод градусов
+
     // Дан инпут. В него вводится температура в градусах Фарингейта.
     // Сделайте так, чтобы автоматически по мере ввода в абзац под инпутом эта температура выводилась в
     // градусах Цельсия.
+    // var input = document.getElementById('input');
+    // var p = document.getElementById('paragraph');
     //
+    // input.addEventListener("keyup", function () {
+    //     p.innerHTML = (input.value - 32) * (5/9);
+    // })
+
     //     Факториал
     // Дан инпут, кнопка и абзац. В инпут вводится число.
     // По нажатию на кнопку выведите в абзац факториал этого числа.
     //
+    // var input = document.getElementById('input');
+    // var button = document.getElementById('butt');
+    // var p = document.getElementById('paragraph');
+    //
+    // button.addEventListener("click", function () {
+    //     p.innerHTML = getFactorial(input.value);
+    //
+    //     function getFactorial(value) {
+    //         var fact = 1;
+    //
+    //         for (var i = 1; i <= (value); i++) {
+    //
+    //             fact *= i;
+    //
+    //         }
+    //
+    //         return fact;
+    //     }
+    // })
+
     //     Квадратное уравнение
     // Даны 3 инпута, кнопка и абзац. В инпуты вводятся коэффициенты квадратного уравнения.
     // По нажатию на кнопку найдите корни этого уравнения и выведите их в абзац.
     //
+
+
     //     Угадай число
     // Реализуйте игру 'угадай число'. Суть: компьютер загадывает число от 1 до 100.
     // В инпут на экране игрок вводит число от 1 до 100, пытаясь угадать, что же загадал компьютер.
