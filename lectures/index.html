@@ -1506,49 +1506,65 @@
     // в ней появлялось число 1, а когда ждем на следующую td-шку - то число 2. Потом опять число 1,
     // и затем число 2 и так далее. При этом, если в td-шке уже есть число - новое число не должно вставляться.
     //
-    var parent = document.getElementById('parent');
-    var table = document.createElement("table");
-    table.border = '1px';
-    table.cellPadding = '0px';
-    table.cellSpacing = '0px';
-
-    for (var i = 0; i < 3; i++) {
-        var tr = document.createElement("tr");
-        for (var j = 0; j < 3; j++) {
-            var td = document.createElement("td");
-            td.style.width = '50px';
-            td.style.height = '50px';
-            td.style.textAlign = 'center';
-            var previousValue = '';
-            var counter = 0;
-            td.addEventListener("click", function () {
-                if (counter < 9) {
-                    if (previousValue === '' && this.innerHTML == '') {
-                        this.innerHTML = 'X';
-                        previousValue = 'X';
-                        counter++;
-                    } else if (previousValue === 'X' && this.innerHTML == '') {
-                        this.innerHTML = 'O';
-                        previousValue = 'O';
-                        counter++;
-
-                    } else if (previousValue === 'O' && this.innerHTML == '') {
-                        this.innerHTML = 'X';
-                        previousValue = 'X';
-                        counter++;
-
-                    }
-                    console.log(previousValue);
-                }
-            })
-            tr.appendChild(td);
-
-        }
-        table.appendChild(tr);
-    }
-    parent.appendChild(table);
     //     Крестики-нолики
     // Реализуйте игру крестики-нолики.
     //
+    // var parent = document.getElementById('parent');
+    // var table = document.createElement("table");
+    // table.border = '1px';
+    // table.cellPadding = '0px';
+    // table.cellSpacing = '0px';
+    //
+    // for (var i = 0; i < 3; i++) {
+    //     var tr = document.createElement("tr");
+    //     for (var j = 0; j < 3; j++) {
+    //         var td = document.createElement("td");
+    //         td.style.width = '50px';
+    //         td.style.height = '50px';
+    //         td.style.textAlign = 'center';
+    //         var previousValue = '';
+    //         var counter = 0;
+    //         td.addEventListener("click", function () {
+    //             if (counter < 9) {
+    //                 if (previousValue === '' && this.innerHTML == '') {
+    //                     this.innerHTML = 'X';
+    //                     previousValue = 'X';
+    //                     counter++;
+    //                 } else if (previousValue === 'X' && this.innerHTML == '') {
+    //                     this.innerHTML = 'O';
+    //                     previousValue = 'O';
+    //                     counter++;
+    //
+    //                 } else if (previousValue === 'O' && this.innerHTML == '') {
+    //                     this.innerHTML = 'X';
+    //                     previousValue = 'X';
+    //                     counter++;
+    //
+    //                 }
+    //                 console.log(previousValue);
+    //             }
+    //         })
+    //         tr.appendChild(td);
+    //
+    //     }
+    //     table.appendChild(tr);
+    // }
+    // parent.appendChild(table);
+
+
+    // Лекция №7 по JavaScript. Домашняя работа
+    // Задачи
+
+    // Дан массив с числами. Выведите эти числа на экран в виде таблицы table.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы по нажатию на любую ячейку она активировалась - это значит
+    //     становилась красного фона. Совет: активацию ячеек лучше делать навешиванием какого-либо CSS класса,
+    //     например, класса active.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы по нажатию на активированную ячейку,
+    //     активация с нее снималась.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы под таблицей выводилась сумма активированных в
+    //     данный момент ячеек.
 
 </script>
