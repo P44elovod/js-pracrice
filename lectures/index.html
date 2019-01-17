@@ -5,9 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<input id="a" placeholder="a">
-<input id="b" placeholder="b">
-<input id="c" placeholder="c">
+<input id="input">
 <p></p>
 <div id="parent"></div>
 
@@ -1437,4 +1435,80 @@
     //
     //     Модифицируйте предыдущую задачу, добавив таймер обратного отсчета.
     //     Если игрок не успеет угадать число за отведенное время - он проиграл.
+    // var input = document.getElementById('input');
+    // var p = document.getElementById('paragraph');
+    // var timer = document.getElementById('parent');
+    //
+    //
+    // initGame(1, 100, 3);
+    //
+    //
+    // // startTimer();
+    //
+    // function initGame(min, max, timerValue) {
+    //
+    //     timer.innerHTML = timerValue;
+    //
+    //     input.addEventListener("focus", startTimer);
+    //
+    //
+    //     var value = Math.floor(min + Math.random() * (max + 1 - min));
+    //     console.log(value);
+    //
+    //     var timerId =
+    //
+    //         input.addEventListener("blur", function () {
+    //
+    //             compareAnswer(this.value, value);
+    //             this.value = '';
+    //
+    //         });
+    // }
+    //
+    // function compareAnswer(answer, value) {
+    //
+    //     if (answer > value) {
+    //         p.innerHTML = 'введите число поменьше';
+    //     } else if (answer < value) {
+    //
+    //         p.innerHTML = 'введите число побольше'
+    //
+    //     } else if (answer == value) {
+    //
+    //         p.innerHTML = 'угадали' + value;
+    //
+    //     }
+    //
+    // }
+    //
+    //
+    // function startTimer() {
+    //
+    //     window.timerID = window.setInterval(function () {
+    //
+    //         timer.innerHTML = timer.innerHTML - 1;
+    //         if (timer.innerHTML < 1) {
+    //             input.disabled = true;
+    //             p.innerHTML = 'время истекло'
+    //             window.clearInterval(timerID);
+    //         }
+    //     }, 1000);
+    //
+    //
+    // }
+    // Лекция №7 по JavaScript. Классная работа
+    // Задачи
+    // С помощью цикла сделайте на экране таблицу table, размером 3 на 3 с пустыми td-шками.
+    // Добавьте средствами CSS этим td-шкам границу, а также ширину и высоту 50px.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы по нажатию на любую td-шку в ней появлялось число 1.
+    //
+    // Модифицируйте предыдущую задачу так, чтобы когда мы жмем на первую td-шку,
+    // в ней появлялось число 1, а когда ждем на следующую td-шку - то число 2. Потом опять число 1,
+    // и затем число 2 и так далее. При этом, если в td-шке уже есть число - новое число не должно вставляться.
+    //
+    //     Крестики-нолики
+    // Реализуйте игру крестики-нолики.
+    //
+
 </script>
