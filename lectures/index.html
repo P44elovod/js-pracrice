@@ -5,13 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-<input id="input">
 <p></p>
 <div id="parent"></div>
 
 <ul id="ul"></ul>
 <p id="paragraph"></p>
-<button id="butt">go!</button>
 </body>
 </html>
 <script>
@@ -1498,6 +1496,7 @@
     // }
     // Лекция №7 по JavaScript. Классная работа
     // Задачи
+
     // С помощью цикла сделайте на экране таблицу table, размером 3 на 3 с пустыми td-шками.
     // Добавьте средствами CSS этим td-шкам границу, а также ширину и высоту 50px.
     //
@@ -1507,6 +1506,47 @@
     // в ней появлялось число 1, а когда ждем на следующую td-шку - то число 2. Потом опять число 1,
     // и затем число 2 и так далее. При этом, если в td-шке уже есть число - новое число не должно вставляться.
     //
+    var parent = document.getElementById('parent');
+    var table = document.createElement("table");
+    table.border = '1px';
+    table.cellPadding = '0px';
+    table.cellSpacing = '0px';
+
+    for (var i = 0; i < 3; i++) {
+        var tr = document.createElement("tr");
+        for (var j = 0; j < 3; j++) {
+            var td = document.createElement("td");
+            td.style.width = '50px';
+            td.style.height = '50px';
+            td.style.textAlign = 'center';
+            var previousValue = '';
+            var counter = 0;
+            td.addEventListener("click", function () {
+                if (counter < 9) {
+                    if (previousValue === '' && this.innerHTML == '') {
+                        this.innerHTML = 'X';
+                        previousValue = 'X';
+                        counter++;
+                    } else if (previousValue === 'X' && this.innerHTML == '') {
+                        this.innerHTML = 'O';
+                        previousValue = 'O';
+                        counter++;
+
+                    } else if (previousValue === 'O' && this.innerHTML == '') {
+                        this.innerHTML = 'X';
+                        previousValue = 'X';
+                        counter++;
+
+                    }
+                    console.log(previousValue);
+                }
+            })
+            tr.appendChild(td);
+
+        }
+        table.appendChild(tr);
+    }
+    parent.appendChild(table);
     //     Крестики-нолики
     // Реализуйте игру крестики-нолики.
     //
