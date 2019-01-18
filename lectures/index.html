@@ -1572,42 +1572,41 @@
     //     Модифицируйте предыдущую задачу так, чтобы под таблицей выводилась сумма активированных в
     //     данный момент ячеек.
 
-    var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    var parent = document.getElementById('parent');
-
-    initTable(array);
-
-    function initTable(values) {
-        var table = document.createElement("table");
-        table.border = '1px';
-        table.cellSpacing = '0px';
-        table.cellPadding = '0px';
-        for (var i = 0; i < values.length; i += 5) {
-            var tr = document.createElement("tr");
-            for (var j = i; j < i + 5; j++) {
-                addCell(values[j], tr);
-            }
-            table.appendChild(tr);
-        }
-
-        parent.appendChild(table);
-
-    }
-
-    function addCell(value, parent) {
-        var td = document.createElement("td");
-        td.innerHTML = value;
-        td.width = '50px';
-        td.addEventListener("click", function () {
-
-            if (this.className != 'active') {
-                this.className = 'active';
-            } else {
-                this.className = '';
-            }
-
-        })
-        parent.appendChild(td);
-    }
+    // var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // var parent = document.getElementById('parent');
+    // var p = document.getElementById('paragraph');
+    // initTable(array);
+    //
+    // function initTable(values) {
+    //     var table = document.createElement("table");
+    //     for (var i = 0; i < values.length; i += 5) {
+    //         var tr = document.createElement("tr");
+    //         for (var j = i; j < i + 5; j++) {
+    //             addCell(values[j], tr);
+    //         }
+    //         table.appendChild(tr);
+    //     }
+    //
+    //     parent.appendChild(table);
+    //
+    // }
+    //
+    // function addCell(value, parent) {
+    //     var td = document.createElement("td");
+    //     td.innerHTML = value;
+    //     td.width = '50px';
+    //     td.addEventListener("click", function () {
+    //
+    //         if (this.className != 'active') {
+    //             this.className = 'active';
+    //             p.innerHTML = Number(p.innerHTML) + Number(this.innerHTML);
+    //         } else {
+    //             this.className = '';
+    //             p.innerHTML = Number(p.innerHTML) - Number(this.innerHTML);
+    //         }
+    //
+    //     })
+    //     parent.appendChild(td);
+    // }
 
 </script>
