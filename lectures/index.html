@@ -1616,15 +1616,68 @@
     // которая параметрами будет принимать два целых числа и возвращать массив,
     // заполненный целыми числами в этом промежутке. Например, range(1, 5) должно вернуть массив [1, 2, 3, 4, 5].
     //
+    // function range(min, max) {
+    //     var arr = [];
+    //     for (var i = min; i < max+1; i++){
+    //         arr.push(i);
+    //     }
+    //     return arr;
+    // }
+
     //     Сделайте функцию shuffle,
     //     которая параметром будет принимать массив, а возвращать этот массив, в котором элементы будут
     //     перемешаны в случайном порядке.
     //
+    var arr = [1, 3, 5, 6, 7];
+    var usedIndexes = [];
+  console.log(shuffle(arr));
+
+    function shuffle(arr) {
+        var newArray = [];
+
+        while (newArray.length < arr.length) {
+            var index = getRandomIndex(0, arr.length - 1);
+            if (isUsedCheck(index, usedIndexes) === false) {
+
+                newArray.push(arr[index]);
+            }
+
+          isUsedCheck(index, usedIndexes);
+        }
+
+        return newArray;
+
+    }
+
+    function getRandomIndex(min, max) {
+        var randomIndex = Math.floor(min + Math.random() * (max + 1 - min));
+        return randomIndex;
+    }
+
+    function isUsedCheck(num, indexStorage) {
+
+        var flag = false;
+
+        for (var i = 0; i < indexStorage.length; i++) {
+            if (indexStorage[i] == num) {
+                flag = true;
+            }
+        }
+        if (flag === false) {
+
+            indexStorage.push(num);
+
+        }
+        return flag;
+    }
+
     //     После того, как вы решите эту задачу, посмотрите ее разбор тут: ссылка на видео.
     //
+
     //     Сделайте функцию createTable, которая параметром будет принимать массив и создавать таблицу table,
     //     заполненную элементами из этого массива.
     //
+
     //     С помощью функции range сделайте массив, заполненный числами от 1 до 25.
     //     С помощью функции createTable создайте таблицу, заполненную элементами из этого массива.
     //
