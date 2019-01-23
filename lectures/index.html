@@ -1571,7 +1571,6 @@
     //
     //     Модифицируйте предыдущую задачу так, чтобы под таблицей выводилась сумма активированных в
     //     данный момент ячеек.
-
     // var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     // var parent = document.getElementById('parent');
     // var p = document.getElementById('paragraph');
@@ -1717,5 +1716,77 @@
     //     return arr;
     // }
 
+    // Лекция №8 по JavaScript. Домашняя работа
+    // Игра
+
+    // Сделайте игру, в которой нужно будет кликать по числам от 1 до 25.
+    // Числа выведены в виде таблицы table в случайном порядке.
+    // Играющему необходимо по порядку кликать по числам - сначала 1, потом 2 и так далее до 25.
+    // Когда он кликает на правильную ячейку - она активируется и делает красный фон.
+    // Когда он кликает на неправильную ячейку - ничего не происходит.
+    // Когда он дойдет до последнего числа - игра начинается сначала.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы в игре тикал таймер обратного отсчета.
+    //     Если игрок не успел найти все числа по порядку - он проиграл.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы, когда игрок выигрывает,
+    //     таблица увеличивалась на 1 колонку и на 1 ряд.
+
+
+    var parent = document.getElementById('parent');
+
+    initGame(1, 25, parent);
+
+    function initGame(min, max, parent) {
+
+        var rawSize = 5;
+        createTable(shaffle(range(min, max)), parent, rawSize);
+
+    }
+
+    function range(min, max) {
+        var arr = [];
+        for (var i = min; i < max + 1; i++) {
+            arr.push(i);
+        }
+        return arr;
+    }
+
+    function createTable(content, parent, rawSize) {
+
+        var table = document.createElement("table");
+
+        for (var i = 0; i < content.length; i += rawSize) {
+            var tr = document.createElement("tr");
+            for (var j = i; j < i + rawSize; j++) {
+                var td = document.createElement("td");
+                td.innerHTML = content[j];
+                td.addEventListener("click", initElement)
+                
+                tr.appendChild(td);
+            }
+
+            table.appendChild(tr);
+
+        }
+
+        parent.appendChild(table);
+
+    }
+
+    function shaffle(array) {
+
+        array.sort(function (a, b) {
+            return Math.random() - 0.5;
+        })
+
+        return array;
+
+    }
+    
+    function initElement() {
+        elem.className = 'active';
+        this.removeEventListener("click", initElement);
+    }
 
 </script>
