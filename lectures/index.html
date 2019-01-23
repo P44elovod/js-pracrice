@@ -1734,19 +1734,20 @@
 
 
     var parent = document.getElementById('parent');
+    var p = document.getElementById('paragraph');
 
-    initGame(1, parent, 5);
+    initGame(1, parent, 5, 3);
 
-    function initGame(min, parent, rawSize) {
+    function initGame(min, parent, rawSize, time) {
 
-        var arr = range(min, rawSize*rawSize);
+        var arr = range(min, rawSize * rawSize);
 
-        createTable(arr, shaffle(range(min, rawSize*rawSize)), parent, rawSize);
+        createTable(arr, shaffle(range(min, rawSize * rawSize)), parent, rawSize, time);
 
     }
 
 
-    function createTable(sourceArray, content, parent, rawSize) {
+    function createTable(sourceArray, content, parent, rawSize, time) {
         var table = document.createElement("table");
 
         for (var i = 0; i < content.length; i += rawSize) {
@@ -1755,7 +1756,8 @@
                 var td = document.createElement("td");
                 td.innerHTML = content[j];
                 td.addEventListener("click", function initElement() {
-
+                    p.innerHTML = time;
+                    window.timerID = window.setInterval(timer, 1000);
 
                     if (this.innerHTML == sourceArray[0]) {
                         this.className = 'active';
@@ -1765,7 +1767,7 @@
                     }
                     if (sourceArray.length == 0) {
                         parent.firstChild.remove();
-                        initGame(1, parent, rawSize+1);
+                        initGame(1, parent, rawSize + 1, time+30);
                     }
                 });
 
@@ -1797,6 +1799,15 @@
             arr.push(i);
         }
         return arr;
+    }
+
+    function timer() {
+        p.innerHTML = p.innerHTML - 1;
+        if (p.innerHTML < 1) {
+            window.clearInterval(window.timerID)
+        }
+
+
     }
 
 </script>
