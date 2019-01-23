@@ -1735,25 +1735,18 @@
 
     var parent = document.getElementById('parent');
 
-    initGame(1, 25, parent);
+    initGame(1, parent, 5);
 
-    function initGame(min, max, parent) {
+    function initGame(min, parent, rawSize) {
 
-        var rawSize = 5;
-        createTable(shaffle(range(min, max)), parent, rawSize);
+        var arr = range(min, rawSize*rawSize);
+
+        createTable(arr, shaffle(range(min, rawSize*rawSize)), parent, rawSize);
 
     }
 
-    function range(min, max) {
-        var arr = [];
-        for (var i = min; i < max + 1; i++) {
-            arr.push(i);
-        }
-        return arr;
-    }
 
-    function createTable(content, parent, rawSize) {
-
+    function createTable(sourceArray, content, parent, rawSize) {
         var table = document.createElement("table");
 
         for (var i = 0; i < content.length; i += rawSize) {
@@ -1761,8 +1754,21 @@
             for (var j = i; j < i + rawSize; j++) {
                 var td = document.createElement("td");
                 td.innerHTML = content[j];
-                td.addEventListener("click", initElement)
-                
+                td.addEventListener("click", function initElement() {
+
+
+                    if (this.innerHTML == sourceArray[0]) {
+                        this.className = 'active';
+                        this.removeEventListener("click", initElement);
+                        sourceArray.shift();
+
+                    }
+                    if (sourceArray.length == 0) {
+                        parent.firstChild.remove();
+                        initGame(1, parent, rawSize+1);
+                    }
+                });
+
                 tr.appendChild(td);
             }
 
@@ -1774,6 +1780,7 @@
 
     }
 
+
     function shaffle(array) {
 
         array.sort(function (a, b) {
@@ -1783,10 +1790,13 @@
         return array;
 
     }
-    
-    function initElement() {
-        this.className = 'active';
-        this.removeEventListener("click", initElement);
+
+    function range(min, max) {
+        var arr = [];
+        for (var i = min; i < max + 1; i++) {
+            arr.push(i);
+        }
+        return arr;
     }
 
 </script>
