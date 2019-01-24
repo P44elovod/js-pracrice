@@ -1742,12 +1742,18 @@
 
         var arr = range(min, rawSize * rawSize);
 
-        createTable(arr, shaffle(range(min, rawSize * rawSize)), parent, rawSize, time);
+        createTable(arr, shaffle(range(min, rawSize * rawSize)), parent, rawSize);
+        window.addEventListener("click",function setTimer(){
+            p.innerHTML = time;
+            window.timerID = window.setInterval(timer, 1000);
+            this.removeEventListener("click", setTimer);
+
+        });
 
     }
 
 
-    function createTable(sourceArray, content, parent, rawSize, time) {
+    function createTable(sourceArray, content, parent, rawSize) {
         var table = document.createElement("table");
 
         for (var i = 0; i < content.length; i += rawSize) {
@@ -1755,9 +1761,9 @@
             for (var j = i; j < i + rawSize; j++) {
                 var td = document.createElement("td");
                 td.innerHTML = content[j];
+
                 td.addEventListener("click", function initElement() {
-                    p.innerHTML = time;
-                    window.timerID = window.setInterval(timer, 1000);
+
 
                     if (this.innerHTML == sourceArray[0]) {
                         this.className = 'active';
@@ -1769,6 +1775,7 @@
                         parent.firstChild.remove();
                         initGame(1, parent, rawSize + 1, time+30);
                     }
+
                 });
 
                 tr.appendChild(td);
@@ -1806,7 +1813,10 @@
         if (p.innerHTML < 1) {
             window.clearInterval(window.timerID)
         }
-
+        if (p.innerHTML < 1){
+            parent.firstChild.remove();
+            parent.innerHTML = 'GAME OVER!'
+        }
 
     }
 
