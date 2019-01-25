@@ -7,6 +7,7 @@
         .active {
 
         }
+
         .hide {
             display: none;
         }
@@ -19,11 +20,16 @@
 <ul id="ul"></ul>
 
 
-<p id="1">1</p><button id="button1">hide 1</button>
-<p id="2">2</p><button id="button2">hide 2</button>
-<p id="3">3</p><button id="button3">hide 3</button>
-<p id="4">4</p><button id="button4">hide 4</button>
-<p id="5">5</p><button id="button5">hide 5</button>
+<p id="1">1</p>
+<button id="button1">hide 1</button>
+<p id="2">2</p>
+<button id="button2">hide 2</button>
+<p id="3">3</p>
+<button id="button3">hide 3</button>
+<p id="4">4</p>
+<button id="button4">hide 4</button>
+<p id="5">5</p>
+<button id="button5">hide 5</button>
 
 </body>
 </html>
@@ -1886,22 +1892,28 @@
     // Даны абзацы со своим уникальным id. К каждому абзацу привязана кнопка.
     // По умолчанию абзацы видны на экране. Сделайте так, чтобы по нажатию на любую кнопку,
     // скрывался привязанный к ней абзац.
-var buttons = document.querySelector('button');
-var buttons = document.querySelector('');
-    button.addEventListener("click", hideElem);
+    var buttons = document.querySelectorAll('button');
+    var paragraph = document.querySelectorAll('p');
+  for (var i = 0; i < buttons.length; i++){
+      console.log(buttons[i]);
+  }
+    // button.addEventListener("click", hideElem);
 
 
     function initTabs(paragraphs, buttons) {
-        for (var i = 0; i = )
+       for (var i = 0; i < buttons.length; i++){
 
-    }
+           buttons[i].addEventListener("click", hideElem);
+
+       }
+
+            }
 
     function hideElem() {
         var id = document.getElementById(getID());
         id.className = 'hide';
 
     }
-
 
 
 </script>
