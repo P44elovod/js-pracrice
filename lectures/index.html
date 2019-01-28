@@ -54,6 +54,7 @@
 </div>
 
 <ul id="ul"></ul>
+<input id="input">
 
 
 </body>
@@ -1149,6 +1150,65 @@
     //     Практика
     // После того, как вы повторите мой код, на его базе сделайте так,
     // чтобы в конце каждой li стояла ссылка 'удалить', в помощью которой можно будет удалить эту li из ul.
+
+    var arr = ['a', 'b', 'c'];
+    var ul  = document.getElementById('ul');
+    var input = document.getElementById('input');
+
+    initAddingInput(ul, input);
+    initList(ul, arr);
+    
+    function initList(ul, arr) {
+        var items = createList(ul, arr);
+        for (var i = 0; i < items.length; i++){
+            editElem(items[i]);
+        } 
+    }
+    
+    function initAddingInput(ul, input) {
+        input.addEventListener("blur", function () {
+            addItem(ul, this.value);
+            this.value = '';
+        });
+    }
+
+    function addItem(ul, text) {
+        var li = document.createElement("li");
+        li.innerHTML = text;
+        ul.appendChild(li);
+
+        return li;
+    }
+
+    function editElem(elem) {
+        elem.addEventListener("click", function edit() {
+            var text = this.innerHTML;
+            this.innerHTML = '';
+
+            var input = document.createElement("input");
+            input.value = text;
+            this.appendChild(input);
+
+            var self = this;
+            input.addEventListener("blur", function () {
+                self.innerHTML = this.value;
+
+                self.addEventListener("click", edit);
+
+            });
+            this.removeEventListener("click", edit);
+        })
+    }
+
+    function createList(elem, arr) {
+        var items = [];
+        for (var i = 0; i < arr.length; i++) {
+            var li = addItem(elem, arr[i]);
+            items.push(li);
+        }
+
+        return items;
+    }
 
     // Лекция №4 по JavaScript. Домашняя работа
     // Задачи
