@@ -1161,7 +1161,7 @@
     function initList(ul, arr) {
         var items = createList(ul, arr);
         for (var i = 0; i < items.length; i++){
-            editElem(items[i]);
+            editElem(items[i].firstElementChild);
         } 
     }
     
@@ -1180,7 +1180,7 @@
         return li;
     }
 
-    function editElem(elem) {
+    function editElem(elem, elem2) {
         elem.addEventListener("click", function edit() {
             var text = this.innerHTML;
             this.innerHTML = '';
@@ -1197,13 +1197,13 @@
 
             });
             this.removeEventListener("click", edit);
-        })
+        });
     }
 
     function createList(elem, arr) {
         var items = [];
         for (var i = 0; i < arr.length; i++) {
-            var li = addItem(elem, arr[i]);
+            var li = addItem(elem, '<span>' + arr[i] + '</span>' + ' lkjlkjlkjl');
             items.push(li);
         }
 
