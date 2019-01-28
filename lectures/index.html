@@ -4,32 +4,57 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .active {
 
+        .tabs {
+            display: inline-block;
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+            margin-left: 2px;
+            border: 1px solid #000;
+            text-align: center;
+            border-radius: 5px;
         }
 
-        .hide {
+        .content {
+            width: 200px;
+            height: 100px;
+            line-height: 20px;
+            margin-left: 2px;
+            border: 1px solid #000;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .active {
+            background-color: Background;
+        }
+
+
+        .passive {
             display: none;
         }
     </style>
 </head>
 <body>
-<p></p>
-<div id="parent"></div>
+<div id="parent">
+    <div>
+        <div class="tabs" id="0">1</div>
+        <div class="tabs" id="1">2</div>
+        <div class="tabs" id="2">3</div>
+        <div class="tabs" id="3">4</div>
+    </div>
+    <div>
+        <div class="content passive" id="0">1</div>
+        <div class="content passive" id="1">2</div>
+        <div class="content passive" id="2">3</div>
+        <div class="content passive" id="3">4</div>
+    </div>
+</div>
 
 <ul id="ul"></ul>
 
-
-<p id="1">1</p>
-<button id="button1">hide 1</button>
-<p id="2">2</p>
-<button id="button2">hide 2</button>
-<p id="3">3</p>
-<button id="button3">hide 3</button>
-<p id="4">4</p>
-<button id="button4">hide 4</button>
-<p id="5">5</p>
-<button id="button5">hide 5</button>
 
 </body>
 </html>
@@ -1892,28 +1917,94 @@
     // Даны абзацы со своим уникальным id. К каждому абзацу привязана кнопка.
     // По умолчанию абзацы видны на экране. Сделайте так, чтобы по нажатию на любую кнопку,
     // скрывался привязанный к ней абзац.
-    var buttons = document.querySelectorAll('button');
-    var paragraph = document.querySelectorAll('p');
-  for (var i = 0; i < buttons.length; i++){
-      console.log(buttons[i]);
-  }
-    // button.addEventListener("click", hideElem);
+    // var buttons = document.querySelectorAll('button');
+    // var paragraph = document.querySelectorAll('p');
+    //
+    //
+    //
+    // initTabs(paragraph, buttons);
+    //
+    // function initTabs(paragraphs, buttons) {
+    //     for (var i = 0; i < buttons.length; i++) {
+    //
+    //         buttons[i].addEventListener("click", function (event) {
+    //
+    //             paragraphs[event.target.id - 1].className = 'hide';
+    //
+    //         });
+    //
+    //     }
+    //
+    // }
 
+    // Лекция №9 по JavaScript. Домашняя работа
 
-    function initTabs(paragraphs, buttons) {
-       for (var i = 0; i < buttons.length; i++){
+    // Разминка
 
-           buttons[i].addEventListener("click", hideElem);
+    // Даны абзацы. Сделайте так, чтобы по клику на любой абзац он становился красного цвета.
+    // Решите задачу путем добавления этому абзацу CSS класса active, который и будет задавать красный цвет.
+    //
+    // var paragraph = document.querySelectorAll('p');
+    //
+    // makeActive(paragraph);
+    //
+    //
+    // function makeActive(paragtaphs) {
+    //     for (var i = 0; i < paragtaphs.length; i++) {
+    //         paragtaphs[i].addEventListener("click", function () {
+    //             this.className = 'active';
+    //         })
+    //     }
+    //
+    //
+    // }
 
-       }
+    //     Модифицируйте предыдущую задачу так, чтобы красным цветом всегда был выделен только один абзац.
+    //     При нажатии на другой абзац именно он должен становится красным, а предыдущий должен возвращаться черному цвету.
+    //
+    // var paragraph = document.querySelectorAll('p');
+    //
+    //
+    // makeActive(paragraph);
+    //
+    //
+    // function makeActive(paragraphs) {
+    //
+    //     for (var i = 0; i < paragraphs.length; i++) {
+    //
+    //         paragraphs[i].addEventListener("click", function () {
+    //         for (var i = 0; i < paragraphs.length; i++) {
+    //
+    //          paragraphs[i].className = 'passive';
+    //             this.className = 'active';
+    //
+    //         }
+    //
+    //         })
+    //     }
+    //
+    // }
 
-            }
-
-    function hideElem() {
-        var id = document.getElementById(getID());
-        id.className = 'hide';
-
-    }
-
+    //     Вкладки
+    // Реализуйте вкладки. Нажимая на каждую вкладку мы будем видеть ниже текст, соответствующий этой вкладке.
+    //
+    // var tabs = document.querySelectorAll('div.tabs');
+    // var content = document.querySelectorAll('div.content');
+    // console.log(content);
+    //
+    // makeActive(tabs, content);
+    //
+    // function makeActive(tabs, cont) {
+    //     for (var i = 0; i < tabs.length; i++) {
+    //         tabs[i].addEventListener("click", function (event) {
+    //             for (var i = 0; i < content.length; i++) {
+    //                 content[i].className = 'content passive'
+    //                 tabs[i].className = 'tabs';
+    //             }
+    //             this.className = this.className + ' active';
+    //             cont[event.target.id].className = 'content';
+    //         })
+    //     }
+    // }
 
 </script>
