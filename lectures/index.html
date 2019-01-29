@@ -2093,131 +2093,77 @@
     //     По нажатию на эту ссылку под ul должны появится кнопка и два инпута, в которых будет имя и возраст
     //     пользователя. По нажатию на кнопку данные должны поредактироваться, а инпуты и кнопка спрятаться.
     //
-    var ul = document.getElementById('ul');
-    var workers = [
-        {name: 'Коля', age: 30},
-        {name: 'Вася', age: 40},
-        {name: 'Петя', age: 50},
-    ];
-
-
-    initList(ul, workers);
-
-
-    function initList(ul, arr) {
-        var elements = createList(ul, arr);
-        for (var i = 0; i < elements.length; i++) {
-            editElement(elements[i]);
-        }
-    }
-
-    function createList(parent, content) {
-        var elements = [];
-        for (var i = 0; i < content.length; i++) {
-
-            var li = addElement(parent, content[i]);
-
-            elements.push(li);
-
-        }
-        return elements;
-
-    }
-
-    function addElement(ul, content) {
-        var li = document.createElement("li");
-        li.innerHTML = content.name + ' ' + content.age;
-
-        ul.appendChild(li);
-
-        return li;
-
-    }
-
-    function editElement(elem) {
-
-        elem.addEventListener("click", function edit() {
-            var content = this.innerHTML.split(' ');
-            this.innerHTML = '';
-            var nameInput = document.createElement("input");
-            var ageInput = document.createElement("input");
-            var acceptButton = document.createElement("button");
-            acceptButton.innerHTML = 'accept!'
-            nameInput.value = content[0];
-            ageInput.value = content[1];
-
-            this.appendChild(nameInput);
-            this.appendChild(ageInput);
-            this.appendChild(acceptButton);
-
-            var self = this;
-
-
-            acceptButton.addEventListener("click", function hideEdit() {
-                self.innerHTML = nameInput.value + ' ' + ageInput.value;
-                this.removeEventListener("click", hideEdit);
-                // self.addEventListener("click", edit);
-
-
-            })
-            this.removeEventListener("click", edit);
-        });
-    }
-
-    //  function createList(elem, arr) {
-    //     var items = [];
-    //     for (var i = 0; i < arr.length; i++) {
-    //         var li = addItem(elem, '<span>' + arr[i] + '</span>' + ' <a href="#">clear</a>');
-    //         items.push(li);
-    //     }
+    // var ul = document.getElementById('ul');
+    // var workers = [
+    //     {name: 'Коля', age: 30},
+    //     {name: 'Вася', age: 40},
+    //     {name: 'Петя', age: 50},
+    // ];
     //
-    //     return items;
-    // }
-    // var arr = ['a', 'b', 'c'];
-    // var ul  = document.getElementById('ul');
-    // var input = document.getElementById('input');
     //
-    // initList(ul, arr);
+    // initList(ul, workers);
+    //
     //
     // function initList(ul, arr) {
-    //     var items = createList(ul, arr);
-    //     for (var i = 0; i < items.length; i++){
-    //         editElem(items[i].firstElementChild, items[i].lastElementChild);
+    //     var elements = createList(ul, arr);
+    //     for (var i = 0; i < elements.length; i++) {
+    //         editElement(elements[i].firstElementChild, elements[i].lastElementChild);
     //     }
     // }
     //
+    // function createList(parent, content) {
+    //     var elements = [];
+    //     for (var i = 0; i < content.length; i++) {
     //
-    // function addItem(ul, text) {
+    //         var li = addElement(parent, content[i]);
+    //         elements.push(li);
+    //
+    //     }
+    //     return elements;
+    //
+    // }
+    //
+    // function addElement(ul, content) {
     //     var li = document.createElement("li");
-    //     li.innerHTML = text;
+    //     li.innerHTML ='<span>' + content.name + ' ' + content.age + '</span>' + '<a href="#"> edit</a>';
+    //
     //     ul.appendChild(li);
     //
     //     return li;
+    //
     // }
     //
-    // function editElem(elem, elem2) {
-    //     elem.addEventListener("click", function edit() {
-    //         var text = this.innerHTML;
-    //         this.innerHTML = '';
+    // function editElement(editedElem, editorElem) {
     //
-    //         var input = document.createElement("input");
-    //         input.value = text;
-    //         this.appendChild(input);
+    //     editorElem.addEventListener("click", function edit() {
+    //         var content = editedElem.innerHTML.split(' ');
+    //         editedElem.innerHTML = '';
+    //         var nameInput = document.createElement("input");
+    //         var ageInput = document.createElement("input");
+    //         var acceptButton = document.createElement("button");
+    //         acceptButton.innerHTML = 'accept!'
+    //         nameInput.value = content[0];
+    //         ageInput.value = content[1];
     //
-    //         var self = this;
-    //         input.addEventListener("blur", function () {
-    //             self.innerHTML = this.value;
+    //         editedElem.appendChild(nameInput);
+    //         editedElem.appendChild(ageInput);
+    //         editedElem.appendChild(acceptButton);
+    //         editorElem.className = 'passive'
     //
-    //             self.addEventListener("click", edit);
+    //         acceptButton.addEventListener("click", function hideEdit() {
+    //             editedElem.innerHTML = nameInput.value + ' ' + ageInput.value;
+    //             editorElem.classList.remove('passive');
     //
-    //         });
+    //             this.removeEventListener("click", hideEdit);
+    //             editorElem.addEventListener("click", edit);
+    //
+    //
+    //         })
+    //
     //         this.removeEventListener("click", edit);
     //     });
-    //     elem2.addEventListener("click", function () {
-    //         this.parentElement.remove();
-    //     })
     // }
-    //
+
 
 
     //     Задачи
