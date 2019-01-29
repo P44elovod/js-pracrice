@@ -42,7 +42,6 @@
 
 <ul id="ul"></ul>
 
-
 </body>
 </html>
 <script>
@@ -2165,15 +2164,44 @@
     // }
 
 
-
     //     Задачи
     // Дан чекбокс и абзац. Сделайте так, что если чекбокс отмечен - абзац есть на экране,
     // а если не отмечен - то абзаца нет.
+    // var checkbox = document.getElementById('check');
+    // var p = document.getElementById('par');
+    //
+    // checkbox.addEventListener("click", function () {
+    //     if (this.checked != true){
+    //         p.classList.add('passive');
+    //     } else p.classList.remove('passive');
+    // })
+
     //
     //     Дан массив, заполненный значениями true и false. Выведите на экран столько чекбоксов,
     //     сколько элементов в массиве. Причем, если значение элемента равно true - пусть чекбокс будет отмечен,
     //     а если false - не отмечен.
     //
+    // var parent = document.getElementById('parent')
+    // var arr = [true, false, true, true, false];
+    //
+    // showCheckboxes(arr, parent);
+    //
+    // function showCheckboxes(values, parent) {
+    //
+    // for (var i = 0; i < values.length; i++){
+    //     addCheckbox(values[i], parent);
+    // }
+    //
+    // }
+    //
+    // function addCheckbox(value, parentElement) {
+    //     var input = document.createElement("input");
+    //     input.type = 'checkbox';
+    //     input.checked = value;
+    //     parentElement.appendChild(input);
+    // }
+
+
     //     Задачи
 
     // Дан массив с юзерами:
@@ -2185,6 +2213,50 @@
     //     ];
     // Выведите его элементы в виде списка ul. Если юзер активный (поле active равно true),
     // выведите его зеленым цветом, а если не активный - красным.
+    // var ul = document.getElementById('ul');
+    // var users = [
+    //     {name: 'Коля', active: true},
+    //     {name: 'Вася', active: true},
+    //     {name: 'Петя', active: false},
+    // ];
+    //
+    //
+    // createList(ul, users);
+    //
+    // function createList(parent, values) {
+    //     for (var i = 0; i < values.length; i++) {
+    //
+    //         addElement(parent, values[i]);
+    //
+    //     }
+    // }
+    //
+    // function addElement(parent, value) {
+    //
+    //     var li = document.createElement("li");
+    //     li.innerHTML = value.name;
+    //     li.style.color = colorInterpretation(value);
+    //     parent.appendChild(li);
+    // }
+    //
+    // function colorInterpretation(value) {
+    //     var color = 'green';
+    //     if (value.active != true) {
+    //         color = 'red';
+    //     }
+    //     return color;
+    //
+    // }
 
+    // Лекция №10 по JavaScript. Домашняя работа
+    // Чеклист
 
+    // Реализуйте чеклист. Должен быть инпут с добавлением задачи,
+    // а над ним - список с задачами. Возле каждой задачи чекбокс.
+    // Если нажать на чекбокс - задача становится выполненной, перечеркивается и становится серого цвета,
+    // чекбокс при этом пропадает. Справа от любой задачи должен быть крестик для удаления этой задачи.
+    //
+    //     Задачу также можно поредактировать, если сделать двойной клик по ней - в этом случае вместо пункта списка
+    //     появляется инпут с текстом задачи, можно поредактировать текст задачи, нажать Enter и задача изменится.
+    //     Инпут при этом исчезнет.
 </script>
