@@ -4,29 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-
-        .tabs {
-            display: inline-block;
-            width: 50px;
-            height: 20px;
-            line-height: 20px;
-            margin-left: 2px;
-            border: 1px solid #000;
-            text-align: center;
-            border-radius: 5px;
-        }
-
-        .content {
-            width: 200px;
-            height: 100px;
-            line-height: 20px;
-            margin-left: 2px;
-            border: 1px solid #000;
-            text-align: center;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
         .active {
             background-color: Background;
         }
@@ -35,12 +12,17 @@
         .passive {
             display: none;
         }
+
+        .done {
+            color: #BCBCBC;
+        }
     </style>
 </head>
 <body>
 <div id="parent"></div>
 
 <ul id="ul"></ul>
+<input placeholder="enter your task" id="input">
 
 </body>
 </html>
@@ -2259,4 +2241,52 @@
     //     Задачу также можно поредактировать, если сделать двойной клик по ней - в этом случае вместо пункта списка
     //     появляется инпут с текстом задачи, можно поредактировать текст задачи, нажать Enter и задача изменится.
     //     Инпут при этом исчезнет.
+
+    var input = document.getElementById('input');
+    var ul = document.getElementById('ul');
+
+    var tasks = ['task#1', 'task#2', 'task#3'];
+
+    createList(ul, tasks);
+
+    function createList(parent, values) {
+        for (var i = 0; i < values.length; i++){
+
+            addElement(parent, values[i]);
+
+        }
+    }
+
+    function addElement(parent, value) {
+
+        var li = document.createElement("li");
+        li.innerHTML = value;
+        addCheckbox(li);
+        parent.appendChild(li);
+
+    }
+
+    function addCheckbox(parent) {
+
+        var checkbox = document.createElement("input");
+        checkbox.type = 'checkbox';
+        checkbox.addEventListener("click", checkboxHandler)
+        parent.appendChild(checkbox);
+
+    }
+    
+    function checkboxHandler() {
+
+        if (this.checked != false ) {
+
+            console.log(true);
+
+        } else console.log(false);
+
+    }
+
+
+
+
+
 </script>
