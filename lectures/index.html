@@ -15,6 +15,7 @@
 
         .done {
             color: #BCBCBC;
+            text-decoration: line-through;
         }
     </style>
 </head>
@@ -2238,60 +2239,123 @@
     // Если нажать на чекбокс - задача становится выполненной, перечеркивается и становится серого цвета,
     // чекбокс при этом пропадает. Справа от любой задачи должен быть крестик для удаления этой задачи.
     //
-    //     Задачу также можно поредактировать, если сделать двойной клик по ней - в этом случае вместо пункта списка
-    //     появляется инпут с текстом задачи, можно поредактировать текст задачи, нажать Enter и задача изменится.
+    //     Задачу также можно поредактировать, если сделать двойной клик по ней -
+    //     в этом случае вместо пункта списка
+    //     появляется инпут с текстом задачи, можно поредактировать текст задачи,
+    //     нажать Enter и задача изменится.
     //     Инпут при этом исчезнет.
-
-    var input = document.getElementById('input');
-    var ul = document.getElementById('ul');
-
-    var tasks = ['task#1', 'task#2', 'task#3'];
-
-    createList(ul, tasks);
-
-    function createList(parent, values) {
-        for (var i = 0; i < values.length; i++) {
-
-            addElement(parent, values[i]);
-
-        }
-    }
-
-    function addElement(parent, value) {
-
-        var li = document.createElement("li");
-        li.innerHTML = '<span>' + value + '</span>';
-        addCheckbox(li);
-        parent.appendChild(li);
-
-    }
-
-    function addCheckbox(parent) {
-
-        var checkbox = document.createElement("input");
-        checkbox.type = 'checkbox';
-        checkbox.addEventListener("click", function () {
-            if (checkboxHandler() == true){
-                this.parentElement.firstElementChild.classList.add('done');
-                this.parentElement.lastChild.remove();
-            }
-                });
-        parent.appendChild(checkbox);
-
-    }
-
-    function checkboxHandler() {
-
-        if (this.checked == false) {
-            console.log(false);
-            return false;
-
-
-        } else {
-            console.log(true);
-            return true;
-        }
-    }
+// var input = document.getElementById('input');
+    // var ul = document.getElementById('ul');
+    //
+    // var tasks = ['task#1', 'task#2', 'task#3'];
+    //
+    // addElementByInput(ul, input);
+    // initList(ul, tasks);
+    //
+    //
+    // // input.addEventListener("blur", function () {
+    // //     addElement(ul, this.value);
+    // //     this.value = '';
+    // // });
+    //
+    //
+    // function addElementByInput(parent, input) {
+    //     input.addEventListener("blur", function () {
+    //         // var element = addElement(parent, this.value)
+    //        editElement(addElement(parent, this.value).firstElementChild);
+    //         this.value = '';
+    //     });
+    //
+    // }
+    //
+    // function editElement(elem) {
+    //     elem.addEventListener("dblclick", function edit() {
+    //         var text = this.innerHTML;
+    //         this.innerHTML = '';
+    //
+    //         var input = document.createElement("input");
+    //         input.value = text;
+    //         this.appendChild(input);
+    //
+    //         var self = this;
+    //         input.addEventListener("keydown", function (event) {
+    //             if (event.keyCode == 13) {
+    //
+    //                 self.innerHTML = this.value;
+    //                 self.addEventListener("dblclick", edit);
+    //
+    //             }
+    //         })
+    //         this.removeEventListener("dblclick", edit);
+    //     })
+    // }
+    //
+    // function initList(parent, values) {
+    //     var list = createList(parent, values);
+    //     for (var i = 0; i < list.length; i++) {
+    //         editElement(list[i].firstElementChild);
+    //         // console.log(list[i].firstElementChild);
+    //     }
+    // }
+    //
+    // function createList(parent, values) {
+    //     var elements = [];
+    //     for (var i = 0; i < values.length; i++) {
+    //
+    //         elements.push(addElement(parent, values[i]));
+    //
+    //     }
+    //     return elements;
+    //
+    // }
+    //
+    // function addElement(parent, value) {
+    //
+    //     var li = document.createElement("li");
+    //     li.innerHTML = '<span>' + value + '</span>';
+    //     addCheckbox(li);
+    //     addDeleteIcon(li);
+    //     parent.appendChild(li);
+    //
+    //     return li;
+    // }
+    //
+    //
+    // function addCheckbox(parent) {
+    //
+    //     var checkbox = document.createElement("input");
+    //     checkbox.type = 'checkbox';
+    //     checkbox.addEventListener("click", function () {
+    //         if (checkboxHandler() == true) {
+    //             this.parentElement.firstElementChild.classList.add('done');
+    //             this.parentElement.firstElementChild.nextElementSibling.remove();
+    //         }
+    //     });
+    //     parent.appendChild(checkbox);
+    //
+    // }
+    //
+    // function addDeleteIcon(parent) {
+    //     var deleteIcon = document.createElement("span");
+    //     deleteIcon.innerHTML = ' X';
+    //     deleteIcon.addEventListener("click", function () {
+    //         this.parentElement.remove();
+    //     })
+    //     parent.appendChild(deleteIcon);
+    // }
+    //
+    // function checkboxHandler() {
+    //
+    //     if (this.checked == false) {
+    //         console.log(false);
+    //         return false;
+    //
+    //
+    //     } else {
+    //         console.log(true);
+    //         return true;
+    //     }
+    // }
 
 
 </script>
