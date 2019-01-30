@@ -23,7 +23,8 @@
 <div id="parent"></div>
 <input id="input">
 <p></p>
-<button id="button">add</button>
+<button id="add">add</button>
+<button id="sum">sum</button>
 <ul id="ul"></ul>
 </body>
 </html>
@@ -2494,22 +2495,46 @@
     //     очищается, а его содержимое добавляется в массив. Таким образом мы получаем массив данных,
     //     которые пользователь вбивал по очереди в наш инпут.
     //
-    var button = document.getElementById('button');
+    var add = document.getElementById('add');
+    var sum = document.getElementById('sum');
     var inp = document.getElementById('input');
 
-    console.log(addValue(button, inp));
 
-    function addValue(elem, source) {
-        var arr = [];
-        elem.addEventListener("click", function () {
-            console.log(source.value);
-            arr.push(1);
-            source.value = '';
-            return arr;
-        });
-        return arr;
+    sum.addEventListener("click", function () {
+       console.log(addElem(add, inp));
+    });
+
+
+    function calculateSum(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++){
+            sum += Number(arr[i]);
+        }
+        return sum;
     }
 
+
+    function addElem(elem, source) {
+
+        var arr = [];
+
+        elem.addEventListener("click", function () {
+
+            arr.push(source.value);
+            source.value = '';
+
+        });
+        return arr;
+
+    }
+
+    // function addValue(elem, source) {
+    //     elem.addEventListener("click", function () {
+    //         console.log(source.value);
+    //         arr.push(1);
+    //         source.value = '';
+    //     });
+    // }
 
 
     //     Модифицируйте предыдущую задачу. Пусть пользователь вбивает в инпут числа. Сформируйте массив этих чисел.
