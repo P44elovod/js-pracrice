@@ -2250,7 +2250,7 @@
     createList(ul, tasks);
 
     function createList(parent, values) {
-        for (var i = 0; i < values.length; i++){
+        for (var i = 0; i < values.length; i++) {
 
             addElement(parent, values[i]);
 
@@ -2260,7 +2260,7 @@
     function addElement(parent, value) {
 
         var li = document.createElement("li");
-        li.innerHTML = value;
+        li.innerHTML = '<span>' + value + '</span>';
         addCheckbox(li);
         parent.appendChild(li);
 
@@ -2270,23 +2270,28 @@
 
         var checkbox = document.createElement("input");
         checkbox.type = 'checkbox';
-        checkbox.addEventListener("click", checkboxHandler)
+        checkbox.addEventListener("click", function () {
+            if (checkboxHandler() == true){
+                this.parentElement.firstElementChild.classList.add('done');
+                this.parentElement.lastChild.remove();
+            }
+                });
         parent.appendChild(checkbox);
 
     }
-    
+
     function checkboxHandler() {
 
-        if (this.checked != false ) {
+        if (this.checked == false) {
+            console.log(false);
+            return false;
 
+
+        } else {
             console.log(true);
-
-        } else console.log(false);
-
+            return true;
+        }
     }
-
-
-
 
 
 </script>
