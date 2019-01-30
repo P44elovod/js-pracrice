@@ -21,10 +21,10 @@
 </head>
 <body>
 <div id="parent"></div>
-
+<input id="input">
+<p></p>
+<button id="button">add</button>
 <ul id="ul"></ul>
-<input placeholder="enter your task" id="input">
-
 </body>
 </html>
 <script>
@@ -2244,7 +2244,7 @@
     //     появляется инпут с текстом задачи, можно поредактировать текст задачи,
     //     нажать Enter и задача изменится.
     //     Инпут при этом исчезнет.
-// var input = document.getElementById('input');
+    // var input = document.getElementById('input');
     // var ul = document.getElementById('ul');
     //
     // var tasks = ['task#1', 'task#2', 'task#3'];
@@ -2356,30 +2356,162 @@
     //         return true;
     //     }
     // }
+
     // Лекция №11 по JavaScript. Классная работа
     // Задачи
+
     // Даны 5 инпутов и кнопка. В каждый инпут пользователь должен вбить правильное число.
     // В каждом инпуте число, которое пользователь должен вбить в него, записано в атрибуте data-number.
     // Сделайте так, чтобы по нажатию на кнопку инпуты проверили правильность ввода и, если число было введено
     // правильно, покрасили свою границу в зеленый цвет, а если не правильно - в красный.
     //
+    // var inputs = document.querySelectorAll('input');
+    //
+    // validateValue(inputs);
+    //
+    // function validateValue(arr) {
+    //
+    //     for (var i = 0; i < arr.length; i++){
+    //         arr[i].addEventListener("keyup", function () {
+    //             if (this.value == this.dataset.number ){
+    //                 this.style.borderColor = 'green';
+    //             } else {
+    //                 this.style.borderColor = 'red';
+    //
+    //             }
+    //         })
+    //     }
+    //
+    // }
+
     //     Пусть теперь дан массив чисел. Модифицируйте предыдущую задачу так, чтобы инпуты формировались в цикле,
     //     а содержимое их атрибута data-number бралось из массива.
     //
+    // var parent = document.getElementById('parent');
+    //
+    // var values = [1, 2, 3, 4, 5];
+    //
+    // createElementSet(parent, values, "input");
+    //
+    // function createElementSet(parent, values, element) {
+    //
+    //     for (var i = 0; i < values.length; i++ ){
+    //
+    //         validateValue(addElemnt(element, parent, values[i]));
+    //
+    //
+    //     }
+    //
+    //
+    // }
+    //
+    //
+    // function addElemnt(elementName, parent, value) {
+    //
+    //     var elem = document.createElement(elementName);
+    //     elem.dataset.number = value;
+    //     parent.appendChild(elem);
+    //
+    //     return elem;
+    // }
+    //
+    //
+    // function validateValue(value) {
+    //
+    //         value.addEventListener("keyup", function () {
+    //             if (this.value == this.dataset.number) {
+    //                 this.style.borderColor = 'green';
+    //             } else {
+    //                 this.style.borderColor = 'red';
+    //
+    //             }
+    //         });
+    //
+    // }
+
     //     Задачи
     // Даны 5 инпутов и кнопка. Над каждым инпутом написан вопрос, ответ на который должен дать пользователь.
     // Правильный ответ хранится в каждом инпуте в атрибуте data-right-answer.
     // Сделайте так, чтобы по нажатию на кнопку, все инпуты проверили правильность введенных ответов и каждый
     // неправильный ответ выделили красным цветом и рядом написали правильный.
     //
+    // var button = document.getElementById('button');
+    // var inputs = document.querySelectorAll('input');
+    //
+    //
+    // checkAnswers(button, inputs);
+    //
+    // function checkAnswers(button, values) {
+    //
+    //     button.addEventListener("click", function () {
+    //         for (var i = 0; i < values.length; i++) {
+    //             if (values[i].dataset.rightAnswer != values[i].value) {
+    //                 values[i].style.borderColor = 'red';
+    //                 this.parentElement.insertBefore(createRightAnswerElement(values[i].dataset.rightAnswer), values[i].nextElementSibling);
+    //             }
+    //         }
+    //     });
+    //
+    // }
+    //
+    // function createRightAnswerElement(value) {
+    //     var span = document.createElement("span");
+    //     span.innerHTML = value;
+    //     return span;
+    // }
+
     //     Задачи
+
     // Даны 5 инпутов и кнопка. Пользователь вбивает данные в инпуты и нажимает на кнопку. По нажатию на кнопку
     // сформируйте массив данных, вбитых пользователем.
+    //
+    //
+    // var button = document.getElementById('button');
+    // var inputArr = document.querySelectorAll('input');
+    //
+    //
+    // createArr(button, inputArr);
+    //
+    // function createArr(elem, source) {
+    //     elem.addEventListener("click", function () {
+    //         console.log(createValueArray(source));
+    //     })
+    // }
+    //
+    // function createValueArray(source) {
+    //     var arr = [];
+    //     for (var i = 0; i < source.length; i++) {
+    //
+    //         arr.push(source[i].value);
+    //
+    //     }
+    //     return arr;
+    //
+    // }
+
     //
     //     Дан инпут и кнопка. Пользователь вбивает данные в инпут и нажимает на кнопку. После каждого нажатия инпут
     //     очищается, а его содержимое добавляется в массив. Таким образом мы получаем массив данных,
     //     которые пользователь вбивал по очереди в наш инпут.
     //
+    var button = document.getElementById('button');
+    var inp = document.getElementById('input');
+
+    console.log(addValue(button, inp));
+
+    function addValue(elem, source) {
+        var arr = [];
+        elem.addEventListener("click", function () {
+            console.log(source.value);
+            arr.push(1);
+            source.value = '';
+            return arr;
+        });
+        return arr;
+    }
+
+
+
     //     Модифицируйте предыдущую задачу. Пусть пользователь вбивает в инпут числа. Сформируйте массив этих чисел.
     //     Сделайте еще одну кнопку, по нажатию на которую на экран выведется сумма введенных чисел.
     //
