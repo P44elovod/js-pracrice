@@ -21,10 +21,7 @@
 </head>
 <body>
 <div id="parent"></div>
-<input id="input">
-<p></p>
-<button id="add">add</button>
-<button id="sum">sum</button>
+<p><a href="#" id="prev"><< previous </a>  <a href="#" id="next">  next >> </a></p>
 <ul id="ul"></ul>
 </body>
 </html>
@@ -2494,40 +2491,42 @@
     //     Дан инпут и кнопка. Пользователь вбивает данные в инпут и нажимает на кнопку. После каждого нажатия инпут
     //     очищается, а его содержимое добавляется в массив. Таким образом мы получаем массив данных,
     //     которые пользователь вбивал по очереди в наш инпут.
+    //     Модифицируйте предыдущую задачу. Пусть пользователь вбивает в инпут числа. Сформируйте массив этих чисел.
+    //     Сделайте еще одну кнопку, по нажатию на которую на экран выведется сумма введенных чисел.
     //
-    var add = document.getElementById('add');
-    var sum = document.getElementById('sum');
-    var inp = document.getElementById('input');
-
-
-    sum.addEventListener("click", function () {
-       console.log(addElem(add, inp));
-    });
-
-
-    function calculateSum(arr) {
-        var sum = 0;
-        for (var i = 0; i < arr.length; i++){
-            sum += Number(arr[i]);
-        }
-        return sum;
-    }
-
-
-    function addElem(elem, source) {
-
-        var arr = [];
-
-        elem.addEventListener("click", function () {
-
-            arr.push(source.value);
-            source.value = '';
-
-        });
-        return arr;
-
-    }
-
+    // var add = document.getElementById('add');
+    // var sum = document.getElementById('sum');
+    // var inp = document.getElementById('input');
+    //
+    //
+    // var arr = [];
+    //
+    // sum.addEventListener("click", function () {
+    //     console.log(calculateSum(arr));
+    // })
+    // add.addEventListener("click", function () {
+    //
+    //     addElem(inp, arr);
+    //     return arr;
+    // });
+    //
+    //
+    // function calculateSum(arr) {
+    //     var sum = 0;
+    //     for (var i = 0; i < arr.length; i++) {
+    //         sum += Number(arr[i]);
+    //     }
+    //     return sum;
+    // }
+    //
+    //
+    // function addElem(source, target) {
+    //
+    //     target.push(source.value);
+    //     source.value = '';
+    //
+    // }
+    //
     // function addValue(elem, source) {
     //     elem.addEventListener("click", function () {
     //         console.log(source.value);
@@ -2536,22 +2535,115 @@
     //     });
     // }
 
-
-    //     Модифицируйте предыдущую задачу. Пусть пользователь вбивает в инпут числа. Сформируйте массив этих чисел.
-    //     Сделайте еще одну кнопку, по нажатию на которую на экран выведется сумма введенных чисел.
-    //
     //     Задачи
+
     // Дан массив со строками. Покажите пользователю первый элемент массива, а под ним сделайте ссылку,
     // по нажатию на которую будет показываться следующий элемент массива. Как только все элементы закончатся -
     // покажите сообщение об этом, а также заблокируйте кнопку.
     //
+    // var arr = ['0', '1', '2', '3', '4'];
+    // var parent = document.getElementById('parent');
+    // var next = document.getElementById('next');
+    //
+    // parent.innerHTML = arr[0];
+    // var index = 0;
+    // next.addEventListener("click", function nextValue() {
+    //     if (index == arr.length-1) {
+    //         next.removeEventListener("click", nextValue);
+    //         next.classList.add('done');
+    //         parent.innerHTML = 'фсе';
+    //
+    //     } else {
+    //         index++;
+    //         parent.innerHTML = arr[index];
+    //
+    //     }
+    // });
+
     //     Модифицируйте предыдущую задачу так, чтобы, когда все элементы будут показаны, показ начинался опять
     //     с первого элемента.
     //
+    // var arr = ['0', '1', '2', '3', '4'];
+    // var parent = document.getElementById('parent');
+    // var next = document.getElementById('next');
+    //
+    // parent.innerHTML = arr[0];
+    // var index = 0;
+    // next.addEventListener("click", function nextValue() {
+    //     if (index == arr.length-1) {
+    //         index = 0;
+    //         parent.innerHTML = arr[index];
+    //     } else {
+    //         index++;
+    //         parent.innerHTML = arr[index];
+    //
+    //     }
+    // });
+
     //     Модифицируйте предыдущую задачу так, чтобы стало две кнопки: вперед и назад.
     //
+    // var arr = ['0', '1', '2', '3', '4'];
+    // var parent = document.getElementById('parent');
+    // var next = document.getElementById('next');
+    // var prev = document.getElementById('prev');
+    //
+    // parent.innerHTML = arr[0];
+    // var index = 0;
+    //
+    // prev.addEventListener("click", function previous() {
+    //     if (index == 0) {
+    //        prev.classList.add('done');
+    //        prev.removeEventListener("click", previous);
+    //     } else {
+    //         index--;
+    //         parent.innerHTML = arr[index];
+    //
+    //     }
+    // })
+    //
+    // next.addEventListener("click", function nextValue() {
+    //     if (index == arr.length-1) {
+    //         index = 0;
+    //         parent.innerHTML = arr[index];
+    //     } else {
+    //         index++;
+    //         parent.innerHTML = arr[index];
+    //
+    //     }
+    // });
     //     Модифицируйте предыдущую задачу так, чтобы кнопка назад была неактивной,
     //     если сейчас показывается первый элемент, а кнопка вперед была неактивной, если сейчас показывается последний
     //     элемент.
+    var arr = ['0', '1', '2', '3', '4'];
+    var parent = document.getElementById('parent');
+    var next = document.getElementById('next');
+    var prev = document.getElementById('prev');
+
+    parent.innerHTML = arr[0];
+    var index = 0;
+
+    prev.addEventListener("click", function previous() {
+        if (index < 1) {
+            prev.classList.add('done');
+            prev.removeEventListener("click", previous);
+        } else if (index > 0) {
+            prev.addEventListener("click", previous);
+            index--;
+            parent.innerHTML = arr[index];
+
+
+        }
+    })
+
+    next.addEventListener("click", function nextValue() {
+        if (index == arr.length-1) {
+            index = 0;
+            parent.innerHTML = arr[index];
+        } else {
+            index++;
+            parent.innerHTML = arr[index];
+
+        }
+    });
 
 </script>
