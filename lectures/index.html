@@ -21,7 +21,7 @@
 </head>
 <body>
 <div id="parent"></div>
-<p><a href="#" id="prev"><< previous </a>  <a href="#" id="next">  next >> </a></p>
+<p><a href="#" id="prev" class="done"><< previous </a> <a href="#" id="next"> next >> </a></p>
 <ul id="ul"></ul>
 </body>
 </html>
@@ -2614,36 +2614,41 @@
     //     Модифицируйте предыдущую задачу так, чтобы кнопка назад была неактивной,
     //     если сейчас показывается первый элемент, а кнопка вперед была неактивной, если сейчас показывается последний
     //     элемент.
-    var arr = ['0', '1', '2', '3', '4'];
-    var parent = document.getElementById('parent');
-    var next = document.getElementById('next');
-    var prev = document.getElementById('prev');
+    // var arr = ['0', '1', '2', '3', '4'];
+    // var parent = document.getElementById('parent');
+    // var next = document.getElementById('next');
+    // var prev = document.getElementById('prev');
+    //
+    // parent.innerHTML = arr[0];
+    // var index = 0;
+    //
+    //
+    // prev.addEventListener("click", function previous() {
+    //     index--;
+    //     if (index > 0 && index < arr.length) {
+    //         parent.innerHTML = arr[index];
+    //         next.classList.remove('done');
+    //         parent.innerHTML = arr[index];
+    //     } else if (index == 0){
+    //         prev.classList.add('done');
+    //         parent.innerHTML = arr[index];
+    //     }
+    // })
+    //
+    // next.addEventListener("click", function nextValue() {
+    //     index++;
+    //     if (index >= 0 && index < arr.length-1) {
+    //         parent.innerHTML = arr[index];
+    //         prev.classList.remove('done');
+    //         parent.innerHTML = arr[index];
+    //
+    //      } else if (index == arr.length-1){
+    //         parent.innerHTML = arr[index];
+    //         this.classList.add('done');
+    //
+    //     }
+    // });
 
-    parent.innerHTML = arr[0];
-    var index = 0;
 
-    prev.addEventListener("click", function previous() {
-        if (index < 1) {
-            prev.classList.add('done');
-            prev.removeEventListener("click", previous);
-        } else if (index > 0) {
-            prev.addEventListener("click", previous);
-            index--;
-            parent.innerHTML = arr[index];
-
-
-        }
-    })
-
-    next.addEventListener("click", function nextValue() {
-        if (index == arr.length-1) {
-            index = 0;
-            parent.innerHTML = arr[index];
-        } else {
-            index++;
-            parent.innerHTML = arr[index];
-
-        }
-    });
 
 </script>
