@@ -2755,7 +2755,6 @@
     // }
 
 
-
     //
     //     Пусть теперь массив вопросов и массив правильных ответов будут храниться в таком виде:
     //
@@ -2789,10 +2788,11 @@
     initRadios(radio);
 
     function initRadios(array) {
-        for (var i = 0; i < array.length; i++){
+        for (var i = 0; i < array.length; i++) {
+
             array[i].addEventListener("click", function () {
 
-
+                console.log(findChecked(array));
 
             });
         }
@@ -2800,7 +2800,12 @@
 
     function findChecked(array) {
         for (var i = 0; i < array.length; i++) {
-            if (array[i].checked == true)return array[i].id;
+            if (array[i].checked == true) {
+
+                return i;
+
+            }
+            ;
         }
     }
 
