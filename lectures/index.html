@@ -21,8 +21,11 @@
 </head>
 <body>
 <div id="parent"></div>
-<input id="input">
-<button id="next">answer</button>
+<!--<input id="input">-->
+<!--<button id="next">answer</button>-->
+<input type="radio" id="1" value="ddd">ddd
+<input type="radio" id="2" value="aaa">aaa
+<input type="radio" id="3" value="bbb">bbb
 <p id="par"></p>
 <!--<a href="#" id="prev" class="done"><< previous </a> -->
 <!--<a href="#" id="next"> next >> </a></p>-->
@@ -2689,67 +2692,67 @@
     //     Модифицируйте предыдущую задачу так, чтобы после того, как пользователь ответит на все вопросы,
     //     на экран вывелся список этих вопросов, рядом с каждым ответ пользователя и, если этот ответ
     //     неправильный, еще и правильный ответ.
-    var questions = ['0', '1', '2', '3', '4'];
-    var rightAnswers = ['0', '1', '2', '3', '4'];
-    var next = document.getElementById('next');
-    var parent = document.getElementById('parent');
-    var inp = document.getElementById('input');
-    var ul = document.getElementById('ul');
-
-    var index = 0;
-    var answers = [];
-    parent.innerHTML = questions[index];
-
-
-    next.addEventListener("click", function nextVal() {
-
-        index++;
-
-        if (index < questions.length) {
-
-
-            parent.innerHTML = questions[index];
-            answers.push(inp.value);
-            inp.value = '';
-
-
-        } else if (index == questions.length) {
-            parent.innerHTML = 'thx';
-            answers.push(inp.value);
-            console.log(answers);
-            inp.value = '';
-            showQuestAndAnsw(questions, answers, rightAnswers, ul);
-            next.removeEventListener("click", nextVal);
-        }
-
-        return answers;
-    });
-
-    function checkAnswer(rightAnsw, answ) {
-
-        if (answ === rightAnsw){
-            return true;
-        } else return false;
-
-    }
-
-    function showQuestAndAnsw(quest, answ, rightAns, parent) {
-
-        for (var i = 0; i < quest.length; i++) {
-            var li = document.createElement("li");
-            if (checkAnswer(rightAns[i], answ[i]) == true){
-
-                li.innerHTML = 'Q: ' + quest[i] + ' A:' + answ[i];
-
-            } else {
-                var li = document.createElement("li");
-                li.innerHTML = 'Q: ' + quest[i] + ' A:' + answ[i] + ' RA:' + rightAns[i];
-
-            }
-            parent.appendChild(li);
-        }
-
-    }
+    // var questions = ['0', '1', '2', '3', '4'];
+    // var rightAnswers = ['0', '1', '2', '3', '4'];
+    // var next = document.getElementById('next');
+    // var parent = document.getElementById('parent');
+    // var inp = document.getElementById('input');
+    // var ul = document.getElementById('ul');
+    //
+    // var index = 0;
+    // var answers = [];
+    // parent.innerHTML = questions[index];
+    //
+    //
+    // next.addEventListener("click", function nextVal() {
+    //
+    //     index++;
+    //
+    //     if (index < questions.length) {
+    //
+    //
+    //         parent.innerHTML = questions[index];
+    //         answers.push(inp.value);
+    //         inp.value = '';
+    //
+    //
+    //     } else if (index == questions.length) {
+    //         parent.innerHTML = 'thx';
+    //         answers.push(inp.value);
+    //         console.log(answers);
+    //         inp.value = '';
+    //         showQuestAndAnsw(questions, answers, rightAnswers, ul);
+    //         next.removeEventListener("click", nextVal);
+    //     }
+    //
+    //     return answers;
+    // });
+    //
+    // function checkAnswer(rightAnsw, answ) {
+    //
+    //     if (answ === rightAnsw){
+    //         return true;
+    //     } else return false;
+    //
+    // }
+    //
+    // function showQuestAndAnsw(quest, answ, rightAns, parent) {
+    //
+    //     for (var i = 0; i < quest.length; i++) {
+    //         var li = document.createElement("li");
+    //         if (checkAnswer(rightAns[i], answ[i]) == true){
+    //
+    //             li.innerHTML = 'Q: ' + quest[i] + ' A:' + answ[i];
+    //
+    //         } else {
+    //             var li = document.createElement("li");
+    //             li.innerHTML = 'Q: ' + quest[i] + ' A:' + answ[i] + ' RA:' + rightAns[i];
+    //
+    //         }
+    //         parent.appendChild(li);
+    //     }
+    //
+    // }
 
 
 
@@ -2774,11 +2777,34 @@
     //     };
     // Переделайте предыдущую задачу, чтобы она работала с этим массивом.
     //
+
     //     Задачи
 
     // Даны 3 радиокнопочки. Дан также абзац. Сделайте так, чтобы в этот абзац всегда выводилось value
     // отмеченной кнопочки.
     //
+    var radio = document.querySelectorAll("input");
+    console.log(radio);
+
+    initRadios(radio);
+
+    function initRadios(array) {
+        for (var i = 0; i < array.length; i++){
+            array[i].addEventListener("click", function () {
+
+
+
+            });
+        }
+    }
+
+    function findChecked(array) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i].checked == true)return array[i].id;
+        }
+    }
+
+
     //     Дан массив. Модифицируйте предыдущую задачу так, чтобы радиокнопочки сформировались в цикле,
     //     при этом их value должны браться из массива.
     //
