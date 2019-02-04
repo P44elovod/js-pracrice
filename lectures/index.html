@@ -23,9 +23,9 @@
 <div id="parent"></div>
 <input id="input">
 <button id="next">answer</button>
-<p>
-    <!--<a href="#" id="prev" class="done"><< previous </a> -->
-    <!--<a href="#" id="next"> next >> </a></p>-->
+<p id="par"></p>
+<!--<a href="#" id="prev" class="done"><< previous </a> -->
+<!--<a href="#" id="next"> next >> </a></p>-->
 
 <ul id="ul"></ul>
 </body>
@@ -2682,39 +2682,77 @@
     //     В инпут пользователь будет вводить ответ на вопрос и нажимать на кнопку.
     //     Сформируйте массив ответов пользователя. После того,
     //
-    var questions = ['1', '2', '3', '4', '5'];
-    var next = document.getElementById('next');
-    var parent = document.getElementById('parent');
-    var inp = document.getElementById('input');
-
-    var index = 0;
-    // var answers = [];
-    parent.innerHTML = questions[index];
-
-    next.addEventListener("click", function nextVal() {
-        var answers = [];
-        index++;
-        if (index > questions.length) {
-            next.removeEventListener("click", nextVal);
-
-        }
-        answers.push(inp.value);
-        console.log(inp.value);
-        inp.value = '';
-        parent.innerHTML = questions[index];
-        return answers;
-
-    });
-
-
-
     //     Модифицируйте предыдущую задачу так, чтобы, когда пользователь ответит на все вопросы,
     //     на экран вывелся список вопросов и рядом с каждым вопросом - ответ, который дал на него пользователь.
-    //
+
     //     Пусть теперь кроме массива вопросов, есть еще и массив правильных ответов.
     //     Модифицируйте предыдущую задачу так, чтобы после того, как пользователь ответит на все вопросы,
     //     на экран вывелся список этих вопросов, рядом с каждым ответ пользователя и, если этот ответ
     //     неправильный, еще и правильный ответ.
+    var questions = ['0', '1', '2', '3', '4'];
+    var rightAnswers = ['0', '1', '2', '3', '4'];
+    var next = document.getElementById('next');
+    var parent = document.getElementById('parent');
+    var inp = document.getElementById('input');
+    var ul = document.getElementById('ul');
+
+    var index = 0;
+    var answers = [];
+    parent.innerHTML = questions[index];
+
+
+    next.addEventListener("click", function nextVal() {
+
+        index++;
+
+        if (index < questions.length) {
+
+
+            parent.innerHTML = questions[index];
+            answers.push(inp.value);
+            inp.value = '';
+
+
+        } else if (index == questions.length) {
+            parent.innerHTML = 'thx';
+            answers.push(inp.value);
+            console.log(answers);
+            inp.value = '';
+            showQuestAndAnsw(questions, answers, rightAnswers, ul);
+            next.removeEventListener("click", nextVal);
+        }
+
+        return answers;
+    });
+
+    function checkAnswer(rightAnsw, answ) {
+
+        if (answ === rightAnsw){
+            return true;
+        } else return false;
+
+    }
+
+    function showQuestAndAnsw(quest, answ, rightAns, parent) {
+
+        for (var i = 0; i < quest.length; i++) {
+            var li = document.createElement("li");
+            if (checkAnswer(rightAns[i], answ[i]) == true){
+
+                li.innerHTML = 'Q: ' + quest[i] + ' A:' + answ[i];
+
+            } else {
+                var li = document.createElement("li");
+                li.innerHTML = 'Q: ' + quest[i] + ' A:' + answ[i] + ' RA:' + rightAns[i];
+
+            }
+            parent.appendChild(li);
+        }
+
+    }
+
+
+
     //
     //     Пусть теперь массив вопросов и массив правильных ответов будут храниться в таком виде:
     //
