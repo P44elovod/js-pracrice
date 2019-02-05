@@ -2855,71 +2855,70 @@
     //             '5-3',
     //         },
     //     ]
-
-    var parent = document.getElementById('parent');
-    var scheme = [
-        [
-            '1-1',
-            '1-2',
-            '1-3',
-        ],
-        [
-            '2-1',
-            '2-2',
-            '2-3',
-        ],
-        [
-            '3-1',
-            '3-2',
-            '3-3',
-        ],
-        [
-            '4-1',
-            '4-2',
-            '4-3',
-        ],
-        [
-            '5-1',
-            '5-2',
-            '5-3',
-        ],
-    ];
-
-
-    console.log(scheme);
-
-    createGroup(scheme, parent);
-
-    function createGroup(arr, parent) {
-        for (var i = 0; i < arr.length; i++) {
-
-            for (var j = 0; j < arr[i].length; j++) {
-
-                var radio = document.createElement("input");
-                radio.type = 'radio';
-                var atr = arr[i][j].split('-');
-
-                radio.name = atr[0];
-                radio.value = atr[1];
-                radioHandler(radio);
-                parent.appendChild(radio);
-
-            }
-            var p = document.createElement('p');
-            p.id = atr[0];
-            parent.appendChild(p);
-        }
-    }
-
-    function radioHandler(elem) {
-        elem.addEventListener("click", function () {
-
-            console.log();
-            // .innerHTML = this.value;
-
-        })
-
-    }
+    //
+    // var parent = document.getElementById('parent');
+    // var scheme = [
+    //     [
+    //         '1-1',
+    //         '1-2',
+    //         '1-3',
+    //     ],
+    //     [
+    //         '2-1',
+    //         '2-2',
+    //         '2-3',
+    //     ],
+    //     [
+    //         '3-1',
+    //         '3-2',
+    //         '3-3',
+    //     ],
+    //     [
+    //         '4-1',
+    //         '4-2',
+    //         '4-3',
+    //     ],
+    //     [
+    //         '5-1',
+    //         '5-2',
+    //         '5-3',
+    //     ],
+    // ];
+    //
+    //
+    //
+    // createGroup(scheme, parent);
+    //
+    // function createGroup(arr, parent) {
+    //     for (var i = 0; i < arr.length; i++) {
+    //         var p = document.createElement('p');
+    //         for (var j = 0; j < arr[i].length; j++) {
+    //
+    //             var radio = document.createElement("input");
+    //             radio.type = 'radio';
+    //             var atr = arr[i][j].split('-');
+    //
+    //             radio.name = atr[0];
+    //             radio.value = atr[1];
+    //             radioHandler(radio, p);
+    //             parent.appendChild(radio);
+    //
+    //         }
+    //
+    //         // p.id = atr[0];
+    //         parent.appendChild(p);
+    //     }
+    // }
+    //
+    // function radioHandler(elem, paragraph) {
+    //     elem.addEventListener("click", function () {
+    //
+    //         // console.log(this.value);
+    //         paragraph.innerHTML = this.value;
+    //
+    //     })
+    //
+    // }
 
     // Тесты
     // Дан следующий массив с вопросами и вариантами ответов:
@@ -2943,7 +2942,80 @@
     //             ...
     //         },
     //     ]
-    // Реализуйте текст с вопросами и вариантами ответов. Каждый вопрос должен быть в своем абзаце,
+    // Реализуйте тест с вопросами и вариантами ответов. Каждый вопрос должен быть в своем абзаце,
     // а под ним - 5 радиокнопочек, с помощью которых можно выбрать один из ответов.
     // Если ответ правильный - вопрос должен покраситься в зеленый цвет, а если неправильный - в красный.
+    var parent = document.getElementById('parent');
+    var questions = [
+        {
+            question: 'Вопрос 1',
+            answers: [
+                'Ответ 1',
+                'Ответ 2',
+                'Ответ 3',
+                'Ответ 4',
+                'Ответ 5',
+            ],
+            right: 3, //номер правильного ответа
+        },
+        {
+            question: 'Вопрос 2',
+            answers: [
+                'Ответ 1',
+                'Ответ 2',
+                'Ответ 3',
+                'Ответ 4',
+                'Ответ 5',
+            ],
+            right: 2, //номер правильного ответа
+        },
+        {
+            question: 'Вопрос 3',
+            answers: [
+                'Ответ 1',
+                'Ответ 2',
+                'Ответ 3',
+                'Ответ 4',
+                'Ответ 5',
+            ],
+            right: 4, //номер правильного ответа
+        },
+    ];
+
+    initTest(questions, parent);
+
+    function initTest(values, parent) {
+
+        for (var i = 0; i < values.length; i++) {
+            var p = document.createElement('p');
+
+            p.innerHTML = values[i].question;
+            parent.appendChild(p);
+            for (var j = 0; j < values[i].answers.length; j++) {
+                var radio = document.createElement('input');
+                var lable = document.createElement("label");
+                radio.type = 'radio';
+                radio.name = values[i].question;
+                radio.value = j + 1;
+                radioHandler(radio, values[i].right, p);
+                lable.innerHTML = values[i].answers[j];
+                parent.appendChild(radio);
+                parent.appendChild(lable);
+            }
+        }
+
+
+    }
+
+    function radioHandler(elem, rightAnswer, question) {
+        elem.addEventListener("click", function () {
+
+            if (this.value === rightAnswer) {
+                question.style.color = 'green';
+            } else question.style.color = 'red';
+
+        })
+    }
+
+
 </script>
