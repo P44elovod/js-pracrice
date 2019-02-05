@@ -21,7 +21,6 @@
 </head>
 <body>
 <div id="parent"></div>
-<!--<p id="par"></p>-->
 
 <ul id="ul"></ul>
 </body>
@@ -2230,7 +2229,9 @@
     //
     // }
 
-    // Лекция №10 по JavaScript. Домашняя работа
+    // Лекция №10 по JavaScript.
+
+    // Домашняя работа
     // Чеклист
 
     // Реализуйте чеклист. Должен быть инпут с добавлением задачи,
@@ -2356,7 +2357,9 @@
     //     }
     // }
 
-    // Лекция №11 по JavaScript. Классная работа
+    // Лекция №11 по JavaScript.
+
+    // Классная работа
     // Задачи
 
     // Даны 5 инпутов и кнопка. В каждый инпут пользователь должен вбить правильное число.
@@ -2651,8 +2654,9 @@
     //     }
     // });
 
-    //
+
     // Лекция №11 по JavaScript. Домашняя работа
+
     // Задачи
 
     // Дан массив со вопросами. Покажите пользователю первый вопрос из массива, а под ним сделайте ссылку,
@@ -2945,77 +2949,229 @@
     // Реализуйте тест с вопросами и вариантами ответов. Каждый вопрос должен быть в своем абзаце,
     // а под ним - 5 радиокнопочек, с помощью которых можно выбрать один из ответов.
     // Если ответ правильный - вопрос должен покраситься в зеленый цвет, а если неправильный - в красный.
-    var parent = document.getElementById('parent');
-    var questions = [
-        {
-            question: 'Вопрос 1',
-            answers: [
-                'Ответ 1',
-                'Ответ 2',
-                'Ответ 3',
-                'Ответ 4',
-                'Ответ 5',
-            ],
-            right: 3, //номер правильного ответа
-        },
-        {
-            question: 'Вопрос 2',
-            answers: [
-                'Ответ 1',
-                'Ответ 2',
-                'Ответ 3',
-                'Ответ 4',
-                'Ответ 5',
-            ],
-            right: 2, //номер правильного ответа
-        },
-        {
-            question: 'Вопрос 3',
-            answers: [
-                'Ответ 1',
-                'Ответ 2',
-                'Ответ 3',
-                'Ответ 4',
-                'Ответ 5',
-            ],
-            right: 4, //номер правильного ответа
-        },
-    ];
+    // var parent = document.getElementById('parent');
+    // var questions = [
+    //     {
+    //         question: 'Вопрос 1',
+    //         answers: [
+    //             'Ответ 1',
+    //             'Ответ 2',
+    //             'Ответ 3',
+    //             'Ответ 4',
+    //             'Ответ 5',
+    //         ],
+    //         right: 3, //номер правильного ответа
+    //     },
+    //     {
+    //         question: 'Вопрос 2',
+    //         answers: [
+    //             'Ответ 1',
+    //             'Ответ 2',
+    //             'Ответ 3',
+    //             'Ответ 4',
+    //             'Ответ 5',
+    //         ],
+    //         right: 2, //номер правильного ответа
+    //     },
+    //     {
+    //         question: 'Вопрос 3',
+    //         answers: [
+    //             'Ответ 1',
+    //             'Ответ 2',
+    //             'Ответ 3',
+    //             'Ответ 4',
+    //             'Ответ 5',
+    //         ],
+    //         right: 4, //номер правильного ответа
+    //     },
+    // ];
+    //
+    // initTest(questions, parent);
+    //
+    // function initTest(values, parent) {
+    //
+    //     for (var i = 0; i < values.length; i++) {
+    //         var p = document.createElement('p');
+    //
+    //         p.innerHTML = values[i].question;
+    //         parent.appendChild(p);
+    //         for (var j = 0; j < values[i].answers.length; j++) {
+    //             var radio = document.createElement('input');
+    //             var lable = document.createElement("label");
+    //             radio.type = 'radio';
+    //             radio.name = values[i].question;
+    //             radio.value = j + 1;
+    //             radioHandler(radio, values[i].right, p);
+    //             lable.innerHTML = values[i].answers[j];
+    //             parent.appendChild(radio);
+    //             parent.appendChild(lable);
+    //         }
+    //     }
+    //
+    //
+    // }
+    //
+    // function radioHandler(elem, rightAnswer, question) {
+    //     elem.addEventListener("click", function () {
+    //
+    //         if (this.value == rightAnswer) {
+    //             question.style.color = 'green';
+    //         } else {
+    //             question.style.color = 'red';
+    //         }
+    //
+    //     });
+    // }
 
-    initTest(questions, parent);
+    // Лекция №12 по JavaScript.
+    // Классная работа
 
-    function initTest(values, parent) {
+    // Задачи
+    // Выведите на экран текущий день, месяц, год. Например, '31 января 2025 года'.
 
-        for (var i = 0; i < values.length; i++) {
-            var p = document.createElement('p');
+    //  var month = [
+    //      'январ',
+    //      'феврал',
+    //      'март',
+    //      'апрел',
+    //      'май',
+    //      'июн',
+    //      'июл',
+    //      'август',
+    //      'сентябр',
+    //      'октябр',
+    //      'ноябр',
+    //      'декабр'
+    //  ]
+    //  var date = new Date();
+    //  document.write(date.getDate() + ' ' + addEnd(month[date.getMonth()]) + ' ' + date.getFullYear() + ' года');
+    //
+    // function addEnd(month) {
+    //     if (month == 3 || month == 8){
+    //         return month + 'а';
+    //     } else {
+    //         return month + 'я';
+    //     }
+    // }
 
-            p.innerHTML = values[i].question;
-            parent.appendChild(p);
-            for (var j = 0; j < values[i].answers.length; j++) {
-                var radio = document.createElement('input');
-                var lable = document.createElement("label");
-                radio.type = 'radio';
-                radio.name = values[i].question;
-                radio.value = j + 1;
-                radioHandler(radio, values[i].right, p);
-                lable.innerHTML = values[i].answers[j];
-                parent.appendChild(radio);
-                parent.appendChild(lable);
-            }
-        }
+    //     Выведите на экран текущий день недели.
+    //
+    // var days = [
+    //     'понедельник',
+    //     'вторник',
+    //     'среда',
+    //     'четверг',
+    //     'пятница',
+    //     'суббота',
+    //     'воскресенье'
+    // ];
+    // document.write(days[new Date().getDay()-1]);
+    //     Выведите на экран последний день текущего месяца.
+    //
+    // var days = [
+    //     'понедельник',
+    //     'вторник',
+    //     'среда',
+    //     'четверг',
+    //     'пятница',
+    //     'суббота',
+    //     'воскресенье'
+    // ];
+    // var date = new Date(2012, 2, 0);
+    // document.write(days[date.getDay()-1]);
 
+    //     Задачи
+    // Выведите на экран ul, заполненный числами от 1 до 31.
+    //
+    // var ul = document.getElementById('ul');
+    //
+    // createList(1, 31, ul);
+    //
+    // function createList(start, end, parent) {
+    //     for (var i = 0; i <= end; i++) {
+    //         var li = document.createElement("li");
+    //         li.innerHTML = i;
+    //         parent.appendChild(li);
+    //     }
+    // }
 
-    }
+    // Выведите на экран ul, заполненный числами от 1 до последнего дня текущего месяца.
+    //
+    // var ul = document.getElementById('ul');
+    //
+    //
+    // createList(1, getLastDay(2012, 2), ul);
+    //
+    // function getLastDay(year, month) {
+    //     return new Date(year, month, 0 - 1).getDate();
+    // }
+    //
+    // function createList(start, end, parent) {
+    //     for (var i = start; i <= end; i++) {
+    //         var li = document.createElement("li");
+    //         li.innerHTML = i;
+    //          li.style.backgroundColor = highlightHollyday(i);
+    //         parent.appendChild(li);
+    //     }
+    // }
 
-    function radioHandler(elem, rightAnswer, question) {
-        elem.addEventListener("click", function () {
+    //     Модифицируйте предыдущую задачу так, чтобы номер текущего дня выделялся зеленым цветом.
+    //
+    // function highlightToday(date) {
+    //     if (date == new Date().getDate()){
+    //         return 'red';
+    //     }
+    // }
 
-            if (this.value === rightAnswer) {
-                question.style.color = 'green';
-            } else question.style.color = 'red';
+    //     Модифицируйте предыдущую задачу так, чтобы все выходные дни выделялись красным цветом.
+    //
+    // function highlightHollyday(value) {
+    //     var date = new Date(2012, 2, value);
+    //     if (date.getDay() == 6 || date.getDay() == 5 ){
+    //         return 'red';
+    //     }
+    // }
 
-        })
-    }
+    //     Задачи
 
+    // Выведите на экран текущий месяц и год, например, 'январь 2025'.
+    // Под этой датой выведите стрелочку, по нажатию на которую месяц будет перематываться вперед.
+    // То есть первое нажатие выведет 'февраль 2025', второе 'март 2025' и так далее.
+    // Когда месяцы текущего года закончатся, необходимо увеличить год на единицу и продолжить дальше по аналогии.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы появилась также стрелка,
+    //     по нажатию на которую можно будет проматывать месяцы назад.
+    //
+    //     Задачи
+    // Реализуйте календарик следующего вида: показаны дни текущего месяца (в ряд),
+    // слева стрелка 'предыдущий месяц', справа ссылка 'следующий месяц'.
+    // Сверху показан год и месяц, который мы смотрим.
+    // Если мы смотрим текущий месяц текущего года - текущий день должен быть как-то выделен.
+    //
+    //     Задачи
+    // Определите день недели первого дня текущего месяца.
+    //
+    //     Определите день недели первого дня текущего месяца.
+    //     Узнайте, сколько дней назад от этой даты был понедельник.
+    //
+    //     Определите день недели последнего дня текущего месяца.
+    //     Узнайте, через сколько дней от этой даты будет воскресенье.
+    //
+    //     Задачи
+    // Выведите на экран ul, заполненный числами от 1 до последнего дня текущего месяца.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы под каждым числом был написан также и день недели.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы перед первым числом текущего месяца были написаны
+    //     еще и последние числа предыдущего месяца так, чтобы начало нашего списка приходилось на понедельник.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы после последнего числа текущего месяца были написаны еще и
+    //     первые числа следующего месяца так, чтобы конец нашего списка приходился на воскресенье.
+    //
+    //     Календарь
+    // Реализуйте квадратный календарик, который будет показывать даты и дни недели за текущий месяц.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы сверху над календариком появились стрелки вперед и назад,
+    //     с помощью которых можно будет менять просматриваемый месяц.
 
 </script>
