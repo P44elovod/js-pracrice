@@ -3176,45 +3176,56 @@
         // prev.href = '#';
         // prev.innerHTML = String.fromCharCode(26);
 
+        //написать геттер для датаатрибута контена
+
         var next = createNavigation('>>');
         var prev = createNavigation('<<')
-        var content = createContentElement(convertMonthName(monthNames, getDate().month) + ' ' + getDate().year);
+        var content = createContentElement(convertMonthName(monthNames, new Date().getMonth()) + ' ' + new Date().getFullYear());
 
-        switchNextMonth(next, getDate(), monthNames, 'cont');
-        switchPrevMonth(prev, getDate(), monthNames, 'cont');
+        switchNextMonth(next, getDate(content.dataset.date), monthNames);
+        switchPrevMonth(prev, getDate(content.dataset.date), monthNames);
 
         parent.appendChild(prev);
         parent.appendChild(content);
         parent.appendChild(next);
+
     }
 
-    function switchNextMonth(elem, date, monthNames, contentId) {
-        var i = 0;
+    function switchNextMonth(elem, date, monthNames) {
+        var i = date.month+2;
         elem.addEventListener("click", function () {
+
             this.parentElement.firstElementChild.nextElementSibling.innerHTML =
                 convertMonthName(monthNames, new Date(date.year, date.month + i).getMonth()) + ' '
-                + new Date(date.year, date.month + i).getFullYear()
+                + new Date(date.year, i).getFullYear()
+            ;
+
+            this.parentElement.firstElementChild.nextElementSibling.dataset.date =
+                new Date(date.year, date.month + i).getFullYear() + ', '
+                + new Date(date.year, date.month + i).getMonth();
+            console.log(new Date(date.year, i).getMonth());
+            i++
+        })
+    }
+
+    function switchPrevMonth(elem, date, monthNames, startDate) {
+        var i = date.month;
+        elem.addEventListener("click", function () {
+            console.log(i);
+
+            this.parentElement.firstElementChild.nextElementSibling.innerHTML =
+                convertMonthName(monthNames, new Date(date.year, date.month - i).getMonth()) + ' '
+                + new Date(date.year, date.month - i).getFullYear()
             ;
 
             i++
         })
     }
 
-    function switchPrevMonth(elem, date, monthNames, contentId) {
-        var i = date.month;
-        elem.addEventListener("click", function () {
-            this.parentElement.firstElementChild.nextElementSibling.innerHTML =
-                convertMonthName(monthNames, new Date(date.year, date.month - i).getMonth()) + ' '
-                + new Date(date.year, date.month - i).getFullYear()
-            ;
-
-            i--
-        })
-    }
-
     function createContentElement(innerValue) {
         var span = document.createElement("span");
         span.innerHTML = innerValue;
+        span.dataset.date = new Date().getFullYear() + '-' + new Date().getMonth();
 
         return span;
 
@@ -3237,9 +3248,8 @@
 
     }
 
-    function getDate() {
-        var date = new Date(2019, 1,);
-
+    function getDate(today) {
+        var date = new Date(today);
         return {
             "month": date.getMonth(),
             "year": date.getFullYear()
