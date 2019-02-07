@@ -3165,28 +3165,70 @@
     ];
 
 
-
     initCalendar(parent, month);
 
     function initCalendar(parent, monthNames) {
-        var a = document.createElement("a");
-        a.href = '#';
-        a.innerHTML = String.fromCharCode(26);
-        parent.innerHTML = convertMonthName(monthNames, getDate().month) + ' ' + getDate().year;
+        // var next = document.createElement("a");
+        // next.href = '#';
+        // next.innerHTML = String.fromCharCode(26);
+        //
+        // var prev = document.createElement("a");
+        // prev.href = '#';
+        // prev.innerHTML = String.fromCharCode(26);
 
+        var next = createNavigation('>>');
+        var prev = createNavigation('<<')
+        var content = createContentElement(convertMonthName(monthNames, getDate().month) + ' ' + getDate().year);
 
+        switchNextMonth(next, getDate(), monthNames, 'cont');
+        switchPrevMonth(prev, getDate(), monthNames, 'cont');
 
-        parent.appendChild(a);
+        parent.appendChild(prev);
+        parent.appendChild(content);
+        parent.appendChild(next);
     }
 
-    function dateHandler(elem, month){
+    function switchNextMonth(elem, date, monthNames, contentId) {
+        var i = 0;
         elem.addEventListener("click", function () {
-            parent.innerHTML = convertMonthName(monthNames, month + 1) + ' ' + getDate().year;
-        });
+            this.parentElement.firstElementChild.nextElementSibling.innerHTML =
+                convertMonthName(monthNames, new Date(date.year, date.month + i).getMonth()) + ' '
+                + new Date(date.year, date.month + i).getFullYear()
+            ;
+
+            i++
+        })
     }
 
-    function switchMonth(month) {
-        return month + 1;
+    function switchPrevMonth(elem, date, monthNames, contentId) {
+        var i = date.month;
+        elem.addEventListener("click", function () {
+            this.parentElement.firstElementChild.nextElementSibling.innerHTML =
+                convertMonthName(monthNames, new Date(date.year, date.month - i).getMonth()) + ' '
+                + new Date(date.year, date.month - i).getFullYear()
+            ;
+
+            i--
+        })
+    }
+
+    function createContentElement(innerValue) {
+        var span = document.createElement("span");
+        span.innerHTML = innerValue;
+
+        return span;
+
+    }
+
+
+    function createNavigation(innerValue) {
+
+        var nav = document.createElement("a");
+        nav.href = '#';
+        nav.innerHTML = innerValue;
+
+        return nav;
+
     }
 
     function convertMonthName(arrayMonthNames, month) {
@@ -3196,7 +3238,7 @@
     }
 
     function getDate() {
-        var date = new Date();
+        var date = new Date(2019, 1,);
 
         return {
             "month": date.getMonth(),
