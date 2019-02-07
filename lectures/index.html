@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        a:link, a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: red;
+        }
+
         .active {
             background-color: Background;
         }
@@ -3156,12 +3165,45 @@
     ];
 
 
-    parent.innerHTML = showDate(month) + ' ' + String.fromCharCode(26);
 
-    function showDate(arr) {
-        var date = new Date();
-        return month[date.getMonth()] + ' ' + date.getFullYear();
+    initCalendar(parent, month);
+
+    function initCalendar(parent, monthNames) {
+        var a = document.createElement("a");
+        a.href = '#';
+        a.innerHTML = String.fromCharCode(26);
+        parent.innerHTML = convertMonthName(monthNames, getDate().month) + ' ' + getDate().year;
+
+
+
+        parent.appendChild(a);
     }
+
+    function dateHandler(elem, month){
+        elem.addEventListener("click", function () {
+            parent.innerHTML = convertMonthName(monthNames, month + 1) + ' ' + getDate().year;
+        });
+    }
+
+    function switchMonth(month) {
+        return month + 1;
+    }
+
+    function convertMonthName(arrayMonthNames, month) {
+
+        return arrayMonthNames[month];
+
+    }
+
+    function getDate() {
+        var date = new Date();
+
+        return {
+            "month": date.getMonth(),
+            "year": date.getFullYear()
+        };
+    }
+
 
     //     Модифицируйте предыдущую задачу так, чтобы появилась также стрелка,
     //     по нажатию на которую можно будет проматывать месяцы назад.
