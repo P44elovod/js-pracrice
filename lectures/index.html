@@ -30,6 +30,7 @@
 </head>
 <body>
 <div id="parent"></div>
+<p id="navigation"></p>
 
 <ul id="ul"></ul>
 </body>
@@ -3147,8 +3148,13 @@
     // Под этой датой выведите стрелочку, по нажатию на которую месяц будет перематываться вперед.
     // То есть первое нажатие выведет 'февраль 2025', второе 'март 2025' и так далее.
     // Когда месяцы текущего года закончатся, необходимо увеличить год на единицу и продолжить дальше по аналогии.
+    //     Модифицируйте предыдущую задачу так, чтобы появилась также стрелка,
+    //     по нажатию на которую можно будет проматывать месяцы назад.
     //
     var parent = document.getElementById('parent');
+    var navi = document.getElementById('navigation');
+    var monthDifference = 0;
+
     var month = [
         'январь',
         'февраль',
@@ -3165,70 +3171,52 @@
     ];
 
 
-    initCalendar(parent, month);
+    initCalendar(parent);
 
-    function initCalendar(parent, monthNames) {
-        // var next = document.createElement("a");
-        // next.href = '#';
-        // next.innerHTML = String.fromCharCode(26);
-        //
-        // var prev = document.createElement("a");
-        // prev.href = '#';
-        // prev.innerHTML = String.fromCharCode(26);
 
-        //написать геттер для датаатрибута контена
+    function initCalendar(parent) {
 
-        var next = createNavigation('>>');
-        var prev = createNavigation('<<')
-        var content = createContentElement(convertMonthName(monthNames, new Date().getMonth()) + ' ' + new Date().getFullYear());
 
-        switchNextMonth(next, getDate(content.dataset.date), monthNames);
-        switchPrevMonth(prev, getDate(content.dataset.date), monthNames);
+        createCalendar(parent);
 
-        parent.appendChild(prev);
-        parent.appendChild(content);
-        parent.appendChild(next);
+
+        var next = createNavigation(' >>');
+        var prev = createNavigation('<< ');
+        navi.appendChild(prev);
+        navi.appendChild(next);
+
+        naviHandler(prev, next);
+
 
     }
 
-    function switchNextMonth(elem, date, monthNames) {
-        var i = date.month+2;
-        elem.addEventListener("click", function () {
 
-            this.parentElement.firstElementChild.nextElementSibling.innerHTML =
-                convertMonthName(monthNames, new Date(date.year, date.month + i).getMonth()) + ' '
-                + new Date(date.year, i).getFullYear()
-            ;
+    function createCalendar(parentElement) {
 
-            this.parentElement.firstElementChild.nextElementSibling.dataset.date =
-                new Date(date.year, date.month + i).getFullYear() + ', '
-                + new Date(date.year, date.month + i).getMonth();
-            console.log(new Date(date.year, i).getMonth());
-            i++
-        })
-    }
-
-    function switchPrevMonth(elem, date, monthNames, startDate) {
-        var i = date.month;
-        elem.addEventListener("click", function () {
-            console.log(i);
-
-            this.parentElement.firstElementChild.nextElementSibling.innerHTML =
-                convertMonthName(monthNames, new Date(date.year, date.month - i).getMonth()) + ' '
-                + new Date(date.year, date.month - i).getFullYear()
-            ;
-
-            i++
-        })
-    }
-
-    function createContentElement(innerValue) {
         var span = document.createElement("span");
-        span.innerHTML = innerValue;
-        span.dataset.date = new Date().getFullYear() + '-' + new Date().getMonth();
+        var date = new Date();
+        date.setMonth(date.getMonth() + monthDifference);
+        parentElement.innerHTML = convertMonthName(month, date.getMonth()) + ' ' + date.getFullYear();
 
-        return span;
 
+    }
+
+
+    function naviHandler(prev, next) {
+        prev.addEventListener("click", switchPrevMonth);
+        next.addEventListener("click", switchNextMonth);
+
+    }
+
+
+    function switchNextMonth() {
+        monthDifference++;
+        createCalendar(parent);
+    }
+
+    function switchPrevMonth() {
+        monthDifference--;
+        createCalendar(parent);
     }
 
 
@@ -3248,18 +3236,8 @@
 
     }
 
-    function getDate(today) {
-        var date = new Date(today);
-        return {
-            "month": date.getMonth(),
-            "year": date.getFullYear()
-        };
-    }
 
 
-    //     Модифицируйте предыдущую задачу так, чтобы появилась также стрелка,
-    //     по нажатию на которую можно будет проматывать месяцы назад.
-    //
 
     //     Задачи
     // Реализуйте календарик следующего вида: показаны дни текущего месяца (в ряд),
