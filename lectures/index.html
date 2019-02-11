@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .date{
+        div {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .date {
 
             width: 20px;
             height: 20px;
             border: black 1px solid;
         }
+
         a:link, a:visited {
             text-decoration: none;
             color: black;
@@ -20,7 +26,7 @@
         }
 
         .active {
-            background-color: Background;
+            background-color: red;
         }
 
 
@@ -36,7 +42,10 @@
 </head>
 <body>
 <div id="parent"></div>
-<p id="navigation"></p>
+<br>
+<div id="prev"><<</div>
+<div id="dates"></div>
+<div id="next">>></div>
 
 <ul id="ul"></ul>
 </body>
@@ -3244,7 +3253,6 @@
     //
 
 
-
     //     Задачи
     // Реализуйте календарик следующего вида: показаны дни текущего месяца (в ряд),
     // слева стрелка 'предыдущий месяц', справа ссылка 'следующий месяц'.
@@ -3252,9 +3260,10 @@
     // Если мы смотрим текущий месяц текущего года - текущий день должен быть как-то выделен.
     //
     var parent = document.getElementById('parent');
-    var navi = document.getElementById('navigation');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
     var monthDifference = 0;
-
+    var dates = document.getElementById('dates');
     var month = [
         'январь',
         'февраль',
@@ -3278,13 +3287,6 @@
 
 
         createCalendar(parent);
-
-
-        var next = createNavigation(' >>');
-        var prev = createNavigation('<< ');
-        navi.appendChild(prev);
-        navi.appendChild(next);
-
         naviHandler(prev, next);
 
 
@@ -3293,13 +3295,14 @@
 
     function createCalendar(parentElement) {
 
-        var span = document.createElement("span");
         var date = new Date();
         date.setMonth(date.getMonth() + monthDifference);
-        parentElement.innerHTML = convertMonthName(month, date.getMonth()) + ' ' + date.getFullYear();
+        var currentMonth = date.getMonth();
+        parentElement.innerHTML = convertMonthName(month, currentMonth) + ' ' + date.getFullYear();
 
 
-
+        var daysQuant = findDaysQuantity(date.getFullYear(), currentMonth);
+        createDateList(daysQuant, dates, highlightCurrentDate(date.getFullYear(), date.getMonth()));
     }
 
 
@@ -3308,7 +3311,6 @@
         next.addEventListener("click", switchNextMonth);
 
     }
-
 
     function switchNextMonth() {
         monthDifference++;
@@ -3320,23 +3322,47 @@
         createCalendar(parent);
     }
 
-
-    function createNavigation(innerValue) {
-
-        var nav = document.createElement("a");
-        nav.href = '#';
-        nav.innerHTML = innerValue;
-
-        return nav;
-
-    }
-
     function convertMonthName(arrayMonthNames, month) {
 
         return arrayMonthNames[month];
 
     }
 
+    function findDaysQuantity(year, currentMonth) {
+        var date = new Date(year, currentMonth + 1, 0);
+        var lastDay = date.getDate();
+
+        return lastDay;
+    }
+
+    function createDateList(daysQuant, datesParentElement, day) {
+        datesParentElement.innerHTML = '';
+        for (var i = 1; i <= daysQuant; i++) {
+            var element = document.createElement("div");
+
+            if (i == day) {
+                element.classList.add('active');
+            }
+            element.innerHTML = i;
+            element.classList.add('date');
+            datesParentElement.appendChild(element);
+        }
+    }
+
+    function highlightCurrentDate(year, currentMonth) {
+
+        var currentDate = new Date();
+        var date = new Date(year, currentMonth);
+
+        if (currentDate.getMonth() == date.getMonth()) {
+            var curDate = currentDate.getDate();
+            return curDate;
+
+        } else {
+            return null;
+        }
+
+    }
 
     //     Задачи
     // Определите день недели первого дня текущего месяца.
