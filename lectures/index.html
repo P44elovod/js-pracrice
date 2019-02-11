@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        .date{
+
+            width: 20px;
+            height: 20px;
+            border: black 1px solid;
+        }
         a:link, a:visited {
             text-decoration: none;
             color: black;
@@ -3151,6 +3157,100 @@
     //     Модифицируйте предыдущую задачу так, чтобы появилась также стрелка,
     //     по нажатию на которую можно будет проматывать месяцы назад.
     //
+    // var parent = document.getElementById('parent');
+    // var navi = document.getElementById('navigation');
+    // var monthDifference = 0;
+    //
+    // var month = [
+    //     'январь',
+    //     'февраль',
+    //     'март',
+    //     'апрель',
+    //     'май',
+    //     'июнь',
+    //     'июль',
+    //     'август',
+    //     'сентябрь',
+    //     'октябрь',
+    //     'ноябрь',
+    //     'декабрь'
+    // ];
+    //
+    //
+    // initCalendar(parent);
+    //
+    //
+    // function initCalendar(parent) {
+    //
+    //
+    //     createCalendar(parent);
+    //
+    //
+    //     var next = createNavigation(' >>');
+    //     var prev = createNavigation('<< ');
+    //     navi.appendChild(prev);
+    //     navi.appendChild(next);
+    //
+    //     naviHandler(prev, next);
+    //
+    //
+    // }
+    //
+    //
+    // function createCalendar(parentElement) {
+    //
+    //     var span = document.createElement("span");
+    //     var date = new Date();
+    //     date.setMonth(date.getMonth() + monthDifference);
+    //     parentElement.innerHTML = convertMonthName(month, date.getMonth()) + ' ' + date.getFullYear();
+    //
+    //
+    // }
+    //
+    //
+    // function naviHandler(prev, next) {
+    //     prev.addEventListener("click", switchPrevMonth);
+    //     next.addEventListener("click", switchNextMonth);
+    //
+    // }
+    //
+    //
+    // function switchNextMonth() {
+    //     monthDifference++;
+    //     createCalendar(parent);
+    // }
+    //
+    // function switchPrevMonth() {
+    //     monthDifference--;
+    //     createCalendar(parent);
+    // }
+    //
+    //
+    // function createNavigation(innerValue) {
+    //
+    //     var nav = document.createElement("a");
+    //     nav.href = '#';
+    //     nav.innerHTML = innerValue;
+    //
+    //     return nav;
+    //
+    // }
+    //
+    // function convertMonthName(arrayMonthNames, month) {
+    //
+    //     return arrayMonthNames[month];
+    //
+    // }
+    //
+
+
+
+    //     Задачи
+    // Реализуйте календарик следующего вида: показаны дни текущего месяца (в ряд),
+    // слева стрелка 'предыдущий месяц', справа ссылка 'следующий месяц'.
+    // Сверху показан год и месяц, который мы смотрим.
+    // Если мы смотрим текущий месяц текущего года - текущий день должен быть как-то выделен.
+    //
     var parent = document.getElementById('parent');
     var navi = document.getElementById('navigation');
     var monthDifference = 0;
@@ -3199,6 +3299,7 @@
         parentElement.innerHTML = convertMonthName(month, date.getMonth()) + ' ' + date.getFullYear();
 
 
+
     }
 
 
@@ -3236,15 +3337,6 @@
 
     }
 
-
-
-
-    //     Задачи
-    // Реализуйте календарик следующего вида: показаны дни текущего месяца (в ряд),
-    // слева стрелка 'предыдущий месяц', справа ссылка 'следующий месяц'.
-    // Сверху показан год и месяц, который мы смотрим.
-    // Если мы смотрим текущий месяц текущего года - текущий день должен быть как-то выделен.
-    //
 
     //     Задачи
     // Определите день недели первого дня текущего месяца.
