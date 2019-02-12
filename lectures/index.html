@@ -42,10 +42,6 @@
 </head>
 <body>
 <div id="parent"></div>
-<br>
-<div id="prev"><<</div>
-<div id="dates"></div>
-<div id="next">>></div>
 
 <ul id="ul"></ul>
 </body>
@@ -3259,129 +3255,250 @@
     // Сверху показан год и месяц, который мы смотрим.
     // Если мы смотрим текущий месяц текущего года - текущий день должен быть как-то выделен.
     //
-    var parent = document.getElementById('parent');
-    var prev = document.getElementById('prev');
-    var next = document.getElementById('next');
-    var monthDifference = 0;
-    var dates = document.getElementById('dates');
-    var month = [
-        'январь',
-        'февраль',
-        'март',
-        'апрель',
-        'май',
-        'июнь',
-        'июль',
-        'август',
-        'сентябрь',
-        'октябрь',
-        'ноябрь',
-        'декабрь'
-    ];
-
-
-    initCalendar(parent);
-
-
-    function initCalendar(parent) {
-
-
-        createCalendar(parent);
-        naviHandler(prev, next);
-
-
-    }
-
-
-    function createCalendar(parentElement) {
-
-        var date = new Date();
-        date.setMonth(date.getMonth() + monthDifference);
-        var currentMonth = date.getMonth();
-        parentElement.innerHTML = convertMonthName(month, currentMonth) + ' ' + date.getFullYear();
-
-
-        var daysQuant = findDaysQuantity(date.getFullYear(), currentMonth);
-        createDateList(daysQuant, dates, highlightCurrentDate(date.getFullYear(), date.getMonth()));
-    }
-
-
-    function naviHandler(prev, next) {
-        prev.addEventListener("click", switchPrevMonth);
-        next.addEventListener("click", switchNextMonth);
-
-    }
-
-    function switchNextMonth() {
-        monthDifference++;
-        createCalendar(parent);
-    }
-
-    function switchPrevMonth() {
-        monthDifference--;
-        createCalendar(parent);
-    }
-
-    function convertMonthName(arrayMonthNames, month) {
-
-        return arrayMonthNames[month];
-
-    }
-
-    function findDaysQuantity(year, currentMonth) {
-        var date = new Date(year, currentMonth + 1, 0);
-        var lastDay = date.getDate();
-
-        return lastDay;
-    }
-
-    function createDateList(daysQuant, datesParentElement, day) {
-        datesParentElement.innerHTML = '';
-        for (var i = 1; i <= daysQuant; i++) {
-            var element = document.createElement("div");
-
-            if (i == day) {
-                element.classList.add('active');
-            }
-            element.innerHTML = i;
-            element.classList.add('date');
-            datesParentElement.appendChild(element);
-        }
-    }
-
-    function highlightCurrentDate(year, currentMonth) {
-
-        var currentDate = new Date();
-        var date = new Date(year, currentMonth);
-
-        if (currentDate.getMonth() == date.getMonth()) {
-            var curDate = currentDate.getDate();
-            return curDate;
-
-        } else {
-            return null;
-        }
-
-    }
+    // var parent = document.getElementById('parent');
+    // var prev = document.getElementById('prev');
+    // var next = document.getElementById('next');
+    // var monthDifference = 0;
+    // var dates = document.getElementById('dates');
+    // var month = [
+    //     'январь',
+    //     'февраль',
+    //     'март',
+    //     'апрель',
+    //     'май',
+    //     'июнь',
+    //     'июль',
+    //     'август',
+    //     'сентябрь',
+    //     'октябрь',
+    //     'ноябрь',
+    //     'декабрь'
+    // ];
+    //
+    //
+    // initCalendar(parent);
+    //
+    //
+    // function initCalendar(parent) {
+    //
+    //
+    //     createCalendar(parent);
+    //     naviHandler(prev, next);
+    //
+    //
+    // }
+    //
+    //
+    // function createCalendar(parentElement) {
+    //
+    //     var date = new Date();
+    //     date.setMonth(date.getMonth() + monthDifference);
+    //     var currentMonth = date.getMonth();
+    //     parentElement.innerHTML = convertMonthName(month, currentMonth) + ' ' + date.getFullYear();
+    //
+    //
+    //     var daysQuant = findDaysQuantity(date.getFullYear(), currentMonth);
+    //     createDateList(daysQuant, dates, highlightCurrentDate(date.getFullYear(), date.getMonth()));
+    // }
+    //
+    //
+    // function naviHandler(prev, next) {
+    //     prev.addEventListener("click", switchPrevMonth);
+    //     next.addEventListener("click", switchNextMonth);
+    //
+    // }
+    //
+    // function switchNextMonth() {
+    //     monthDifference++;
+    //     createCalendar(parent);
+    // }
+    //
+    // function switchPrevMonth() {
+    //     monthDifference--;
+    //     createCalendar(parent);
+    // }
+    //
+    // function convertMonthName(arrayMonthNames, month) {
+    //
+    //     return arrayMonthNames[month];
+    //
+    // }
+    //
+    // function findDaysQuantity(year, currentMonth) {
+    //     var date = new Date(year, currentMonth + 1, 0);
+    //     var lastDay = date.getDate();
+    //
+    //     return lastDay;
+    // }
+    //
+    // function createDateList(daysQuant, datesParentElement, day) {
+    //     datesParentElement.innerHTML = '';
+    //     for (var i = 1; i <= daysQuant; i++) {
+    //         var element = document.createElement("div");
+    //
+    //         if (i == day) {
+    //             element.classList.add('active');
+    //         }
+    //         element.innerHTML = i;
+    //         element.classList.add('date');
+    //         datesParentElement.appendChild(element);
+    //     }
+    // }
+    //
+    // function highlightCurrentDate(year, currentMonth) {
+    //
+    //     var currentDate = new Date();
+    //     var date = new Date(year, currentMonth);
+    //
+    //     if (currentDate.getMonth() == date.getMonth()) {
+    //         var curDate = currentDate.getDate();
+    //         return curDate;
+    //
+    //     } else {
+    //         return null;
+    //     }
+    //
+    // }
 
     //     Задачи
     // Определите день недели первого дня текущего месяца.
-    //
+    // var date = new Date();
+    // date.setDate(1);
+    // console.log(date.getDay());
     //     Определите день недели первого дня текущего месяца.
     //     Узнайте, сколько дней назад от этой даты был понедельник.
     //
+    // var date = new Date();
+    // date.setDate(1);
+    // console.log(date.getDay()-1);
     //     Определите день недели последнего дня текущего месяца.
     //     Узнайте, через сколько дней от этой даты будет воскресенье.
     //
+    // var date = new Date();
+    // date.setMonth(date.getMonth() + 1);
+    // date.setDate(0);
+    // console.log(7 - date.getDay());
+
 
     //     Задачи
     // Выведите на экран ul, заполненный числами от 1 до последнего дня текущего месяца.
     //
+    // var parent = document.getElementById('ul');
+    //
+    // createList(parent, getLastDate());
+    //
+    // function createList(parent, lastDay) {
+    //     for (var i = 1; i <= lastDay; i++) {
+    //         var li = document.createElement("li");
+    //         li.innerHTML = i;
+    //         parent.appendChild(li);
+    //     }
+    // }
+    //
+    // function getLastDate() {
+    //     var date = new Date();
+    //     date.setMonth(date.getMonth() + 1);
+    //     date.setDate(0);
+    //
+    //     var lastDate = date.getDate();
+    //     return lastDate;
+    // }
+
+
     //     Модифицируйте предыдущую задачу так, чтобы под каждым числом был написан также и день недели.
     //
+    // var parent = document.getElementById('ul');
+    // var days = [
+    //     'вс',
+    //     'пн',
+    //     'вт',
+    //     'ср',
+    //     'чт',
+    //     'пт',
+    //     'сб'
+    //
+    // ];
+    //
+    // createList(days, parent, getLastDate());
+    //
+    // function createList(dayList, parent, lastDate) {
+    //
+    //     for (var i = 1; i <= lastDate; i++) {
+    //         var li = document.createElement("li");
+    //         var date = new Date();
+    //         date.setDate(i);
+    //         li.innerHTML = i + '<br>' + convertDayNames(dayList, date.getDay());
+    //         parent.appendChild(li);
+    //     }
+    //
+    // }
+    //
+    // function getLastDate() {
+    //
+    //     var lastDate = new Date();
+    //     lastDate.setMonth(lastDate.getMonth() + 1);
+    //     lastDate.setDate(0);
+    //
+    //     return lastDate.getDate();
+    //
+    // }
+    //
+    // function convertDayNames(namesList, day) {
+    //     return namesList[day];
+    // }
+
     //     Модифицируйте предыдущую задачу так, чтобы перед первым числом текущего месяца были написаны
     //     еще и последние числа предыдущего месяца так, чтобы начало нашего списка приходилось на понедельник.
     //
+    var parent = document.getElementById('ul');
+    var days = [
+        'вс',
+        'пн',
+        'вт',
+        'ср',
+        'чт',
+        'пт',
+        'сб'
+
+    ];
+
+    // detectStartMonday(new Date());
+
+    createList(days, parent, getLastDate());
+
+
+    function createList(dayList, parent, lastDate) {
+        var date = new Date();
+        for (var i = 1; i <= lastDate; i++) {
+            var li = document.createElement("li");
+            date.setDate(i);
+            li.innerHTML = i + '<br>' + convertDayNames(dayList, date.getDay());
+            parent.appendChild(li);
+        }
+
+    }
+
+    function detectStartMonday(currDate) {
+        currDate.setDate(1);
+        var monday = currDate.getDay() - 1;
+        console.log(monday);
+
+    }
+
+    function getLastDate() {
+
+        var lastDate = new Date();
+        lastDate.setMonth(lastDate.getMonth() + 1);
+        lastDate.setDate(0);
+
+        return lastDate.getDate();
+
+    }
+
+    function convertDayNames(namesList, day) {
+        return namesList[day];
+    }
+
     //     Модифицируйте предыдущую задачу так, чтобы после последнего числа текущего месяца были написаны еще и
     //     первые числа следующего месяца так, чтобы конец нашего списка приходился на воскресенье.
     //
