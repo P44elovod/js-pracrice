@@ -3450,57 +3450,90 @@
     //     Модифицируйте предыдущую задачу так, чтобы перед первым числом текущего месяца были написаны
     //     еще и последние числа предыдущего месяца так, чтобы начало нашего списка приходилось на понедельник.
     //
-    var parent = document.getElementById('ul');
-    var days = [
-        'вс',
-        'пн',
-        'вт',
-        'ср',
-        'чт',
-        'пт',
-        'сб'
-
-    ];
-
-    // detectStartMonday(new Date());
-
-    createList(days, parent, getLastDate());
-
-
-    function createList(dayList, parent, lastDate) {
-        var date = new Date();
-        for (var i = 1; i <= lastDate; i++) {
-            var li = document.createElement("li");
-            date.setDate(i);
-            li.innerHTML = i + '<br>' + convertDayNames(dayList, date.getDay());
-            parent.appendChild(li);
-        }
-
-    }
-
-    function detectStartMonday(currDate) {
-        currDate.setDate(1);
-        var monday = currDate.getDay() - 1;
-        console.log(monday);
-
-    }
-
-    function getLastDate() {
-
-        var lastDate = new Date();
-        lastDate.setMonth(lastDate.getMonth() + 1);
-        lastDate.setDate(0);
-
-        return lastDate.getDate();
-
-    }
-
-    function convertDayNames(namesList, day) {
-        return namesList[day];
-    }
-
     //     Модифицируйте предыдущую задачу так, чтобы после последнего числа текущего месяца были написаны еще и
     //     первые числа следующего месяца так, чтобы конец нашего списка приходился на воскресенье.
+    // var parent = document.getElementById('ul');
+    // var days = [
+    //     'вс',
+    //     'пн',
+    //     'вт',
+    //     'ср',
+    //     'чт',
+    //     'пт',
+    //     'сб'
+    //
+    // ];
+    //
+    // detectStartMonday(new Date());
+    //
+    // createList(days, parent, getLastDate(new Date()));
+    //
+    //
+    // function createList(dayList, parent, lastDate) {
+    //     var date = new Date();
+    //     var prevDate = new Date();
+    //     var nextDate = new Date();
+    //     nextDate.setMonth(date.getMonth() + 1);
+    //
+    //
+    //     addElements(getPrevMonthInterval(prevDate, date).prevMonthStartDate, getPrevMonthInterval(prevDate, date).prevMonthLastDate, prevDate, parent, dayList);
+    //     addElements(1, lastDate, date, parent, dayList);
+    //     addElements(1, detectEndMonday(date), nextDate, parent, dayList);
+    //
+    //
+    // }
+    //
+    //
+    // function getPrevMonthInterval(prevDate, currentDate) {
+    //
+    //     prevDate.setMonth(currentDate.getMonth() - 1);
+    //     var prevLastDate = getLastDate(prevDate);
+    //     prevDate.setDate(prevLastDate - detectStartMonday(currentDate));
+    //
+    //     return {
+    //         'prevMonthLastDate': prevLastDate,
+    //         'prevMonthStartDate': prevDate.getDate()
+    //
+    //     }
+    // }
+    //
+    // function addElements(startValue, endValue, dateValue, parentElement, list) {
+    //     for (var i = startValue; i <= endValue; i++) {
+    //         var li = document.createElement("li");
+    //         dateValue.setDate(i);
+    //         li.innerHTML = dateValue.getDate() + '<br>' + convertDayNames(list, dateValue.getDay());
+    //         parentElement.appendChild(li);
+    //     }
+    // }
+    //
+    // function detectStartMonday(currDate) {
+    //     currDate.setDate(1);
+    //     var mondayDef = currDate.getDay() - 2;
+    //
+    //     return mondayDef;
+    // }
+    //
+    // function detectEndMonday(currDate) {
+    //   currDate.setDate(getLastDate(currDate));
+    //     var mondayDef =  7 - currDate.getDay();
+    //     return mondayDef;
+    // }
+    //
+    // function getLastDate(date) {
+    //
+    //
+    //     date.setMonth(date.getMonth() + 1);
+    //     date.setDate(0);
+    //
+    //     return date.getDate();
+    //
+    // }
+    //
+    // function convertDayNames(namesList, day) {
+    //     return namesList[day];
+    // }
+
+
     //
 
     //     Календарь
