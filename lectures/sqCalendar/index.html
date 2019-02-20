@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #calendar {
+            display: inline-block;
+        }
+
+        #calendar td, #calendar th {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        #calendar .nav, #calendar .info {
+            text-align: center;
+            display: inline;
+
+        }
+
+        #calendar a:link, a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        #calendar a:hover {
+            color: red;
+        }
+
+        #calendar .active {
+            background: aquamarine;
+        }
+
+    </style>
+</head>
+<body>
+<div id="calendar">
+
+    <div class="info">Февраль 2018</div>
+    <div class="nav">
+        <a href="#" class="prev">&larr;</a>
+        <a href="#" class="next">&rarr;</a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>пн</th>
+            <th>вт</th>
+            <th>ср</th>
+            <th>чт</th>
+            <th>пт</th>
+            <th>сб</th>
+            <th>вс</th>
+        </tr>
+        </thead>
+        <tbody class="dates">
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
+<script>
+    //     Календарь
+    // Реализуйте квадратный календарик, который будет показывать даты и дни недели за текущий месяц.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы сверху над календариком появились стрелки вперед и назад,
+    //     с помощью которых можно будет менять просматриваемый месяц.
+
+    (function (selector) {
+
+
+        var calendar = document.querySelector(selector);
+
+        initCalendar(calendar);
+
+        function initCalendar(parent) {
+
+            var date = new Date();
+            var displayedYear = date.getFullYear();
+            var displayedMonth = date.getMonth();
+            var prev = parent.querySelector('.prev');
+            var next = parent.querySelector('.next');
+            var dates = parent.querySelector('.dates');
+            var info = parent.querySelector('.info');
+
+            drawCalendar(displayedYear, displayedMonth);
+
+            prev.addEventListener("click", function () {
+                var prevDates = getPrevMonthYear(displayedYear, displayedMonth);
+
+                displayedYear = prevDates.prevYear;
+                displayedMonth = prevDates.prevMonth;
+
+                drawCalendar(displayedYear, displayedMonth, parent);
+
+            });
+
+            next.addEventListener("click", function () {
+                var nextDates = getNextMonthYear(displayedYear, displayedMonth);
+
+                displayedYear = nextDates.nextYear;
+                displayedMonth = nextDates.nextMonth;
+
+                drawCalendar(displayedYear, displayedMonth, parent);
+
+            });
+
+            function drawCalendar(year, month) {
+
+                drawDates(year, month, dates);
+                showInfo(year, month, info);
+
+            }
+
+        }
+
+
+        function getPrevMonthYear(year, month) {
+
+            var prevDate = new Date(year, month, 0)
+
+            return {
+                'prevMonth': prevDate.getMonth(),
+                'prevYear': prevDate.getFullYear()
+            }
+        }
+
+        function getNextMonthYear(year, month) {
+
+            var nextDate = new Date(year, month + 1)
+
+            return {
+                'nextMonth': nextDate.getMonth(),
+                'nextYear': nextDate.getFullYear()
+            }
+        }
+
+        function showInfo(year, month, parent) {
+            parent.innerHTML = getMonthName(month) + ' ' + year;
+        }
+
+        function getMonthName(monthNum) {
+            var monthes = [
+                'Январь',
+                'Февраль',
+                'Март',
+                'Апрель',
+                'Май',
+                'Июнь',
+                'Июль',
+                'Август',
+                'Сентябрь',
+                'Октябрь',
+                'Ноябрь',
+                'Декабрь'
+            ];
+
+            return monthes[monthNum];
+        }
+
+        function drawDates(year, month, dates) {
+            var arr = [];
+            var firstDateOfMonth = 1;
+            var lastDateOfMonth = getLastDayOfMonth(year, month);
+
+            var unshiftElemsNum = getUnshiftElemsNum(year, month);
+            var pushElemsNum = getPushElemsNum(year, month);
+
+            arr = createArr(firstDateOfMonth, lastDateOfMonth);
+            arr = unshiftElems(unshiftElemsNum, '', arr);
+            arr = pushElems(pushElemsNum, '', arr);
+            arr = chunkArr(7, arr);
+
+            createTable(arr, dates);
+
+        }
+
+        function createTable(arr, parent) {
+            parent.innerHTML = '';
+            for (var i = 0; i < arr.length; i++) {
+                var tr = document.createElement("tr");
+                for (var j = 0; j < arr[i].length; j++) {
+                    var td = document.createElement("td");
+                    td.innerHTML = arr[i][j];
+                    tr.appendChild(td);
+                }
+                parent.appendChild(tr);
+            }
+
+
+        }
+
+        function createArr(from, to) {
+            var arr = [];
+            for (var i = from; i <= to; i++) {
+                arr.push(i);
+            }
+            return arr;
+
+        }
+
+        function unshiftElems(num, elem, arr) {
+
+            for (var i = 0; i < num; i++) {
+                arr.unshift(elem);
+            }
+            return arr;
+        }
+
+        function pushElems(num, elem, arr) {
+
+            for (var i = 0; i < num; i++) {
+                arr.push(elem);
+            }
+            return arr;
+
+        }
+
+        function getLastDayOfMonth(year, month) {
+
+            return new Date(year, month + 1, 0).getDate();
+
+            // if (month == 1) {
+            //     if (isLeap(year)) {
+            //         return 29;
+            //     } else {
+            //         return 28;
+            //     }
+            //
+            // } else {
+            //
+            //     var days = [31, undefined, 31, 30, 31, 30, 31, 31, 30, 31];
+            //     return days[month];
+            // }
+            //
+            // function isLeap(year) {
+            //     if ((year % 4 == 0 && year % 100 != 0) || year % 400 ==0 ) {
+            //         return true;
+            //     } else {
+            //         return false;
+            //     }
+            // }
+
+        }
+
+        function getUnshiftElemsNum(year, month) {
+            var jsDayNum = getFirstWeekDayOfMonthNum(year, month);
+            var realDayNum = getRealDayWeekNum(jsDayNum);
+
+            return realDayNum - 1;
+
+        }
+
+        function getPushElemsNum(year, month) {
+            var jsDayNum = getLastDayOfMonhtNum(year, month);
+            var realDayNum = getRealDayWeekNum(jsDayNum);
+
+            return 7 - realDayNum;
+
+        }
+
+        function chunkArr(num, arr) {
+            var result = [];
+
+            while (arr.length >= 7) {
+                result.push(arr.splice(0, num));
+
+            }
+
+
+            return result;
+
+        }
+
+        function getRealDayWeekNum(jsNumOfDay) {
+            if (jsNumOfDay == 6) {
+                return 7;
+            } else {
+                return jsNumOfDay;
+            }
+        }
+
+        function getFirstWeekDayOfMonthNum(year, month) {
+
+            return new Date(year, month, 1).getDay();
+
+        }
+
+        function getLastDayOfMonhtNum(year, month) {
+
+            return new Date(year, month + 1, 0).getDay();
+
+        }
+    }('#calendar'));
+</script>
