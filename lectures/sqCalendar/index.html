@@ -29,14 +29,11 @@
             color: red;
         }
 
-        #calendar .active {
-            background: aquamarine;
-        }
 
     </style>
 </head>
 <body>
-<div id="calendar">
+<div id="calendar" >
 
     <div class="info">Февраль 2018</div>
     <div class="nav">
@@ -44,7 +41,7 @@
         <a href="#" class="next">&rarr;</a>
     </div>
 
-    <table>
+    <table class="calendarTable">
         <thead>
         <tr>
             <th>пн</th>
@@ -64,16 +61,16 @@
 </body>
 </html>
 <script>
-    //     Календарь
-    // Реализуйте квадратный календарик, который будет показывать даты и дни недели за текущий месяц.
-    //
-    //     Модифицируйте предыдущую задачу так, чтобы сверху над календариком появились стрелки вперед и назад,
-    //     с помощью которых можно будет менять просматриваемый месяц.
-
+    // Лекция №12 по JavaScript. Домашняя работа
+    // Органайзер
+    // Реализуйте органайзер. Он представляет собой календарик,
+    //     нажимая на даты которого можно увидеть список задач, запланированных на этот день.
+    //     Задачи можно добавлять, удалять, редактировать, помечать выполненными.
     (function (selector) {
 
 
         var calendar = document.querySelector(selector);
+        var calendarTable = calendar.querySelector('.calendarTable');
 
         initCalendar(calendar);
 
@@ -184,9 +181,14 @@
             for (var i = 0; i < arr.length; i++) {
                 var tr = document.createElement("tr");
                 for (var j = 0; j < arr[i].length; j++) {
-                    var td = document.createElement("td");
-                    td.innerHTML = arr[i][j];
-                    tr.appendChild(td);
+                    if (arr[i][0] == '' && i == 5) {
+                        break;
+                    } else {
+                        var td = document.createElement("td");
+                        td.innerHTML = arr[i][j];
+                        td.addEventListener("click", initList);
+                        tr.appendChild(td);
+                    }
                 }
                 parent.appendChild(tr);
             }
@@ -224,26 +226,6 @@
 
             return new Date(year, month + 1, 0).getDate();
 
-            // if (month == 1) {
-            //     if (isLeap(year)) {
-            //         return 29;
-            //     } else {
-            //         return 28;
-            //     }
-            //
-            // } else {
-            //
-            //     var days = [31, undefined, 31, 30, 31, 30, 31, 31, 30, 31];
-            //     return days[month];
-            // }
-            //
-            // function isLeap(year) {
-            //     if ((year % 4 == 0 && year % 100 != 0) || year % 400 ==0 ) {
-            //         return true;
-            //     } else {
-            //         return false;
-            //     }
-            // }
 
         }
 
@@ -295,5 +277,11 @@
             return new Date(year, month + 1, 0).getDay();
 
         }
+        
+        function initList() {
+            
+        }
+        
+        
     }('#calendar'));
 </script>
