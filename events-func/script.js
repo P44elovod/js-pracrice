@@ -1,6 +1,27 @@
 // На elem.onclick
 //  #1 Даны картинки. Привяжите к каждой картинке событие, чтобы по клику на картинку алертом выводился ее src.
 //
+// var elems = document.getElementsByTagName('input');
+// for (var i = 0; i < elems.length; i++) {
+//     elems[i].onclick = func;
+// }
+//
+// function func() {
+//     alert('!');
+// }
+//  var elem = document.getElementsByTagName('img');
+//
+// // console.log(elem.src);
+// for (var i = 0; i <= elem.length; i++ ){
+//
+// console.log(elem[i]);
+// // elem.onclick = func;
+//
+// }
+// //
+// function func() {
+//     alert(elem.src);
+// }
 //     На addEventListener, removeEventListener
 //  #2 Даны ссылки. Привяжите всем ссылкам событие - по наведению на ссылку в атрибут title запишется ее текст.
 //
