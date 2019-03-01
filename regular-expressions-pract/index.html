@@ -239,37 +239,82 @@
     // Примеры емэйлов для тестирования mymail@mail.ru, my.mail@mail.ru, my-mail@mail.ru, my_mail@mail.ru,
     // mail@mail.com, mail@mail.by, mail@yandex.ru. Показать решение.
     //
-    let patt = /^[a-zA-Z0-9.]@[a-z]/g
-    console.log(/^[a-zA-Z0-9.]+@.+/g.test('my_mail@mail.ru'));
+    // let patt = /^[a-zA-Z0-9_\-]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+    // console.log(patt.test('mail@yandex.ru'));
 
-    //
     //     Дана строка с текстом, в котором могут быть емейлы.
     //     С помощью match найдите все емэйлы в виде массива. Показать решение.
     //
+    // let str = 'mymail@mail.ru, my.mail@mail.ru, my-mail@mail.ru, my_mail@mail.ru, mail@mail.com, mail@mail.by, mail@yandex.ru';
+    // let patt = /([a-zA-Z0-9_\-]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3})/g;
+    //
+    // str.match(patt).forEach(value => console.log(value));
+
     //     С помощью test определите, что переданная строка является доменом.
     //     Примеры доменов: site.ru, site.com, my-site.com. Показать решение.
     //
+    // let patt = /^[a-zA-Z\-]+\.?[a-zA-Z]+\.?[a-zA-Z]{2,3}$/
+    // console.log(patt.test('my-site.com'));
+
     //     С помощью test определите, что переданная строка является доменом.
     //     Примеры доменов: http://site.ru, http://site.com. Показать решение.
     //
+    // let patt = /^(http:\/\/)[a-zA-Z\-]+\.?[a-zA-Z]+\.?[a-zA-Z]{2,3}$/
+    // console.log(patt.test('http://site.com'));
+
     //     С помощью test определите, что переданная строка является доменом вида http://site.ru.
     //     Протокол может быть как http, так и https. Показать решение.
     //
+    // let patt = /^(http:\/\/)|(https:\/\/)[a-zA-Z\-]+\.?[a-zA-Z]+\.?[a-zA-Z]{2,3}$/
+    // console.log(patt.test('https://site.com'));
+
     //     С помощью test определите, что переданная строка начинается с http или с https. Показать решение.
     //
+    // let patt = /^(http:\/\/)|(https:\/\/)/;
+    // console.log(patt.test('http://site.com'));
+
+
     //     С помощью test определите, что переданная строка заканчивается расширением txt, html или php.
     //     Показать решение.
     //
+    // let patt = /(php)|(html)|(txt)$/;
+    // console.log(patt.test('asdf.txt'));
+
     //     С помощью test определите, что переданная строка заканчивается расширением jpg или jpeg. Показать решение.
     //
+    // let patt = /(jpeg)|(jpg)$/;
+    // console.log(patt.test('asdf.jpg'));
+
     //     С помощью test узнайте является ли строка числом, длиной до 12 цифр. Показать решение.
     //
+    // let patt = /\d{1,12}/;
+    // console.log(patt.test('1111111111111111111111111111111111'));
+
     //     Дана строка с буквами, пробелами и цифрами. Найдите сумму всех чисел из данной строки. Показать решение.
     //
+    // let str = 'Дана строка 1 с  36 буквами, пробел65ами и цифрами';
+    // console.log(getSum(getDigitals(str)));
+    //
+    // function getDigitals(str) {
+    //     let patt = /\d/g;
+    //     return str.match(patt);
+    // }
+    //
+    // function getSum(arr) {
+    //     let sum = 0;
+    //     for (let value of arr) {
+    //         sum += Number(value);
+    //     }
+    //     return sum
+    // }
+
     //     Задачи на replace
     // С помощью replace замените в строке домены вида http://site.ru, http://site.com на
     // <a href="http://site.ru">site.ru</a>. Показать решение.
     //
+    let patt = /^(http:\/\/)([a-zA-Z\-]+\.?[a-zA-Z]+\.?[a-zA-Z]{2,3}$)/;
+    console.log('http://site.com'.replace(patt, '<a href=$1>$2</a>'));
+
     //     С помощью replace замените все повторяющиеся пробелы на один. Показать решение.
     //
     //     Найдите и удалите все комментарии CSS. Показать решение.
