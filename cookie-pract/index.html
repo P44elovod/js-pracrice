@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type=" text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script type=" text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 </head>
 <body>
-<input id="city">
-
+<div id="counter"></div>
 </body>
 </html>
 <script>
@@ -32,6 +32,7 @@
     // console.log($.cookie('name') + ' ' + $.cookie('age'));
 
     //     Практика
+
     // Дан инпут. Ведите в него город, например, Минск. Сохраните его в куки.
     // Зайдя на другую страницу сайта вы должны увидеть фразу 'ваш город - Минск'. Показать решение.
     //
@@ -40,8 +41,7 @@
     //     $.cookie('city', this.value);
     // console.log(document.cookie);
     // });
-    document.onloadeddata(alert('ваш город - ' + $.cookie('city')));
-
+    // document.onloadeddata(alert('ваш город - ' + $.cookie('city')));
 
 
     //     При заходе на страницу спросите с помощью инпута день рождения пользователя.
@@ -49,18 +49,99 @@
     //     до его дня рождения. И пусть по этим числам запуститься обратный отсчет (то есть они будут тикать).
     //     Показать решение.
     //
+    // let inputValue = document.getElementById('birthDate');
+    //
+    // inputValue.addEventListener("blur", function () {
+    //
+    //     // console.log(this.value.replace(/(\d{2})(\d{2})(\d{4})/,'$3,$2,$1'));
+    //
+    //     $.cookie('birthDate', new Date(this.value.replace(/(\d{2})(\d{2})(\d{4})/, '$3,$2,$1')));
+    //     this.value = '';
+    //
+    // });
+    //
+    // $(document).ready(function () {
+    //
+    //     let birthDate = new Date($.cookie('birthDate'));
+    //     if (birthDate) {
+    //
+    //         let today = new Date();
+    //         let nextBirthDate = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+    //         let difSeconds = Math.floor((nextBirthDate - today) / 1000);
+    //
+    //         window.setInterval(function () {
+    //             difSeconds--;
+    //             let difMonth = Math.floor(difSeconds / 60 / 60 / 24 / 30);
+    //             let difDays = Math.floor((nextBirthDate - new Date(today.getFullYear(), today.getMonth() + difMonth, today.getDate())) / 1000 / 60 / 60 / 24);
+    //             let difHours = Math.floor((nextBirthDate - new Date(today.getFullYear(), today.getMonth() + difMonth, today.getDate() + difDays)) / 1000 / 60 / 60);
+    //             let difMin = Math.floor((nextBirthDate - new Date(today.getFullYear(), today.getMonth() + difMonth, today.getDate() + difDays), today.getHours() + difHours) / 1000 / 60);
+    //             let difSec = Math.floor((nextBirthDate - new Date(today.getFullYear(), today.getMonth() + difMonth, today.getDate() + difDays), today.getHours() + difHours, today.getMinutes() + difMin) / 1000);
+    //
+    //             console.log( difMonth + ' ' + difDays + ' ' + difHours + ' '  + difMin + ' ' +difSec);
+    //         }, 1000)
+    //         console.log(difSeconds);
+    //     }
+    // });
+    // с таймером какая - то дичь(
+
     //     Дана форма с инпутами. Пользователь вводит какие-то данные и закрывает страницу
     //     (не факт, что он заполнил всю форму). Сделайте так, чтобы при следующем заходе на страницу
     //     введенные им ранее данные стояли на своих местах. Показать решение.
     //
+    // let inputValue = document.getElementById('birthDate');
+    //
+    // inputValue.addEventListener("blur", function () {
+    //     $.cookie('inputValue', this.value);
+    //     this.value = '';
+    // })
+    // if ($.cookie('inputValue') != undefined) {
+    //     inputValue.value = $.cookie('inputValue');
+    //     console.log($.cookie('inputValue'))
+    // }
+
     //     Даны чекбоксы. Пользователь произвольно отмечает их и закрывает страницу.
     //     Сделайте так, чтобы при следующем заходе на страницу чекбоксы стали отмеченными так,
     //     как это сделал пользователь ранее. Показать решение.
     //
+    // let checkboxes = document.querySelectorAll('input');
+    // let status = [];
+    // for (let value of checkboxes) {
+    //     value.addEventListener("click", function () {
+    //         if (this.checked === true) {
+    //             status.push(value.id);
+    //             $.cookie('checked', JSON.stringify(status));
+    //             console.log($.cookie('checked'));
+    //         }
+    //     });
+    // }
+    //
+    // $(document).ready(function () {
+    //     let restoredStatus = JSON.parse($.cookie('checked'));
+    //     for (let value of restoredStatus) {
+    //         checkboxes[value].checked = true;
+    //     }
+    // })
+
+
     //     При заходе на страницу появляется счетчик обратного отсчета.
     //     Когда он доходит до нуля, на странице пишется - 'отсчет закончен'.
     //     При обновлении страницы счетчик не должен начинать идти заново. Показать решение.
     //
+    // let counterElem = document.getElementById('counter');
+    // var time = 5;
+    // console.log($.cookie('timer'));
+    // if ($.cookie('timer') != '1') {
+    //     var timerID = window.setInterval(function () {
+    //         counterElem.innerHTML = time;
+    //         if (time == 0) {
+    //             window.clearInterval(timerID);
+    //             $.cookie('timer', '1');
+    //         } else {
+    //             time--;
+    //         }
+    //     }, 1000);
+    // }
+
     //     Дан тектареа. Пользователь может потянуть за его угол и изменить его размер.
     //     Сделайте так, чтобы при следующем заходе на страницу, текстареа был заданного размера. Показать решение.
     //
