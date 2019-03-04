@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js></script>
-    <script type=" text/javascript" src="jquery.cookie.js"></script
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type=" text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 </head>
 <body>
+<input id="city">
 
 </body>
 </html>
@@ -17,17 +18,32 @@
     //
     // Основы работы
     //
+
     // Установите куку с именем 'name' и значением 'Иван'. Выведите содержимое этой куки на экран. Показать решение.
     //
-    $.cookie('name', 'Иван');
-    console.log($cookie);
+    // $.cookie('name', 'Иван');
+    // console.log($.cookie('name'));
+
     //     Установите куку с вашем именем и вашим возрастом. Выведите на экран содержимое этих двух кук.
     //     Показать решение.
     //
+    // $.cookie('name', 'UserName');
+    // $.cookie('age', 'UserAge');
+    // console.log($.cookie('name') + ' ' + $.cookie('age'));
+
     //     Практика
     // Дан инпут. Ведите в него город, например, Минск. Сохраните его в куки.
     // Зайдя на другую страницу сайта вы должны увидеть фразу 'ваш город - Минск'. Показать решение.
     //
+    // var city = document.getElementById('city');
+    // city.addEventListener("blur", function () {
+    //     $.cookie('city', this.value);
+    // console.log(document.cookie);
+    // });
+    document.onloadeddata(alert('ваш город - ' + $.cookie('city')));
+
+
+
     //     При заходе на страницу спросите с помощью инпута день рождения пользователя.
     //     Когда он зайдет с следующий раз - напишите сколько месяцев, дней, часов, минут и секунд осталось
     //     до его дня рождения. И пусть по этим числам запуститься обратный отсчет (то есть они будут тикать).
