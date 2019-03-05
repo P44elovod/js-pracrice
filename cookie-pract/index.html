@@ -8,7 +8,7 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 </head>
 <body>
-<div id="counter"></div>
+<textarea id="text" style="width: 200px; height: 200px;"></textarea>
 </body>
 </html>
 <script>
@@ -144,12 +144,30 @@
 
     //     Дан тектареа. Пользователь может потянуть за его угол и изменить его размер.
     //     Сделайте так, чтобы при следующем заходе на страницу, текстареа был заданного размера. Показать решение.
+    // let text = document.getElementById('text');
+    // let startWidth = text.style.width;
+    // let startHeight = text.style.height;
     //
+    // $(document).ready(function () {
+    //     if ($.cookie('width')){
+    //         text.style.width = $.cookie('width');
+    //         text.style.height = $.cookie('height');
+    //     }
+    // })
+    //
+    // text.addEventListener("mouseup", function () {
+    //     if (this.style.width != startWidth || this.style.height != startHeight){
+    //         $.cookie('width', this.style.width);
+    //         $.cookie('height', this.style.height);
+    //     }
+    // })
+
     //     Дан инпут. В него можно ввести данные, затем поредактировать их, затем еще поредактировать.
     //     Пусть инпут хранит историю своих изменений (даже после перезагрузки страницы).
     //     Сверху над инпутом должны появится стрелочки, с помощью которых можно перемещаться по истории.
     //     Показать решение.
     //
+
     //     Дан сайт. Пусть каждая страница для каждого посетителя хранит время последнего захода и количество
     //     заходов на нее этим посетителем. Пусть эти данные показываются при заходе в формате 'с последнего захода
     //     прошло ... вы посещали эту страницу ... раз'. Показать решение.
