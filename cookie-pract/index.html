@@ -6,30 +6,34 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type=" text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-<style>
-    .nav {
-        margin-left: 60px;
+    <style>
+        .nav {
+            margin-left: 60px;
 
-    }
-    div.nav {
-        display: inline-block;
-    }
-    a:link, a:visited {
-        text-decoration: none;
-        color: black;
-    }
-    a:hover {
-        color: red;
-    }
-</style>
+        }
+
+        div.nav {
+            display: inline-block;
+        }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
 
 </head>
 <body>
 <div class="nav">
     <a href="#" id="prev">&larr;</a>
     <a href="#" id="next">&rarr;</a>
-</div><br>
-<input>
+</div>
+<br>
+<input id="input">
 </body>
 </html>
 <script>
@@ -188,6 +192,32 @@
     //     Сверху над инпутом должны появится стрелочки, с помощью которых можно перемещаться по истории.
     //     Показать решение.
     //
+    let arr = [];
+    let index = 0;
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    let input = document.getElementById('input');
+
+    input.addEventListener("blur", function () {
+        arr.push(this.value);
+        this.value = '';
+        index = arr.length;
+
+    });
+
+    next.addEventListener("click", function () {
+        if (index < arr.length-1) {
+            index++
+            input.value = arr[index];
+        }
+    });
+    prev.addEventListener("click", function () {
+        if (index > 0) {
+            index--
+            input.value = arr[index];
+        }
+    });
+
 
     //     Дан сайт. Пусть каждая страница для каждого посетителя хранит время последнего захода и количество
     //     заходов на нее этим посетителем. Пусть эти данные показываются при заходе в формате 'с последнего захода
