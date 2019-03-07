@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type=" text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+</head>
+<body>
+<a href="#" id="prev">&larr;</a>
+<a href="#" id="next">&rarr;</a>
+<textarea id="text"></textarea>
+
+</body>
+</html>
+<script>
+    // Задачи на работу с локальным хранилищем на JavaScript
+
+    //     Задачи для решения
+
+    // Основы работы
+    // Дан текстареа. В него вводится текст. Сделайте так, чтобы после захода на эту страницу через некоторое время,
+    // введенный текст остался в текстареа. Текст должен запоминаться в локальном хранилище.
+    //
+    // let text = document.getElementById('text');
+    // text.addEventListener("blur", function () {
+    //     localStorage.setItem('text', this.value);
+    // });
+    //
+    // $(document).ready(function () {
+    //     if (localStorage.getItem('text')){
+    //         text.value = localStorage.getItem('text');
+    //     }
+    // });
+
+    //     Закрепление
+
+    // Дан текстареа. В него можно ввести данные, затем поредактировать их, затем еще поредактировать.
+    // Пусть текстареа хранит историю своих изменений (даже после перезагрузки страницы).
+    // Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории.
+    // let arr = [];
+    // let index = 0;
+    // let next = document.getElementById('next');
+    // let prev = document.getElementById('prev');
+    // let text = document.getElementById('text');
+    //
+    // $(document).ready(function () {
+    //     if (getStorage('content')) {
+    //         arr = getStorage('content');
+    //         index = arr.length;
+    //     }
+    // })
+    //
+    // text.addEventListener("blur", function () {
+    //     arr.push(this.value);
+    //     this.value = '';
+    //     setStorage('content', arr);
+    //
+    // });
+    //
+    // next.addEventListener("click", function () {
+    //     if (index < arr.length - 1) {
+    //         index++
+    //         text.value = arr[index];
+    //
+    //     }
+    // });
+    // prev.addEventListener("click", function () {
+    //
+    //     if (index > 0) {
+    //         index--
+    //         text.value = arr[index];
+    //     }
+    // });
+    //
+    //
+    // function setStorage(itemName, array) {
+    //
+    //     localStorage.setItem(itemName, JSON.stringify(array));
+    //
+    // }
+    //
+    // function getStorage(itemName) {
+    //     if ($.cookie(itemName)) {
+    //         return JSON.parse($.cookie(itemName));
+    //     } else false;
+    // }
+
+    //
+    //     Дана форма с инпутами, текстареа, чекбоксами, радио кнопочками, селектами и тп.
+    //     Пользователь вводит какие-то данные и закрывает страницу (не факт, что он заполнил всю форму).
+    //     Сделайте так, чтобы при следующем заходе на страницу введенные им ранее данные стояли на своих местах.
+    //     Сделайте ваш скрипт как можно более универсальным.
+    //
+
+    //     Реализуйте записную книгу, хранящую данные в локальном хранилище.
+    //
+    //     Реализуйте органайзер, хранящий данные в локальном хранилище.
+</script>
