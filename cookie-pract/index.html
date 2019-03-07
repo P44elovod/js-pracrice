@@ -192,37 +192,60 @@
     //     Сверху над инпутом должны появится стрелочки, с помощью которых можно перемещаться по истории.
     //     Показать решение.
     //
-    let arr = [];
-    let index = 0;
-    let next = document.getElementById('next');
-    let prev = document.getElementById('prev');
-    let input = document.getElementById('input');
-
-    input.addEventListener("blur", function () {
-        arr.push(this.value);
-        this.value = '';
-        index = arr.length;
-
-    });
-
-    next.addEventListener("click", function () {
-        if (index < arr.length-1) {
-            index++
-            input.value = arr[index];
-        }
-    });
-    prev.addEventListener("click", function () {
-        if (index > 0) {
-            index--
-            input.value = arr[index];
-        }
-    });
-
+    // let arr = [];
+    // let index = 0;
+    // let next = document.getElementById('next');
+    // let prev = document.getElementById('prev');
+    // let input = document.getElementById('input');
+    //
+    // $(document).ready(function () {
+    //     if (getCookie('content')) {
+    //         arr = getCookie('content');
+    //         index = arr.length;
+    //     }
+    // })
+    //
+    // input.addEventListener("blur", function () {
+    //     arr.push(this.value);
+    //     this.value = '';
+    //     // index = arr.length;
+    //     setCookie('content', arr);
+    //
+    // });
+    //
+    // next.addEventListener("click", function () {
+    //     if (index < arr.length - 1) {
+    //         index++
+    //         input.value = arr[index];
+    //
+    //     }
+    // });
+    // prev.addEventListener("click", function () {
+    //
+    //     if (index > 0) {
+    //         index--
+    //         input.value = arr[index];
+    //     }
+    // });
+    //
+    //
+    // function setCookie(cookieName, array) {
+    //
+    //     $.cookie(cookieName, JSON.stringify(array));
+    //
+    // }
+    //
+    // function getCookie(cookieName) {
+    //     if ($.cookie(cookieName)) {
+    //         return JSON.parse($.cookie(cookieName));
+    //     } else false;
+    // }
 
     //     Дан сайт. Пусть каждая страница для каждого посетителя хранит время последнего захода и количество
     //     заходов на нее этим посетителем. Пусть эти данные показываются при заходе в формате 'с последнего захода
     //     прошло ... вы посещали эту страницу ... раз'. Показать решение.
     //
+
     //     Пусть по заходу на страницу показывается определенный рекламный текст.
     //     Рядом с ним сделайте кнопку 'убрать', по нажатию на которую этот рекламный текст не показывается этому
     //     пользователю ровно один день.
