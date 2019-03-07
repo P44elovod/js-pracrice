@@ -24,16 +24,19 @@
         a:hover {
             color: red;
         }
+        .hide {
+            display: none;
+        }
     </style>
 
 </head>
 <body>
-<div class="nav">
-    <a href="#" id="prev">&larr;</a>
-    <a href="#" id="next">&rarr;</a>
+<div>
+    <p id="ad">,kfvmdkvmldsjnfbv</p>
+    <a href="#" id="hide">убрать</a>
 </div>
 <br>
-<input id="input">
+
 </body>
 </html>
 <script>
@@ -263,4 +266,23 @@
     //     Пусть по заходу на страницу показывается определенный рекламный текст.
     //     Рядом с ним сделайте кнопку 'убрать', по нажатию на которую этот рекламный текст не показывается этому
     //     пользователю ровно один день.
+
+    let hide = document.getElementById('hide');
+    let ad = document.getElementById('ad');
+
+    hide.addEventListener("click", function () {
+        let date = new Date();
+        $.cookie('date', date);
+        ad.classList.add('hide');
+        hide.classList.add('hide');
+    });
+
+
+
+
+
+
+
+
+
 </script>
