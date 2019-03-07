@@ -245,6 +245,20 @@
     //     заходов на нее этим посетителем. Пусть эти данные показываются при заходе в формате 'с последнего захода
     //     прошло ... вы посещали эту страницу ... раз'. Показать решение.
     //
+    // $(document).ready(function () {
+    //
+    //     let numbersOfVisits = 0;
+    //     let now = new Date();
+    //     if ($.cookie('lastVisit')) {
+    //         console.log('с последнего захода прошло ' + Math.floor((now - new Date(JSON.parse($.cookie('lastVisit'))[0])) / 1000 / 60) + ' минут, вы посещали эту страницу ' + JSON.parse($.cookie('lastVisit'))[1] + ' раз');
+    //         numbersOfVisits++
+    //         $.cookie('lastVisit', JSON.stringify([new Date(), numbersOfVisits]));
+    //     } else {
+    //         numbersOfVisits++
+    //         JSON.stringify([new Date(), numbersOfVisits])
+    //     }
+    //
+    // });
 
     //     Пусть по заходу на страницу показывается определенный рекламный текст.
     //     Рядом с ним сделайте кнопку 'убрать', по нажатию на которую этот рекламный текст не показывается этому
