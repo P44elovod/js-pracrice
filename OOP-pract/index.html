@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // Задачи на основы работы с ООП в JavaScript
+
+    // Задачи для решения
+
+    // Простые задачи
+    // Реализуйте класс Worker (Работник), который будет иметь следующие свойства: name (имя), surname (фамилия),
+    // rate (ставка за день работы), days (количество отработанных дней).
+    // Также класс должен иметь метод getSalary(), который будет выводить зарплату работника.
+    // Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days.
+    //
+    class Worker {
+
+        constructor(name, surname, rate, days) {
+            this._name = name;
+            this._surname = surname;
+            this._rate = rate;
+            this._days = days;
+        }
+
+
+        getName() {
+            return this._name;
+        }
+
+        setName(value) {
+            this._name = value;
+        }
+
+        getSurname() {
+            return this._surname;
+        }
+
+        setSurname(value) {
+            this._surname = value;
+        }
+
+        getRate() {
+            return this._rate;
+        }
+
+        setRate(value) {
+            this._rate = value;
+        }
+
+        getDays() {
+            return this._days;
+        }
+
+        setDays(value) {
+            this._days = value;
+        }
+
+        getSalary() {
+            return this._days * this._rate;
+        }
+
+    }
+
+    //     Вот так должен работать наш класс:
+    //
+    var worker = new Worker('Иван', 'Иванов', 10, 31);
+    //
+    // console.log(worker.name); //выведет 'Иван'
+    // console.log(worker.surname); //выведет 'Иванов'
+    // console.log(worker.rate); //выведет 10
+    // console.log(worker.days); //выведет 31
+    // console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+    // С помощью нашего класса создайте двух рабочих и найдите сумму их зарплат.
+
+    // var worker1 = new Worker('Иван', 'Иванов', 10, 31);
+    // var worker2 = new Worker('Иван', 'Иванов', 20, 31);
+
+    // console.log(worker1.getSalary() + worker2.getSalary());
+
+    //     Геттеры и сеттеры
+    // Модифицируйте класс Worker из предыдущей задачи следующим образом: сделайте все его свойства приватными,
+    // а для их чтения сделайте методы-геттеры. Наш класс теперь будет работать так:
+    //
+    //     var worker = new Worker('Иван', 'Иванов', 10, 31);
+    //
+    // console.log(worker.getName()); //выведет 'Иван'
+    // console.log(worker.getSurname()); //выведет 'Иванов'
+    // console.log(worker.getRate()); //выведет 10
+    // console.log(worker.getDays()); //выведет 31
+    // console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+
+    // Модифицируйте класс Worker из предыдущей задачи следующим образом: для свойства rate и для свойства
+    // days сделайте еще и методы-сеттеры. Наш класс теперь будет работать так:
+    //
+    //     var worker = new Worker('Иван', 'Иванов', 10, 31);
+    //
+    // console.log(worker.getRate()); //выведет 10
+    // console.log(worker.getDays()); //выведет 31
+    // console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+
+
+    //Теперь используем сеттер:
+    // worker.setRate(20); //увеличим ставку
+    // worker.setDays(10); //уменьшим дни
+    // console.log(worker.getSalary()); //выведет 200 - то есть 20*10
+
+    // Практика
+    // Реализуйте класс MyString, который будет иметь следующие методы: метод reverse(),
+    // который параметром принимает строку, а возвращает ее в перевернутом виде, метод ucFirst(),
+    // который параметром принимает строку, а возвращает эту же строку, сделав ее первую букву заглавной и метод
+    // ucWords, который принимает строку и делает заглавной первую букву каждого слова этой строки.
+    //
+    // class MyString {
+    //
+    //
+    //     reverse(string) {
+    //         return Array.from(string).reverse().join('');
+    //     }
+    //
+    //     ucFirst(string) {
+    //
+    //         return string.slice(0, 1).toUpperCase() + string.slice(1);
+    //         // который параметром принимает строку, а возвращает эту же строку, сделав ее первую букву заглавной
+    //     }
+    //
+    //     ucWords(string) {
+    //
+    //         var arr = string.split(' ');
+    //         var result = [];
+    //         for (let value of arr) {
+    //             result.push(this.ucFirst(value));
+    //         }
+    //
+    //         return result.join(' ');
+    //         // который принимает строку и делает заглавной первую букву каждого слова этой строки.
+    //     }
+    // }
+
+    //     Наш класс должен работать так:
+    //
+    // var str = new MyString();
+    //
+    // console.log(str.reverse('abcde')); //выведет 'edcba'
+    // console.log(str.ucFirst('abcde')); //выведет 'Abcde'
+    // console.log(str.ucWords('abcde abcde abcde'));
+    //выведет 'Abcde Abcde Abcde'
+
+    // Реализуйте класс Validator, который будет проверять строки.
+    // К примеру, у него будет метод isEmail параметром принимает строку и проверяет,
+    // является ли она корректным емейлом или нет. Если является - возвращает true, если не является - то false.
+    // Кроме того, класс будет иметь следующие методы: метод isDomain для проверки домена, метод isDate для проверки
+    // даты и метод isPhone для проверки телефона:
+    //
+    // class Validator {
+    //     isEmail(str) {
+    //         return /^[a-zA-Z0-9_\-]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(str);
+    //     }
+    //
+    //     isDomain(str) {
+    //         return /^[a-zA-Z\-]+\.?[a-zA-Z]+\.?[a-zA-Z]{2,3}$/.test(str);
+    //     }
+    //
+    //     isDate(str) {
+    //         return /(\d{2})\.(\d{2})\.(\d{4})/.test(str)
+    //     }
+    //
+    //     isPhone(str) {
+    //         return /(\+375)\s\(\d{2}\)\s\d{3}-\d{2}-\d{2}/.test(str);
+    //     }
+    // }
+
+
+    // var validator = new Validator();
+    //
+    // console.log(validator.isEmail('phphtml@mail.ru'));
+    // console.log(validator.isDomain('phphtml.net'));
+    // console.log(validator.isDate('12.05.2020'));
+    // console.log(validator.isPhone('+375 (29) 817-68-92')); //тут можете формат своей страны
+    //
+
+    // Задачи на наследование классов в JavaScript
+
+    // Реализуйте класс Student (Студент), который будет наследовать от класса User, подобно тому, как это сделано в теоретической части урока. Этот класс должен иметь следующие свойства: name (имя, наследуется от User), surname (фамилия, наследуется от User), year (год поступления в вуз). Класс должен иметь метод getFullName() (наследуется от User), с помощью которого можно вывести одновременно имя и фамилию студента. Также класс должен иметь метод getCourse(), который будет выводить текущий курс студента (от 1 до 5). Курс вычисляется так: нужно от текущего года отнять год поступления в вуз. Текущий год получите самостоятельно.
+    //
+    //     Вот так должен работать наш класс:
+    //
+    //     var student = new Student('Иван', 'Иванов', 2016);
+    //
+    // console.log(worker.name); //выведет 'Иван'
+    // console.log(worker.surname); //выведет 'Иванов'
+    // console.log(worker.getFullName()); //выведет 'Иван Иванов'
+    // console.log(worker.year); //выведет 2016console.log(worker.getCourse()); //выведет 3 - третий курс, так как текущий год 2019
+    // Вот так должен выглядеть класс User, от которого наследуется наш Student:
+    //
+    //     class User {
+    //         constructor(name, surname) {
+    //             this.name = name;
+    //             this.surname = surname;
+    //         }
+    //
+    //         getFullName() {
+    //             return this.name + ' ' + this.surname;
+    //         }
+    //     }
+    //
+    //
+
+    // Задачи на применение ООП при работе с DOM
+    //
+    // Работа с элементами
+    // Реализуйте класс Elem, который параметром принимает селектор одного HTML элемента и затем может выполнять с ним различные операции. Класс должен работать следующим образом:
+    //
+    //     var elem = new Elem('селектор');
+    //
+    // elem.html('!'); //запишет в текст элемента '!'
+    // elem.append('!'); //запишет в начало элемента '!'
+    // elem.prepend('!'); //запишет в конец элемента '!'
+    // elem.attr('class', 'www'); //запишет в атрибут class значение www
+    //
+    // //Должны работать цепочки методов:
+    // elem.html('hello').append('!').prepend('!');
+    // elem.attr('class', 'www').attr('title', 'hello');
+    // Модифицируйте класс Elem из предыдущей задачи так, чтобы он мог работать не только с одним элементом, но и одновременно с группой, как это сделано в jQuery. Кроме того: реализуйте еще и метод each, который будет работать также, как и each из jQuery.
+    //
+    //     Практика
+    // Реализуйте класс Rectangle, о котором я рассказываю в видео в теоретической части урока. У него должны быть следующие свойства: ширина width, высота height. Также у него должны быть следующие методы: получить ширину getWidth, установить ширину setWidth, получить высоту getHeight, установить высоту setHeight.
+</script>
