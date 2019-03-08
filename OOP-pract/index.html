@@ -5,71 +5,72 @@
     <title>Title</title>
 </head>
 <body>
-
+<p>sdcsdvsdvsd</p>
+<div>dmlckmsdljvnkjfdvnkdf</div>
 </body>
 </html>
 <script>
     // Задачи на основы работы с ООП в JavaScript
-
+    //
     // Задачи для решения
-
+    //
     // Простые задачи
     // Реализуйте класс Worker (Работник), который будет иметь следующие свойства: name (имя), surname (фамилия),
     // rate (ставка за день работы), days (количество отработанных дней).
     // Также класс должен иметь метод getSalary(), который будет выводить зарплату работника.
     // Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days.
     //
-    class Worker {
-
-        constructor(name, surname, rate, days) {
-            this._name = name;
-            this._surname = surname;
-            this._rate = rate;
-            this._days = days;
-        }
-
-
-        getName() {
-            return this._name;
-        }
-
-        setName(value) {
-            this._name = value;
-        }
-
-        getSurname() {
-            return this._surname;
-        }
-
-        setSurname(value) {
-            this._surname = value;
-        }
-
-        getRate() {
-            return this._rate;
-        }
-
-        setRate(value) {
-            this._rate = value;
-        }
-
-        getDays() {
-            return this._days;
-        }
-
-        setDays(value) {
-            this._days = value;
-        }
-
-        getSalary() {
-            return this._days * this._rate;
-        }
-
-    }
-
+    // class Worker {
+    //
+    //     constructor(name, surname, rate, days) {
+    //         this._name = name;
+    //         this._surname = surname;
+    //         this._rate = rate;
+    //         this._days = days;
+    //     }
+    //
+    //
+    //     getName() {
+    //         return this._name;
+    //     }
+    //
+    //     setName(value) {
+    //         this._name = value;
+    //     }
+    //
+    //     getSurname() {
+    //         return this._surname;
+    //     }
+    //
+    //     setSurname(value) {
+    //         this._surname = value;
+    //     }
+    //
+    //     getRate() {
+    //         return this._rate;
+    //     }
+    //
+    //     setRate(value) {
+    //         this._rate = value;
+    //     }
+    //
+    //     getDays() {
+    //         return this._days;
+    //     }
+    //
+    //     setDays(value) {
+    //         this._days = value;
+    //     }
+    //
+    //     getSalary() {
+    //         return this._days * this._rate;
+    //     }
+    //
+    // }
+    //
     //     Вот так должен работать наш класс:
     //
-    var worker = new Worker('Иван', 'Иванов', 10, 31);
+    // var worker = new Worker('Иван', 'Иванов', 10, 31);
     //
     // console.log(worker.name); //выведет 'Иван'
     // console.log(worker.surname); //выведет 'Иванов'
@@ -77,12 +78,12 @@
     // console.log(worker.days); //выведет 31
     // console.log(worker.getSalary()); //выведет 310 - то есть 10*31
     // С помощью нашего класса создайте двух рабочих и найдите сумму их зарплат.
-
+    //
     // var worker1 = new Worker('Иван', 'Иванов', 10, 31);
     // var worker2 = new Worker('Иван', 'Иванов', 20, 31);
-
+    //
     // console.log(worker1.getSalary() + worker2.getSalary());
-
+    //
     //     Геттеры и сеттеры
     // Модифицируйте класс Worker из предыдущей задачи следующим образом: сделайте все его свойства приватными,
     // а для их чтения сделайте методы-геттеры. Наш класс теперь будет работать так:
@@ -94,7 +95,7 @@
     // console.log(worker.getRate()); //выведет 10
     // console.log(worker.getDays()); //выведет 31
     // console.log(worker.getSalary()); //выведет 310 - то есть 10*31
-
+    //
     // Модифицируйте класс Worker из предыдущей задачи следующим образом: для свойства rate и для свойства
     // days сделайте еще и методы-сеттеры. Наш класс теперь будет работать так:
     //
@@ -103,13 +104,13 @@
     // console.log(worker.getRate()); //выведет 10
     // console.log(worker.getDays()); //выведет 31
     // console.log(worker.getSalary()); //выведет 310 - то есть 10*31
-
-
-    //Теперь используем сеттер:
+    //
+    //
+    // Теперь используем сеттер:
     // worker.setRate(20); //увеличим ставку
     // worker.setDays(10); //уменьшим дни
     // console.log(worker.getSalary()); //выведет 200 - то есть 20*10
-
+    //
     // Практика
     // Реализуйте класс MyString, который будет иметь следующие методы: метод reverse(),
     // который параметром принимает строку, а возвращает ее в перевернутом виде, метод ucFirst(),
@@ -141,7 +142,7 @@
     //         // который принимает строку и делает заглавной первую букву каждого слова этой строки.
     //     }
     // }
-
+    //
     //     Наш класс должен работать так:
     //
     // var str = new MyString();
@@ -149,8 +150,8 @@
     // console.log(str.reverse('abcde')); //выведет 'edcba'
     // console.log(str.ucFirst('abcde')); //выведет 'Abcde'
     // console.log(str.ucWords('abcde abcde abcde'));
-    //выведет 'Abcde Abcde Abcde'
-
+    // выведет 'Abcde Abcde Abcde'
+    //
     // Реализуйте класс Validator, который будет проверять строки.
     // К примеру, у него будет метод isEmail параметром принимает строку и проверяет,
     // является ли она корректным емейлом или нет. Если является - возвращает true, если не является - то false.
@@ -174,8 +175,8 @@
     //         return /(\+375)\s\(\d{2}\)\s\d{3}-\d{2}-\d{2}/.test(str);
     //     }
     // }
-
-
+    //
+    //
     // var validator = new Validator();
     //
     // console.log(validator.isEmail('phphtml@mail.ru'));
@@ -183,19 +184,58 @@
     // console.log(validator.isDate('12.05.2020'));
     // console.log(validator.isPhone('+375 (29) 817-68-92')); //тут можете формат своей страны
     //
-
+    //
     // Задачи на наследование классов в JavaScript
-
-    // Реализуйте класс Student (Студент), который будет наследовать от класса User, подобно тому, как это сделано в теоретической части урока. Этот класс должен иметь следующие свойства: name (имя, наследуется от User), surname (фамилия, наследуется от User), year (год поступления в вуз). Класс должен иметь метод getFullName() (наследуется от User), с помощью которого можно вывести одновременно имя и фамилию студента. Также класс должен иметь метод getCourse(), который будет выводить текущий курс студента (от 1 до 5). Курс вычисляется так: нужно от текущего года отнять год поступления в вуз. Текущий год получите самостоятельно.
+    //
+    // Реализуйте класс Student (Студент), который будет наследовать от класса User,
+    // подобно тому, как это сделано в теоретической части урока.
+    // Этот класс должен иметь следующие свойства:
+    // name (имя, наследуется от User),
+    // surname (фамилия, наследуется от User),
+    // year (год поступления в вуз).
+    // Класс должен иметь метод getFullName() (наследуется от User),
+    // с помощью которого можно вывести одновременно имя и фамилию студента.
+    // Также класс должен иметь метод getCourse(), который будет выводить текущий курс студента (от 1 до 5).
+    // Курс вычисляется так: нужно от текущего года отнять год поступления в вуз. Текущий год получите самостоятельно.
+    //
+    //
+    // class User {
+    //
+    //     constructor(name, surname) {
+    //         this._name = name;
+    //         this._surname = surname;
+    //     }
+    //
+    //     getFullName() {
+    //         return this._name + ' ' + this._surname;
+    //     }
+    //
+    // }
+    //
+    // class Student extends User {
+    //
+    //     constructor(name, surname, year) {
+    //         super(name, surname);
+    //         this._year = year;
+    //
+    //     }
+    //
+    //     getCourse() {
+    //         let now = new Date();
+    //         return now.getFullYear() - this._year;
+    //     }
+    //
+    // }
     //
     //     Вот так должен работать наш класс:
     //
-    //     var student = new Student('Иван', 'Иванов', 2016);
+    // var student = new Student('Иван', 'Иванов', 2016);
     //
-    // console.log(worker.name); //выведет 'Иван'
-    // console.log(worker.surname); //выведет 'Иванов'
-    // console.log(worker.getFullName()); //выведет 'Иван Иванов'
-    // console.log(worker.year); //выведет 2016console.log(worker.getCourse()); //выведет 3 - третий курс, так как текущий год 2019
+    // console.log(student._name); //выведет 'Иван'
+    // console.log(student._surname); //выведет 'Иванов'
+    // console.log(student.getFullName()); //выведет 'Иван Иванов'
+    // console.log(student._year); //выведет 2016
+    // console.log(student.getCourse()); //выведет 3 - третий курс, так как текущий год 2019
     // Вот так должен выглядеть класс User, от которого наследуется наш Student:
     //
     //     class User {
@@ -210,24 +250,142 @@
     //     }
     //
     //
-
+    //
     // Задачи на применение ООП при работе с DOM
     //
     // Работа с элементами
-    // Реализуйте класс Elem, который параметром принимает селектор одного HTML элемента и затем может выполнять с ним различные операции. Класс должен работать следующим образом:
+    // Реализуйте класс Elem, который параметром принимает селектор одного HTML элемента и затем может выполнять
+    // с ним различные операции. Класс должен работать следующим образом:
     //
-    //     var elem = new Elem('селектор');
+    //
+    // class Elem {
+    //
+    //     constructor(selector) {
+    //         this.elem = document.querySelector(selector);
+    //     }
+    //
+    //     html(value) {
+    //         this.elem.innerHTML = value;
+    //         return this;
+    //     }
+    //
+    //     attr(name, value) {
+    //         this.elem.setAttribute(name, value);
+    //         return this;
+    //     }
+    //
+    //     prepend(value) {
+    //         this.elem.innerHTML = value + this.elem.innerHTML;
+    //         return this;
+    //     }
+    //
+    //     append(value) {
+    //         this.elem.innerHTML = this.elem.innerHTML + value;
+    //         return this;
+    //     }
+    //
+    // }
+    //
+    // var elem = new Elem('p');
     //
     // elem.html('!'); //запишет в текст элемента '!'
     // elem.append('!'); //запишет в начало элемента '!'
     // elem.prepend('!'); //запишет в конец элемента '!'
     // elem.attr('class', 'www'); //запишет в атрибут class значение www
     //
+    //
     // //Должны работать цепочки методов:
-    // elem.html('hello').append('!').prepend('!');
+    // elem.html('hello').prepend('!').append('!');
     // elem.attr('class', 'www').attr('title', 'hello');
-    // Модифицируйте класс Elem из предыдущей задачи так, чтобы он мог работать не только с одним элементом, но и одновременно с группой, как это сделано в jQuery. Кроме того: реализуйте еще и метод each, который будет работать также, как и each из jQuery.
+    //
+    // Модифицируйте класс Elem из предыдущей задачи так, чтобы он мог работать не только с одним элементом,
+    // но и одновременно с группой, как это сделано в jQuery.
+    // Кроме того: реализуйте еще и метод each, который будет работать также, как и each из jQuery.
+    // class Elem {
+    //
+    //     constructor(selectors) {
+    //
+    //         this.elem = document.querySelectorAll(selectors);
+    //     }
+    //
+    //     html(text) {
+    //
+    //         this.elem.forEach(value => value.innerHTML = text);
+    //         return this;
+    //     }
+    //
+    //     attr(name, text) {
+    //         this.elem.forEach(value => value.setAttribute(name, text));
+    //         return this;
+    //     }
+    //
+    //     prepend(text) {
+    //         this.elem.forEach(value => value.innerHTML = text + value.innerHTML);
+    //         return this;
+    //     }
+    //
+    //     append(text) {
+    //         this.elem.forEach(value => value.innerHTML = value.innerHTML + text);
+    //
+    //         return this;
+    //     }
+    //
+    //
+    //     each(elem){
+    //
+    //
+    //
+    //     }
+    //
+    //
+    // }
+    //
+    // var elem = new Elem('p, div');
+    //
+    //
     //
     //     Практика
-    // Реализуйте класс Rectangle, о котором я рассказываю в видео в теоретической части урока. У него должны быть следующие свойства: ширина width, высота height. Также у него должны быть следующие методы: получить ширину getWidth, установить ширину setWidth, получить высоту getHeight, установить высоту setHeight.
+    // Реализуйте класс Rectangle, о котором я рассказываю в видео в теоретической части урока.
+    // У него должны быть следующие свойства: ширина width, высота height.
+    // Также у него должны быть следующие методы: получить ширину getWidth, установить ширину setWidth,
+    // получить высоту getHeight, установить высоту setHeight.
+    //
+    // class Rectangle {
+    //
+    //     constructor(width, height) {
+    //         this.elem = document.createElement("div");
+    //         this._width = width;
+    //         this._height = height;
+    //
+    //         this.elem.style.width = this._width + 'px';
+    //         this.elem.style.height = this._height + 'px';
+    //
+    //         this.elem.style.border = '1px solid black';
+    //         document.body.appendChild(this.elem);
+    //
+    //     }
+    //
+    //
+    //     getWidth() {
+    //         return parseInt(this._width);
+    //     }
+    //
+    //     setWidth(value) {
+    //         this.elem.style.width = value + 'px';
+    //     }
+    //
+    //     getHeight() {
+    //         return parseInt(this._height);
+    //     }
+    //
+    //     setHeight(value) {
+    //         this.elem.style.height = value + 'px';
+    //     }
+    // }
+    //
+    // var rect = new Rectangle(400, 300);
+    //
+    // rect.setHeight(700);
+    // console.log(rect.getHeight());
+    // console.log(rect.getWidth());
 </script>
