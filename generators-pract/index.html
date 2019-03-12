@@ -38,50 +38,192 @@
 
     //     Введение в функции-генераторы ES6
 
-    //
-    //
     //Сделайте функцию-генератор, которая будет возвращать итератор.
     // Первый вызов метода next итератора должен вернуть 1, второй вызов - 2, третий вызов - 3.
     //
+    //
+    // let iterator = createIterator();
+    // console.log(iterator.next().value);
+    // console.log(iterator.next().value);
+    // console.log(iterator.next().value);
+
+    // function* createIterator() {
+    //     yield 1;
+    //     yield 2;
+    //     yield 3;
+    // }
+
     //Переберите итератор, полученный в предыдущей задаче через цикл for-of.
     //
+    // let iterator = createIterator();
+    // for (let value of iterator) {
+    //     console.log(value);
+    // }
+
     // Дан массив. С помощью функции-генератора создайте итератор, перебирающий элементы массива по одному.
     //
+    // let arr = [1, 2, 3];
+    //
+    // let iterator = createIterator(arr);
+    // function *createIterator(arr) {
+    //     for (let value of arr){
+    //         yield value;
+    //     }
+    // }
+    //
+    // for (let value of iterator){
+    //     console.log(value);
+    //
+    // }
+
     // Дан массив. С помощью функции-генератора создайте итератор, перебирающий элементы массива с конца.
     //
+    // let arr = [1, 2, 3];
+    //
+    // let iterator = createIterator(arr);
+    // function *createIterator(arr) {
+    //     let reversedArr = arr.reverse();
+    //     for (let value of reversedArr){
+    //         yield value;
+    //     }
+    // }
+    //
+    // for (let value of iterator) {
+    //     console.log(value);
+    //
+    // }
+
     // Дан массив. С помощью функции-генератора создайте итератор, каждый вызов которого будет возвращать
     // по два элемента массива (сначала первые два, потом вторые два и так далее).
     // Элементы должны возвращаться в виде массива из двух элементов.
     //
+    // let arr = [1, 2, 3, 4];
+    //
+    // let iterator = createIterator(arr);
+    //
+    // function* createIterator(arr) {
+    //
+    //     let newArr = [];
+    //     for (let i = 0; i < arr.length; i += 2) {
+    //         let buffArr = [];
+    //         for (let j = i; j < i+2; j++) {
+    //             buffArr.push(arr[j])
+    //         }
+    //         newArr.push(buffArr);
+    //     }
+    //
+    //
+    //     for (let value of newArr) {
+    //         yield value;
+    //     }
+    // }
+    //
+    // for (let value of iterator) {
+    //     console.log(value);
+    //
+    // }
+
     // Дан массив с числами. С помощью функции-генератора создайте итератор, каждый вызов которого
     // будет возвращать следующий элемент массива, являющийся четным числом.
     //
-    // Дан массив с числами. С помощью функции-генератора создайте итератор, каждый вызов которого
-    // будет возвращать следующее число Фибоначчи.
+    // let arr = [1, 2, 3, 4, 6];
     //
+    // let iterator = createIterator(arr);
+    //
+    // function* createIterator(arr) {
+    //     for (let value of arr) {
+    //         if (value % 2 == 0) {
+    //             yield value;
+    //         }
+    //     }
+    // }
+    //
+    // for (let value of iterator) {
+    //     console.log(value);
+    //
+    // }
+
 
     //     Создаем итератор объекта с помощью генератора ES6
 
     //Дан объект. С помощью функции-генератора создайте его итератор,
     // переберите элементы этого объекта с помощью цикла for-of.
     //
+    // let obj = {
+    //     a:1,
+    //     b:2,
+    //     c:3
+    // }
+    //
+    // let iterator = createIterator(obj);
+    // function *createIterator(obj) {
+    //     for (let value in obj){
+    //         yield obj[value];
+    //     }
+    // }
+    //
+    // for (let value of iterator){
+    //     console.log(value);
+    // }
 
     //     Создание итерируемых объектов на ES6
-    //
+
     // Дан объект. Сделайте так, чтобы его элементы можно было перебрать с помощью цикла for-of.
+    // let obj = {
+    //     a: 1,
+    //     b: 2,
+    //     c: 3,
+    //     [Symbol.iterator]: function* () {
     //
+    //         for (let key in this) {
+    //             yield this[key];
+    //
+    //         }
+    //     }
+    // };
+    //
+    // for (let elem of obj) {
+    //     console.log(elem);
+    // }
+
 
     //     Встроенные итераторы коллекций values, keys и entries
 
     // Дан массив. Переберите элементы этого массива через цикл for-of так, чтобы в каждой итерации в переменную
     // elem записывался элемент массива, а в переменную key - ключ.
     //
+    // let arr = [1, 2, 3];
+    //
+    // let iterator = arr.entries();
+    // for (let [key, value] of iterator) {
+    //     console.log(key, value);
+    // }
+
     // Дан массив. Получите массив ключей этого массива. Найдите сумму элементов этого нового полученного массива.
     //
+    // let arr = [1, 2, 3];
+    //
+    // let iterator = arr.keys();
+    // let sum = 0;
+    // for (let key of iterator) {
+    //     sum += key;
+    // }
+    // console.log(sum);
+
     // Дана коллекция Map. Получите массив ее ключей.
     //
+    // let map = new Map();
+    // map.set('a',2);
+    // map.set('b',3);
+    // console.log(Array.from(map.keys()));
+
     // Дана коллекция Map. Получите массив ее значений.
     //
+    // let map = new Map();
+    // map.set('a',2);
+    // map.set('b',3);
+    // console.log(Array.from(map.values()));
+
 
     //     Встроенные итераторы строк
 
