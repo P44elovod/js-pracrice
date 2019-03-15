@@ -10,9 +10,187 @@
     <script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
 </head>
 <body>
-
+<div id="content"></div>
 </body>
 </html>
 <script type="text/babel">
+    // Задачи на работу с условиями и циклами в React
 
+    //     Задачи для решения
+
+    // На сокращенный if
+
+    //     Дан следующий стейт:
+    //
+    //     this.state = {show: true, name: 'Иван'};
+    // Изначально результат работы метода render следующий ('Иван' берется из this.state.name):
+    //
+    // <div>
+    //     <p>Привет, Иван!</p>
+    // </div>
+    // Сделайте так, чтобы если this.state.show был равен true, то выводился текст 'Привет, Иван',
+    // а если равен false - то 'Пока, Иван'. Показать решение.
+    //
+    // class App extends React.Component {
+    //     constructor(){
+    //         super();
+    //         this.state = {show: false, name: 'Иван'};
+    //
+    //     }
+    //     render() {
+    //         return (
+    //             <div>
+    //                 <p>{this.state.show ? 'Привет' : 'Пока'},  {this.state.name}!</p>
+    //             </div>
+    //         )
+    //     }
+    //
+    // }
+    // ReactDOM.render(
+    //     <App/>,
+    //     document.getElementById('content')
+    // );
+
+    //     На показ элементов
+
+    // Дан следующий стейт:
+    //
+    //     this.state = {name: 'Иван', age: 25};
+    // Дана кнопка (результат работы метода render):
+    //
+    // <div>
+    //     <button>Нажми на меня</button>
+    // </div>
+    // Сделайте так, чтобы по нажатию на кнопку результат работы метода render изменился на следующее
+    // ('Иван' и 25 должны взяться из стейта):
+    //
+    // <div>
+    //     <p>имя: Иван, возраст: 25</p>
+    //     <button>Нажми на меня</button>
+    // </div>
+    //     Переделайте предыдущую задачу так, чтобы по первому нажатию на кнопку абзац с нашим текстом показывался,
+    //     а по второму нажатию - скрывался. Показать решение.
+    //     Переделайте предыдущую задачу так, чтобы по заходу на страницу текст кнопки был 'показать', а после нажатия на нее - 'скрыть' (ну и так далее - по каждому нажатию текст должен чередоваться). Показать решение.
+    //
+    /*class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {name: 'Иван', age: 25, show: false};
+        }
+
+        toggleText(){
+            this.setState({show: !this.state.show});
+        }
+
+        render() {
+            var lable = 'показать';
+            if (this.state.show){
+                var content = <p>имя: {this.state.name}, возраст: {this.state.age}</p>;
+                var lable = 'скрыть';
+
+            }
+            return (
+
+                <div>
+                    {content}
+                    <button onClick={this.toggleText.bind(this)}>{lable}</button>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('content')
+    );
+*/
+
+    //     На циклы
+
+    // Пусть в стейте дан массив имен ['Коля', 'Вася', 'Петя'].
+    // Выведите каждый элемент этого массива в отдельной <li> в списке ul. Вот так:
+    //
+    //     <ul>
+    //         <li>Коля</li>
+    //         <li>Вася</li>
+    //         <li>Петя</li>
+    //     </ul>
+    // Показать решение.
+    //
+    // Переделайте предыдущую задачу так, чтобы в каждой li кроме элемента массива еще и стоял его порядковый номер в массиве. Вот так:
+        //
+        //     <ul>
+        //         <li>Коля - 1</li>
+        //         <li>Вася - 2</li>
+        //         <li>Петя - 3</li>
+        //     </ul>
+        // По
+    /*class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {names: ['Коля', 'Вася', 'Петя']};
+        }
+
+        render() {
+            let list = this.state.names.map(function (item, index) {
+                return <li key={index}>{item} - {index + 1}</li>
+            });
+            return (
+                <ul>{list}</ul>
+
+            )
+
+        }
+    }
+
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('content')
+    )
+    */
+
+    //     Дан следующий стейт:
+    //
+    //     this.state = {
+    //         hrefs: [
+    //             {href: '1.html', text: 'ссылка 1'},
+    //             {href: '2.html', text: 'ссылка 2'},
+    //             {href: '3.html', text: 'ссылка 3'},
+    //         ]
+    //     };
+    // С помощью this.state.hrefs выведите на экран следующее:
+    //
+    //     <ul>
+    //         <li><a href="1.html">ссылка 1</a></li>
+    //         <li><a href="2.html">ссылка 2</a></li>
+    //         <li><a href="3.html">ссылка 3</a></li>
+    //     </ul>
+    // Показать решение.
+    /*class App extends React.Component{
+        constructor(){
+            super();
+            this.state = {
+                        hrefs: [
+                            {href: '1.html', text: 'ссылка 1'},
+                            {href: '2.html', text: 'ссылка 2'},
+                            {href: '3.html', text: 'ссылка 3'},
+                        ]
+                    };
+        }
+
+        render() {
+            let list = this.state.hrefs.map(function (item, index) {
+                return <li key={index}><a href={item.href}>{item.text}</a></li>
+            })
+            return(
+                <ul>{list}</ul>
+            )
+        }
+
+
+    }
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('content')
+    );*/
 </script>
