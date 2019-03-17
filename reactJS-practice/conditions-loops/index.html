@@ -179,7 +179,7 @@
         }
 
         render() {
-            let list = this.state.hrefs.map(function (item, index) {
+            let list = this.state.hrefs.map((item, index) => {
                 return <li key={index}><a href={item.href}>{item.text}</a></li>
             })
             return(
