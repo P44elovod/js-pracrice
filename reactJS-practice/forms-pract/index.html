@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://npmcdn.com/react@15.3.0/dist/react.js"></script>
+    <script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+</body>
+</html>
+<script type="text/babel">
+    // Задачи на работу с формами в React
+
+    //     Задачи для решения
+
+    // На инпуты
+
+    // Дан инпут и абзац. Сделайте так, чтобы при наборе текста в инпуте он автоматически появлялся в этом абзаце.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы текст в абзац выводился в верхнем регистре.
+    //
+    //     Дан инпут и абзац. В инпут вводится возраст пользователя. Сделайте так, чтобы при наборе текста
+    //     в абзаце автоматически появлялся год рождения пользователя.
+    //
+    /*class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {value: ''};
+        }
+
+        handleChange(event) {
+            this.setState({value: event.target.value});
+        }
+
+        findBirthYear(){
+
+            let date = new Date();
+            return date.getFullYear() - this.state.value;
+
+        }
+
+        render() {
+
+            if (this.state.value){
+                var year = this.findBirthYear();
+            }
+
+            return    <div>
+                <p>{year}</p>
+                <input onChange={this.handleChange.bind(this)}/>
+
+
+            </div>
+
+
+
+        }
+    }*/
+    //     Дан инпут и 3 абзаца. В инпут вводится ФИО пользователя через пробел.
+    //     Сделайте так, чтобы при наборе текста в первом абзаце появилась фамилия пользователя,
+    //     во втором - имя, а в третьем - отчество.
+    //
+    /*class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {value: ''};
+        }
+
+        handleChange(event) {
+            this.setState({value: event.target.value});
+        }
+
+        splitName() {
+
+            const list = this.state.value.split(' ').map((value, index) => {
+                return <p key={index}>{value}</p>
+            });
+
+            return list;
+
+        }
+
+        render() {
+
+            if (this.state.value) {
+                var list = this.splitName();
+            }
+
+            return <div>
+                <input onChange={this.handleChange.bind(this)}/>
+                <p>{list}</p>
+
+
+            </div>
+
+
+        }
+    }*/
+
+    //     На submit
+
+    // Дан инпут и кнопка submit. В инпут вводится текст. Сделайте так, чтобы по нажатию на кнопку этот текст вывелся в какой-нибудь абзац.
+    //
+    //     Даны два инпута и кнопка. В инпуты вводятся числа. Сделайте так, чтобы по нажатию на кнопку под инпутами в какой-нибудь абзац вывелась сумма этих чисел.
+    //
+    //     Даны 3 инпута и кнопка. В инпуты вводится имя, фамилия и отчество. Сделайте так, чтобы по нажатию на кнопку под инпутами в какой-нибудь абзац вывелось полное ФИО пользователя.
+    //
+
+    //     На формы + массивы
+
+    // Дан массив с именами пользователей. Выведите этот массив в виде списка ul. Также даны инпут и кнопка. Сделайте так, чтобы в инпут можно было ввести еще одно имя, нажать на кнопку - и это имя добавилось в конец списка ul.
+    //
+    //     Модифицируйте предыдущую задачу так, чтобы в конце каждой li появилась кнопка для удаления этого пункта списка.
+    //
+    //     Дан следующий стейт:
+    //
+    //     this.state = {
+    //         hrefs: [
+    //             {href: '1.html', text: 'ссылка 1'},
+    //             {href: '2.html', text: 'ссылка 2'},
+    //             {href: '3.html', text: 'ссылка 3'},
+    //         ]
+    //     };
+    // Выведите на экран следующее:
+    //
+    //     <ul>
+    //         <li><a href="1.html">ссылка 1</a></li>
+    //         <li><a href="2.html">ссылка 2</a></li>
+    //         <li><a href="3.html">ссылка 3</a></li>
+    //     </ul>
+
+    // Сделайте 2 инпута и кнопку, по нажатию на которую в список добавится новый li, причем href возьмется из первого инпута, а текст ссылки - из второго.
+    //
+    //     Дан массив. Выведите этот массив в виде списка ul. Также даны инпут и кнопка. Сделайте так, чтобы в инпут можно было ввести число, нажать на кнопку - и из списка ul удалился элемент с введенным в инпут номером.
+    //
+    //     Дан следующий массив:
+    //
+    //     this.state = {
+    //         users: [
+    //             {name: 'Коля', age: 30},
+    //             {name: 'Вася', age: 40},
+    //             {name: 'Петя', age: 50},
+    //         ]
+    //     };
+    // Выведите его на экран в виде таблицы:
+    //
+    //     <table>
+    //         <tr>
+    //             <td>Коля</td><td>30</td>
+    //         </tr>
+    //         <tr>
+    //             <td>Коля</td><td>40</td>
+    //         </tr>
+    //         <tr>
+    //             <td>Коля</td><td>50</td>
+    //         </tr>
+    //     </table>
+    // Сделайте 2 инпута и кнопку, по нажатию на которую в список добавится новая tr с именем и возрастом.
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('content')
+    );
+</script>
