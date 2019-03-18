@@ -10,13 +10,11 @@
     <script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
 </head>
 <body>
-
+<div id="content"></div>
 </body>
 </html>
 <script type="text/babel">
     // Задачи на состояние state и события в React
-
-    // Перед решением задач изучите теорию к данному уроку.
 
     //     Задачи для решения
 
@@ -31,14 +29,78 @@
     //     имя: Иван, возраст: 25
     // </div>
     //
-    //     На события
-    // Сделайте кнопочку, по нажатию на которую сработает метод showMessage и на экран алертом выведется сообщение с текстом 'hello'. Показать решение.
+    // class App extends React.Component {
     //
+    //     constructor() {
+    //         super();
+    //         this.state = {name: 'Иван', age: 25};
+    //     }
+    //     render() {
+    //         return (
+    //             <div>имя: {this.state.name}, возраст: {this.state.age}</div>
+    //         )
+    //     }
+    // }
+    //
+    // ReactDOM.render(
+    //     <App/>,
+    //     document.getElementById('content')
+    // );
+
+    //     На события
+    // Сделайте кнопочку, по нажатию на которую сработает метод showMessage и на экран алертом выведется
+    // сообщение с текстом 'hello'. Показать решение.
+    //
+   /* class App extends React.Component {
+
+        showMessage(){
+            alert('hello');
+        }
+
+        render() {
+            return (
+                <div>
+                    <button onClick={this.showMessage}>Go!</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+      <App/>,
+      document.getElementById('content')
+    );*/
+
     //     Дан следующий стейт:
     //
     //     this.state = {name: 'Иван', age: 25};
-    // Сделайте кнопочку, по нажатию на которую сработает метод showName и на экран алертом выведется имя пользователя из стейта. Показать решение.
-    //
+    // Сделайте кнопочку, по нажатию на которую сработает метод showName и на экран
+    // алертом выведется имя пользователя из стейта. Показать решение.
+/*
+    class App extends React.Component {
+        constructor(){
+            super();
+            this.state = {name: 'Иван', age: 25};
+        }
+       showName() {
+            alert(this.state.name);
+       }
+
+       render() {
+            return (<div>
+                    <button onClick={this.showName.bind(this)}>Go!</button>
+                </div>
+
+            )
+       }
+
+    }
+
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('content')
+    );
+*/
+
     //     На setState
     // Дан следующий стейт:
     //
@@ -49,4 +111,29 @@
     //         имя: Иван, возраст: 25
     //     </div>
     // Сделайте кнопочку, по нажатию на которую 'Иван' поменяется на 'Коля', а 25 поменяется на 30. Показать решение.
+/*
+    class App extends React.Component {
+
+        constructor() {
+            super();
+            this.state = {name: 'Иван', age: 25};
+        }
+        chageData(){
+            this.setState({name: 'Коля', age: 30})
+        }
+        render() {
+            return(
+                <div>
+                    имя: {this.state.name}, возраст: {this.state.age}
+                    <button onClick={this.chageData.bind(this)}>go!</button>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('content')
+    );
+*/
 </script>
