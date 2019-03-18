@@ -104,12 +104,119 @@
 
     //     На submit
 
-    // Дан инпут и кнопка submit. В инпут вводится текст. Сделайте так, чтобы по нажатию на кнопку этот текст вывелся в какой-нибудь абзац.
+    // Дан инпут и кнопка submit. В инпут вводится текст.
+    // Сделайте так, чтобы по нажатию на кнопку этот текст вывелся в какой-нибудь абзац.
+/*    class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {value: '', show: false};
+        }
+
+        handleInputValue(event) {
+            this.setState({value: event.target.value});
+
+        }
+
+        showValue() {
+            this.setState({show: !this.state.show});
+        }
+
+        render() {
+            if (this.state.show) {
+                var value = this.state.value;
+            }
+            return (
+                <div>
+                    <input onBlur={this.handleInputValue.bind(this)}/>
+                    <input type="submit" onClick={this.showValue.bind(this)}/>
+                    <p>{value}</p>
+                </div>
+            )
+        }
+    }*/
+
+    //     Даны два инпута и кнопка. В инпуты вводятся числа.
+    //     Сделайте так, чтобы по нажатию на кнопку под инпутами в какой-нибудь абзац вывелась сумма этих чисел.
     //
-    //     Даны два инпута и кнопка. В инпуты вводятся числа. Сделайте так, чтобы по нажатию на кнопку под инпутами в какой-нибудь абзац вывелась сумма этих чисел.
-    //
-    //     Даны 3 инпута и кнопка. В инпуты вводится имя, фамилия и отчество. Сделайте так, чтобы по нажатию на кнопку под инпутами в какой-нибудь абзац вывелось полное ФИО пользователя.
-    //
+       /* class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {value1: '', value2: '', show: false};
+        }
+
+        handleFirstInputValue(event) {
+            this.setState({value1: event.target.value});
+
+
+        }
+        handleSecondInputValue(event) {
+            this.setState({value2: event.target.value});
+
+
+        }
+
+        showValue() {
+            this.setState({show: !this.state.show});
+        }
+
+        render() {
+            if (this.state.show) {
+                var value = Number(this.state.value1) + Number(this.state.value2);
+            }
+            return (
+                <div>
+                    <input onBlur={this.handleFirstInputValue.bind(this)}/>
+                    <input onBlur={this.handleSecondInputValue.bind(this)}/>
+                    <input type="submit" onClick={this.showValue.bind(this)}/>
+                    <p>{value}</p>
+                </div>
+            )
+        }
+    }*/
+    //     Даны 3 инпута и кнопка. В инпуты вводится имя, фамилия и отчество.
+    //     Сделайте так, чтобы по нажатию на кнопку под инпутами в какой-нибудь абзац вывелось полное
+    //     ФИО пользователя.
+/*    class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {firstName: '', secondName: '', fatherName: '', show: false};
+        }
+
+        handleFirstNameInputValue(event) {
+            this.setState({firstName: event.target.value});
+
+
+        }
+        handleSecondNameInputValue(event) {
+            this.setState({secondName: event.target.value});
+
+
+        }
+        handleFatherNameInputValue(event) {
+            this.setState({fatherName: event.target.value});
+
+
+        }
+
+        showValue() {
+            this.setState({show: !this.state.show});
+        }
+
+        render() {
+            if (this.state.show) {
+                var value = this.state.secondName + ' ' + this.state.firstName   + ' ' + this.state.fatherName;
+            }
+            return (
+                <div>
+                    <input onBlur={this.handleFirstNameInputValue.bind(this)}/>
+                    <input onBlur={this.handleSecondNameInputValue.bind(this)}/>
+                    <input onBlur={this.handleFatherNameInputValue.bind(this)}/>
+                    <input type="submit" onClick={this.showValue.bind(this)}/>
+                    <p>{value}</p>
+                </div>
+            )
+        }
+    }*/
 
     //     На формы + массивы
 
