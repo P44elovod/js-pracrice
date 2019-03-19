@@ -106,121 +106,123 @@
 
     // Дан инпут и кнопка submit. В инпут вводится текст.
     // Сделайте так, чтобы по нажатию на кнопку этот текст вывелся в какой-нибудь абзац.
-/*    class App extends React.Component {
-        constructor() {
-            super();
-            this.state = {value: '', show: false};
-        }
-
-        handleInputValue(event) {
-            this.setState({value: event.target.value});
-
-        }
-
-        showValue() {
-            this.setState({show: !this.state.show});
-        }
-
-        render() {
-            if (this.state.show) {
-                var value = this.state.value;
+    /*    class App extends React.Component {
+            constructor() {
+                super();
+                this.state = {value: '', show: false};
             }
-            return (
-                <div>
-                    <input onBlur={this.handleInputValue.bind(this)}/>
-                    <input type="submit" onClick={this.showValue.bind(this)}/>
-                    <p>{value}</p>
-                </div>
-            )
-        }
-    }*/
+
+            handleInputValue(event) {
+                this.setState({value: event.target.value});
+
+            }
+
+            showValue() {
+                this.setState({show: !this.state.show});
+            }
+
+            render() {
+                if (this.state.show) {
+                    var value = this.state.value;
+                }
+                return (
+                    <div>
+                        <input onBlur={this.handleInputValue.bind(this)}/>
+                        <input type="submit" onClick={this.showValue.bind(this)}/>
+                        <p>{value}</p>
+                    </div>
+                )
+            }
+        }*/
 
     //     Даны два инпута и кнопка. В инпуты вводятся числа.
     //     Сделайте так, чтобы по нажатию на кнопку под инпутами в какой-нибудь абзац вывелась сумма этих чисел.
     //
-       /* class App extends React.Component {
-        constructor() {
-            super();
-            this.state = {value1: '', value2: '', show: false};
-        }
+    /* class App extends React.Component {
+     constructor() {
+         super();
+         this.state = {value1: '', value2: '', show: false};
+     }
 
-        handleFirstInputValue(event) {
-            this.setState({value1: event.target.value});
-
-
-        }
-        handleSecondInputValue(event) {
-            this.setState({value2: event.target.value});
+     handleFirstInputValue(event) {
+         this.setState({value1: event.target.value});
 
 
-        }
+     }
+     handleSecondInputValue(event) {
+         this.setState({value2: event.target.value});
 
-        showValue() {
-            this.setState({show: !this.state.show});
-        }
 
-        render() {
-            if (this.state.show) {
-                var value = Number(this.state.value1) + Number(this.state.value2);
-            }
-            return (
-                <div>
-                    <input onBlur={this.handleFirstInputValue.bind(this)}/>
-                    <input onBlur={this.handleSecondInputValue.bind(this)}/>
-                    <input type="submit" onClick={this.showValue.bind(this)}/>
-                    <p>{value}</p>
-                </div>
-            )
-        }
-    }*/
+     }
+
+     showValue() {
+         this.setState({show: !this.state.show});
+     }
+
+     render() {
+         if (this.state.show) {
+             var value = Number(this.state.value1) + Number(this.state.value2);
+         }
+         return (
+             <div>
+                 <input onBlur={this.handleFirstInputValue.bind(this)}/>
+                 <input onBlur={this.handleSecondInputValue.bind(this)}/>
+                 <input type="submit" onClick={this.showValue.bind(this)}/>
+                 <p>{value}</p>
+             </div>
+         )
+     }
+ }*/
     //     Даны 3 инпута и кнопка. В инпуты вводится имя, фамилия и отчество.
     //     Сделайте так, чтобы по нажатию на кнопку под инпутами в какой-нибудь абзац вывелось полное
     //     ФИО пользователя.
-/*    class App extends React.Component {
-        constructor() {
-            super();
-            this.state = {firstName: '', secondName: '', fatherName: '', show: false};
-        }
-
-        handleFirstNameInputValue(event) {
-            this.setState({firstName: event.target.value});
-
-
-        }
-        handleSecondNameInputValue(event) {
-            this.setState({secondName: event.target.value});
-
-
-        }
-        handleFatherNameInputValue(event) {
-            this.setState({fatherName: event.target.value});
-
-
-        }
-
-        showValue() {
-            this.setState({show: !this.state.show});
-        }
-
-        render() {
-            if (this.state.show) {
-                var value = this.state.secondName + ' ' + this.state.firstName   + ' ' + this.state.fatherName;
+    /*    class App extends React.Component {
+            constructor() {
+                super();
+                this.state = {firstName: '', secondName: '', fatherName: '', show: false};
             }
-            return (
-                <div>
-                    <input onBlur={this.handleFirstNameInputValue.bind(this)}/>
-                    <input onBlur={this.handleSecondNameInputValue.bind(this)}/>
-                    <input onBlur={this.handleFatherNameInputValue.bind(this)}/>
-                    <input type="submit" onClick={this.showValue.bind(this)}/>
-                    <p>{value}</p>
-                </div>
-            )
-        }
-    }*/
+
+            handleFirstNameInputValue(event) {
+                this.setState({firstName: event.target.value});
+
+
+            }
+            handleSecondNameInputValue(event) {
+                this.setState({secondName: event.target.value});
+
+
+            }
+            handleFatherNameInputValue(event) {
+                this.setState({fatherName: event.target.value});
+
+
+            }
+
+            showValue() {
+                this.setState({show: !this.state.show});
+            }
+
+            render() {
+                if (this.state.show) {
+                    var value = this.state.secondName + ' ' + this.state.firstName   + ' ' + this.state.fatherName;
+                }
+                return (
+                    <div>
+                        <input onBlur={this.handleFirstNameInputValue.bind(this)}/>
+                        <input onBlur={this.handleSecondNameInputValue.bind(this)}/>
+                        <input onBlur={this.handleFatherNameInputValue.bind(this)}/>
+                        <input type="submit" onClick={this.showValue.bind(this)}/>
+                        <p>{value}</p>
+                    </div>
+                )
+            }
+        }*/
 
     //     На формы + массивы
 
-    // Дан массив с именами пользователей. Выведите этот массив в виде списка ul. Также даны инпут и кнопка. Сделайте так, чтобы в инпут можно было ввести еще одно имя, нажать на кнопку - и это имя добавилось в конец списка ul.
+    // Дан массив с именами пользователей. Выведите этот массив в виде списка ul. Также даны инпут и кнопка.
+    // Сделайте так, чтобы в инпут можно было ввести еще одно имя, нажать на кнопку - и это имя добавилось в конец
+    // списка ul.
     //
     //     Модифицируйте предыдущую задачу так, чтобы в конце каждой li появилась кнопка для удаления этого пункта списка.
     //
@@ -240,9 +242,59 @@
     //         <li><a href="2.html">ссылка 2</a></li>
     //         <li><a href="3.html">ссылка 3</a></li>
     //     </ul>
-
-    // Сделайте 2 инпута и кнопку, по нажатию на которую в список добавится новый li, причем href возьмется из первого инпута, а текст ссылки - из второго.
+    // Сделайте 2 инпута и кнопку, по нажатию на которую в список добавится новый li,
+    // причем href возьмется из первого инпута, а текст ссылки - из второго.
     //
+   /* class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                hrefs: [
+                    {href: '1.html', text: 'ссылка 1'},
+                    {href: '2.html', text: 'ссылка 2'},
+                    {href: '3.html', text: 'ссылка 3'},
+                ],
+                newHref: {href: '', text: ''}
+            };
+        }
+
+        addLink(event) {
+
+
+            this.state.hrefs.push(this.state.newHref);
+            this.setState({hrefs: this.state.hrefs});
+            event.preventDefault()
+
+        }
+
+        hrefInputHandler(event) {
+            this.setState({newHref: {href: event.target.value, text: this.state.newHref.text}})
+        }
+
+        textInputHandler(event) {
+            this.setState({newHref: {href: this.state.newHref.href, text: event.target.value}})
+
+
+        }
+
+        render() {
+            var list = this.state.hrefs.map((item, index) => {
+                return <li key={index}><a href={item.href}>{item.text}</a></li>
+            })
+            return (
+                <div>
+                    <ul>{list}</ul>
+                    <form onSubmit={this.addLink.bind(this)}>
+                        <input placeholder="href" onChange={this.hrefInputHandler.bind(this)}/>
+                        <input placeholder="text" onChange={this.textInputHandler.bind(this)}/>
+                        <input type="submit" value="add"/>
+                    </form>
+                </div>
+
+            )
+        }
+    }*/
+
     //     Дан массив. Выведите этот массив в виде списка ul. Также даны инпут и кнопка. Сделайте так, чтобы в инпут можно было ввести число, нажать на кнопку - и из списка ul удалился элемент с введенным в инпут номером.
     //
     //     Дан следующий массив:
