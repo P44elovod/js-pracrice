@@ -245,58 +245,99 @@
     // Сделайте 2 инпута и кнопку, по нажатию на которую в список добавится новый li,
     // причем href возьмется из первого инпута, а текст ссылки - из второго.
     //
-   /* class App extends React.Component {
+    /* class App extends React.Component {
+         constructor() {
+             super();
+             this.state = {
+                 hrefs: [
+                     {href: '1.html', text: 'ссылка 1'},
+                     {href: '2.html', text: 'ссылка 2'},
+                     {href: '3.html', text: 'ссылка 3'},
+                 ],
+                 newHref: {href: '', text: ''}
+             };
+         }
+
+         addLink(event) {
+
+
+             this.state.hrefs.push(this.state.newHref);
+             this.setState({hrefs: this.state.hrefs});
+             event.preventDefault()
+
+         }
+
+         hrefInputHandler(event) {
+             this.setState({newHref: {href: event.target.value, text: this.state.newHref.text}})
+         }
+
+         textInputHandler(event) {
+             this.setState({newHref: {href: this.state.newHref.href, text: event.target.value}})
+
+
+         }
+
+         render() {
+             var list = this.state.hrefs.map((item, index) => {
+                 return <li key={index}><a href={item.href}>{item.text}</a></li>
+             })
+             return (
+                 <div>
+                     <ul>{list}</ul>
+                     <form onSubmit={this.addLink.bind(this)}>
+                         <input placeholder="href" onChange={this.hrefInputHandler.bind(this)}/>
+                         <input placeholder="text" onChange={this.textInputHandler.bind(this)}/>
+                         <input type="submit" value="add"/>
+                     </form>
+                 </div>
+
+             )
+         }
+     }*/
+
+    //     Дан массив. Выведите этот массив в виде списка ul.
+    //     Также даны инпут и кнопка. Сделайте так, чтобы в инпут можно было ввести число, нажать на кнопку
+    //     - и из списка ul удалился элемент с введенным в инпут номером.
+    //
+ /*   class App extends React.Component {
         constructor() {
             super();
             this.state = {
-                hrefs: [
-                    {href: '1.html', text: 'ссылка 1'},
-                    {href: '2.html', text: 'ссылка 2'},
-                    {href: '3.html', text: 'ссылка 3'},
-                ],
-                newHref: {href: '', text: ''}
+                arr: [1, 2, 3],
+                index: ''
             };
         }
 
-        addLink(event) {
-
-
-            this.state.hrefs.push(this.state.newHref);
-            this.setState({hrefs: this.state.hrefs});
-            event.preventDefault()
-
+        handleInput(event) {
+            this.setState({index: event.target.value});
         }
 
-        hrefInputHandler(event) {
-            this.setState({newHref: {href: event.target.value, text: this.state.newHref.text}})
-        }
-
-        textInputHandler(event) {
-            this.setState({newHref: {href: this.state.newHref.href, text: event.target.value}})
-
-
+        delItem(event) {
+            this.state.arr.splice(this.state.index, 1);
+            this.setState({arr: this.state.arr});
+            event.preventDefault();
         }
 
         render() {
-            var list = this.state.hrefs.map((item, index) => {
-                return <li key={index}><a href={item.href}>{item.text}</a></li>
+            const list = this.state.arr.map((item, index) => {
+                return <li key={index}>{item}</li>
             })
+
+
             return (
                 <div>
                     <ul>{list}</ul>
-                    <form onSubmit={this.addLink.bind(this)}>
-                        <input placeholder="href" onChange={this.hrefInputHandler.bind(this)}/>
-                        <input placeholder="text" onChange={this.textInputHandler.bind(this)}/>
-                        <input type="submit" value="add"/>
+                    <form onSubmit={this.delItem.bind(this)}>
+                        <input onChange={this.handleInput.bind(this)}/>
+                        <input type="submit"/>
                     </form>
-                </div>
 
+                </div>
             )
         }
+
     }*/
 
-    //     Дан массив. Выведите этот массив в виде списка ul. Также даны инпут и кнопка. Сделайте так, чтобы в инпут можно было ввести число, нажать на кнопку - и из списка ul удалился элемент с введенным в инпут номером.
-    //
     //     Дан следующий массив:
     //
     //     this.state = {
