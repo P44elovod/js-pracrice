@@ -299,44 +299,44 @@
     //     Также даны инпут и кнопка. Сделайте так, чтобы в инпут можно было ввести число, нажать на кнопку
     //     - и из списка ul удалился элемент с введенным в инпут номером.
     //
- /*   class App extends React.Component {
-        constructor() {
-            super();
-            this.state = {
-                arr: [1, 2, 3],
-                index: ''
-            };
-        }
+    /*   class App extends React.Component {
+           constructor() {
+               super();
+               this.state = {
+                   arr: [1, 2, 3],
+                   index: ''
+               };
+           }
 
-        handleInput(event) {
-            this.setState({index: event.target.value});
-        }
+           handleInput(event) {
+               this.setState({index: event.target.value});
+           }
 
-        delItem(event) {
-            this.state.arr.splice(this.state.index, 1);
-            this.setState({arr: this.state.arr});
-            event.preventDefault();
-        }
+           delItem(event) {
+               this.state.arr.splice(this.state.index, 1);
+               this.setState({arr: this.state.arr});
+               event.preventDefault();
+           }
 
-        render() {
-            const list = this.state.arr.map((item, index) => {
-                return <li key={index}>{item}</li>
-            })
+           render() {
+               const list = this.state.arr.map((item, index) => {
+                   return <li key={index}>{item}</li>
+               })
 
 
-            return (
-                <div>
-                    <ul>{list}</ul>
-                    <form onSubmit={this.delItem.bind(this)}>
-                        <input onChange={this.handleInput.bind(this)}/>
-                        <input type="submit"/>
-                    </form>
+               return (
+                   <div>
+                       <ul>{list}</ul>
+                       <form onSubmit={this.delItem.bind(this)}>
+                           <input onChange={this.handleInput.bind(this)}/>
+                           <input type="submit"/>
+                       </form>
 
-                </div>
-            )
-        }
+                   </div>
+               )
+           }
 
-    }*/
+       }*/
 
     //     Дан следующий массив:
     //
@@ -361,6 +361,48 @@
     //         </tr>
     //     </table>
     // Сделайте 2 инпута и кнопку, по нажатию на которую в список добавится новая tr с именем и возрастом.
+
+    class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                users: [
+                    {name: 'Коля', age: 30},
+                    {name: 'Вася', age: 40},
+                    {name: 'Петя', age: 50},
+                ],
+                newUser: {name: '', age: ''}
+            };
+        }
+
+        handleNameInput(event) {
+
+        }
+
+        render() {
+            let table = this.state.users.map((item, index) => {
+                return <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{item.age}</td>
+                </tr>
+            })
+
+            return (
+            <div>
+                <table>
+                    {table}
+                </table>
+            <form>
+                <input onChange={this.handleNameInput.bind(this)}/>
+                <input onChange={this.handleInput.bind(this)}/>
+                <input type="submit"/>
+            </form>
+            </div>
+            )
+
+        }
+    }
+
     ReactDOM.render(
         <App/>,
         document.getElementById('content')
