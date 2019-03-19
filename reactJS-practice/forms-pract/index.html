@@ -361,8 +361,7 @@
     //         </tr>
     //     </table>
     // Сделайте 2 инпута и кнопку, по нажатию на которую в список добавится новая tr с именем и возрастом.
-
-    class App extends React.Component {
+    /*class App extends React.Component {
         constructor() {
             super();
             this.state = {
@@ -376,7 +375,18 @@
         }
 
         handleNameInput(event) {
+            this.setState({newUser: {name: event.target.value, age: this.state.newUser.age}})
+        }
 
+        handleAgeInput(event) {
+            this.setState({newUser: {name: this.state.newUser.name, age: event.target.value}})
+
+        }
+
+        addUser(event) {
+            this.state.users.push(this.state.newUser);
+            this.setState({users: this.state.users});
+            event.preventDefault();
         }
 
         render() {
@@ -388,16 +398,16 @@
             })
 
             return (
-            <div>
-                <table>
-                    {table}
-                </table>
-            <form>
-                <input onChange={this.handleNameInput.bind(this)}/>
-                <input onChange={this.handleInput.bind(this)}/>
-                <input type="submit"/>
-            </form>
-            </div>
+                <div>
+                    <table>
+                        {table}
+                    </table>
+                    <form onSubmit={this.addUser.bind(this)}>
+                        <input onChange={this.handleNameInput.bind(this)}/>
+                        <input onChange={this.handleAgeInput.bind(this)}/>
+                        <input type="submit"/>
+                    </form>
+                </div>
             )
 
         }
@@ -406,5 +416,5 @@
     ReactDOM.render(
         <App/>,
         document.getElementById('content')
-    );
+    );*/
 </script>
