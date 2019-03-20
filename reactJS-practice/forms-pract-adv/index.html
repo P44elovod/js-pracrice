@@ -23,14 +23,79 @@
     // Дан текстареа и абзац. Сделайте так, чтобы при наборе текста в текстареа он автоматически появлялся
     // в этом абзаце.
     //
+    /* class App extends React.Component {
+         constructor() {
+             super();
+             this.state ={value: ''};
+         }
+         changeHandler (event) {
+             this.setState({value: event.target.value})
+         }
+         render() {
+             return (
+                 <div>
+                     <textarea value={this.state.value} onChange={this.changeHandler.bind(this)} />
+                     <p>{this.state.value}</p>
+                 </div>
+             )
+         }
+     }*/
 
     //     На чекбоксы
 
     // Дан чекбокс и абзац. Сделайте так, чтобы состояние чекбокса выводилось в этот абзац.
     //
+    /*  class App extends React.Component{
+          constructor(){
+              super();
+              this.state = {
+                  checked: false
+              };
+          }
+
+          checkboxHandler (event) {
+              this.setState({checked: !this.state.checked})
+          }
+
+          render() {
+              return(
+                  <div>
+                      <input type="checkbox" onChange={this.checkboxHandler.bind(this)}/>
+                      <p>{this.state.checked ? 'hecked' : 'unchecked'}</p>
+                  </div>
+              )
+          }
+      }*/
     //     Дан чекбокс и какой-то абзац с текстом. Сделайте так, чтобы если чекбокс отмечен -
     //     абзац был виден на экране, а если не отмечен - не видим.
     //
+    /* class App extends React.Component{
+         constructor(){
+             super();
+             this.state = {
+                 checked: false
+             };
+         }
+
+         checkboxHandler (event) {
+             this.setState({checked: !this.state.checked})
+         }
+
+         render() {
+             if (this.state.checked) {
+                 var className = 'active';
+             } else {
+                 var className = 'hidden';
+
+             }
+             return(
+                 <div>
+                     <input type="checkbox" onChange={this.checkboxHandler.bind(this)}/>
+                     <p className={className}>текст</p>
+                 </div>
+             )
+         }
+     }*/
 
     //     На селекты
 
@@ -38,14 +103,73 @@
     // Дан также абзац, в который выводится выбранный город. Сделайте так, чтобы при смене города в
     // селекте в абзаце он также менялся.
     //
+   /* class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                option: 'Город 1'
+            };
+        }
+
+        handleSelect (event){
+            this.setState({option: event.target.value})
+        }
+
+        render() {
+            return(
+                <div>
+                    <select onChange={this.handleSelect.bind(this)}>
+                        <option>Город 1</option>
+                        <option>Город 2</option>
+                        <option>Город 3</option>
+                        <option>Город 4</option>
+                    </select>
+                    <p>{this.state.option}</p>
+                </div>
+            )
+        }
+    }*/
+
     //     Модифицируйте предыдущую задачу так, чтобы список городов хранился в массиве из стейта.
     //
+    /* class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                cities: [
+                    'Город 1',
+                    'Город 2',
+                    'Город 3',
+                    'Город 4'
+                    ],
+                option: ''
+
+            };
+        }
+
+        handleSelect (event){
+            this.setState({option: event.target.value})
+        }
+
+        render() {
+            const options = this.state.cities.map((item, index) => {
+                return <option key={index}>{item}</option>
+            })
+            return(
+                <div>
+                    <select onChange={this.handleSelect.bind(this)}>{options}</select>
+                    <p>{this.state.option}</p>
+                </div>
+            )
+        }
+    }*/
 
     //     На радио
 
     // Даны 3 радиокнопочки со значениями 1, 2 и 3. Дан абзац. Сделайте так, чтобы значение выбранной
     // радиокнопочки выводилось в этот абзац.
     //
+
 
     //     Практика
 
@@ -210,4 +334,9 @@
     //     Реализуйте текст с вопросами и вариантами ответов. Каждый вопрос должен быть в своем абзаце,
     //     а под ним - 5 радиокнопочек, с помощью которых можно выбрать один из ответов.
     //     Если ответ правильный - вопрос должен покраситься в зеленый цвет, а если неправильный - в красный.
+
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('content')
+    );
 </script>
